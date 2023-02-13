@@ -1,0 +1,5 @@
+C:\Users\Synergies\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.csproj.AssemblyReference.cache
+C:\Users\Synergies\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Synergies\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.AssemblyInfoInputs.cache
+C:\Users\Synergies\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.AssemblyInfo.cs
+C:\Users\Synergies\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.csproj.CoreCompileInputs.cache
