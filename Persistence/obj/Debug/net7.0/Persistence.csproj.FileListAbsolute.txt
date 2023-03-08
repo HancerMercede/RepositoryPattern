@@ -3,3 +3,20 @@ C:\Users\Synergies\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.Gen
 C:\Users\Synergies\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.AssemblyInfoInputs.cache
 C:\Users\Synergies\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.AssemblyInfo.cs
 C:\Users\Synergies\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\bin\Debug\net7.0\Persistence.deps.json
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\bin\Debug\net7.0\Persistence.runtimeconfig.json
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\bin\Debug\net7.0\Persistence.dll
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\bin\Debug\net7.0\Persistence.pdb
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\bin\Debug\net7.0\Entities.dll
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\bin\Debug\net7.0\Entities.pdb
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.csproj.AssemblyReference.cache
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.AssemblyInfoInputs.cache
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.AssemblyInfo.cs
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.csproj.CoreCompileInputs.cache
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.csproj.CopyComplete
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.dll
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\obj\Debug\net7.0\refint\Persistence.dll
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.pdb
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\obj\Debug\net7.0\Persistence.genruntimeconfig.cache
+C:\Users\HANCER MERCEDE\source\repos\src\Persistence\obj\Debug\net7.0\ref\Persistence.dll
