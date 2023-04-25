@@ -50,6 +50,7 @@ public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
     // I'm not using this Method Now
    /* public async Task UpdateEmployee(string CompanyId, string Id, bool trackChanges)
     {
+
         var dbEntity = await FindByCondiction(c => c.CompanyId == Guid.Parse(CompanyId) && c.Id == Guid.Parse(Id), trackChanges)
             .SingleOrDefaultAsync();
 

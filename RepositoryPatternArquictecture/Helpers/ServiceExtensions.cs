@@ -1,14 +1,10 @@
-﻿using Contracts.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using Persistence.Context;
-using Repository;
-
+﻿
+// ReSharper disable All
 namespace RepositoryPatternArquitecture.Helpers;
 
 public static class ServiceExtensions
 {
-    public static void ConfiguredCors(this IServiceCollection services)
-    {
+    public static void ConfiguredCors(this IServiceCollection services) =>
         services.AddCors(opt =>
         {
             opt.AddPolicy("AllowAll", builder =>
@@ -16,11 +12,18 @@ public static class ServiceExtensions
                .AllowAnyMethod()
                .AllowAnyHeader());
         });
-    }
+    
+    public static void ConfiguredIISIntegration(this IServiceCollection services) =>
+        services.Configure<IISOptions>(opt => 
+        { 
+        
+        });
+    
     public static void ConfiguredSqlContext(this IServiceCollection services, string connection)
     {
         services.AddDbContext<RepositoryContext>(opts =>
-        opts.UseSqlServer(connection));
+            opts.UseSqlServer(connection));
+        //opts.UseInMemoryDatabase("CompanyEmployees"));
     }
 
     public static void ConfigureRepositoryManager(this IServiceCollection services) =>

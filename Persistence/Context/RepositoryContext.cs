@@ -1,7 +1,5 @@
 ﻿using Entities.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure;
-using Persistence.Configurations;
 using System.Reflection;
 
 namespace Persistence.Context;

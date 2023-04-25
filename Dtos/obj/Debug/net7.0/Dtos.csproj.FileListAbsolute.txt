@@ -1,11 +1,11 @@
+C:\Users\HANCER MERCEDE\source\repos\src\Dtos\bin\Debug\net7.0\Dtos.deps.json
+C:\Users\HANCER MERCEDE\source\repos\src\Dtos\bin\Debug\net7.0\Dtos.dll
+C:\Users\HANCER MERCEDE\source\repos\src\Dtos\bin\Debug\net7.0\Dtos.pdb
 C:\Users\HANCER MERCEDE\source\repos\src\Dtos\obj\Debug\net7.0\Dtos.csproj.AssemblyReference.cache
 C:\Users\HANCER MERCEDE\source\repos\src\Dtos\obj\Debug\net7.0\Dtos.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\HANCER MERCEDE\source\repos\src\Dtos\obj\Debug\net7.0\Dtos.AssemblyInfoInputs.cache
 C:\Users\HANCER MERCEDE\source\repos\src\Dtos\obj\Debug\net7.0\Dtos.AssemblyInfo.cs
 C:\Users\HANCER MERCEDE\source\repos\src\Dtos\obj\Debug\net7.0\Dtos.csproj.CoreCompileInputs.cache
-C:\Users\HANCER MERCEDE\source\repos\src\Dtos\bin\Debug\net7.0\Dtos.deps.json
-C:\Users\HANCER MERCEDE\source\repos\src\Dtos\bin\Debug\net7.0\Dtos.dll
-C:\Users\HANCER MERCEDE\source\repos\src\Dtos\bin\Debug\net7.0\Dtos.pdb
 C:\Users\HANCER MERCEDE\source\repos\src\Dtos\obj\Debug\net7.0\Dtos.dll
 C:\Users\HANCER MERCEDE\source\repos\src\Dtos\obj\Debug\net7.0\refint\Dtos.dll
 C:\Users\HANCER MERCEDE\source\repos\src\Dtos\obj\Debug\net7.0\Dtos.pdb

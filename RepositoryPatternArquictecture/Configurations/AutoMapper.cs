@@ -11,7 +11,7 @@ namespace RepositoryPatternArquitecture.Configurations
             // Company mapping
             CreateMap<Company, CompanyDto>()
                 .ForMember(c=>c.FullAddress, opt => 
-                           opt.MapFrom(x => string.Join(' ',x.Address, x.Country)));
+                           opt.MapFrom(x => string.Join(' ',x.Address, x.Country))); // Here is the personal mapping from address and country.
 
             CreateMap<CompanyCreateDto, Company>();
             CreateMap<CompanyUpdateDto, Company>();

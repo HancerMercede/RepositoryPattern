@@ -1,0 +1,12 @@
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\bin\Debug\net6.0\Service.Contracts.deps.json
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\bin\Debug\net6.0\Service.Contracts.dll
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\bin\Debug\net6.0\Service.Contracts.pdb
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\Service.Contracts.csproj.AssemblyReference.cache
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\Service.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\Service.Contracts.AssemblyInfoInputs.cache
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\Service.Contracts.AssemblyInfo.cs
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\Service.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\Service.Contracts.dll
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\refint\Service.Contracts.dll
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\Service.Contracts.pdb
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\ref\Service.Contracts.dll

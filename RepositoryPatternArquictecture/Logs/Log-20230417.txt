@@ -1,0 +1,7 @@
+2023-04-17 12:24:50.602 -04:00 [INF] Now listening on: http://localhost:5215
+2023-04-17 12:24:50.648 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-17 12:24:50.650 -04:00 [INF] Hosting environment: Development
+2023-04-17 12:24:50.651 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-04-17 12:25:03.943 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/ - -
+2023-04-17 12:25:04.046 -04:00 [WRN] Failed to determine the https port for redirect.
+2023-04-17 12:25:04.100 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/ - - - 404 0 - 164.8553ms

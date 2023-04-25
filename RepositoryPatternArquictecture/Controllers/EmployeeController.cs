@@ -1,18 +1,14 @@
 ﻿using AutoMapper;
-using Azure;
-using Contracts.Interfaces;
 using Dtos.DtoModels;
 using Entities.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
-using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.Design;
 
 namespace RepositoryPatternArquitecture.Controllers
 {
-    [Route("api/v1/company/{CompanyId}/[controller]")]
+    [Route("api/v{version:apiVersion}/company/{CompanyId}/[controller]")]
+    [ApiVersion("1.0")]
     [ApiController]
-    [Produces("application/json")]
+    [Produces("application/json", "application/xml")]
     public class EmployeeController : ControllerBase
     {
 
@@ -65,6 +61,7 @@ namespace RepositoryPatternArquitecture.Controllers
         public async Task<ActionResult<EmployeeDto>> Get(string CompanyId, string Id)
         {
             var existCompany = await _repository.Company.GetByCondiction(CompanyId, trackChanges: false);
+
             if (existCompany is null)
             {
                 _logger.LogInformation($"The company with Id: {CompanyId} does not exist in the database.");
@@ -72,6 +69,7 @@ namespace RepositoryPatternArquitecture.Controllers
             }
 
             var employee = await _repository.Employee.GetByCondiction(CompanyId, Id, trackChanges: false);
+
             if (employee is null)
             {
                 _logger.LogInformation($"The employee with the Id:{Id} does not exist in the database.");
@@ -89,8 +87,17 @@ namespace RepositoryPatternArquitecture.Controllers
         public async Task<ActionResult<EmployeeDto>> Create(string CompanyId, [FromBody] EmployeeCreateDto model)
         {
             if (model is null)
-                return BadRequest();
+            {
+                _logger.LogInformation($"The object {typeof(EmployeeCreateDto)} is null.");
+                return BadRequest("EmployeeCreateDto object is null.");
+            }
 
+            if (!ModelState.IsValid)
+            {
+                _logger.LogInformation($"Invalid model state for object {typeof(EmployeeCreateDto)}.");
+                return UnprocessableEntity(ModelState);
+            }
+            
             var Existcompany = await _repository.Company.GetByCondiction(CompanyId, trackChanges: false);
 
             if (Existcompany is null)
@@ -140,6 +147,12 @@ namespace RepositoryPatternArquitecture.Controllers
                 return BadRequest("The model can not be null");
             }
 
+            if (!ModelState.IsValid)
+            {
+                _logger.LogInformation($"Invalid model state for object {typeof(EmployeeCreateDto)}.");
+                return UnprocessableEntity(ModelState);
+            }
+
             var company = await _repository.Company.GetByCondiction(CompanyId, trackChanges: false);
             if (company is null)
             {
@@ -166,10 +179,10 @@ namespace RepositoryPatternArquitecture.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         [ProducesResponseType(400)]
-        public async Task<IActionResult> Path(string CompanyId, string Id, [FromBody] JsonPatchDocument<EmployeeUpdateDto> PathModel)
+        public async Task<IActionResult> Path(string CompanyId, string Id, [FromBody] JsonPatchDocument<EmployeeUpdateDto> pacthDoc)
         {
 
-            if (PathModel is null)
+            if (pacthDoc is null)
             {
                 _logger.LogInformation("The model can not be null");
                 return BadRequest("The model can not be null");
@@ -181,18 +194,27 @@ namespace RepositoryPatternArquitecture.Controllers
                 _logger.LogInformation($"The company with Id:{CompanyId} does not exist.");
                 return NotFound($"The company with Id:{CompanyId} does not exist.");
             }
-            var employeeDb = await _repository.Employee.GetByCondiction(CompanyId, Id, trackChanges: false);
+            // Here i have to track the entity to change the state to modified and being able to save the changes.
+            var employeeDb = await _repository.Employee.GetByCondiction(CompanyId, Id, trackChanges: true);
             if (employeeDb is null)
             {
                 _logger.LogInformation($"The employee with Id:{Id} does not exist in the database.");
                 return NotFound($"The employee with Id:{Id} does not exist in the database.");
             }
 
-            var employeePath = _mapper.Map<EmployeeUpdateDto>(employeeDb);
+            var employeeToPath = _mapper.Map<EmployeeUpdateDto>(employeeDb);
 
-            PathModel.ApplyTo(employeePath);
+            pacthDoc.ApplyTo(employeeToPath, ModelState);
 
-            _mapper.Map(employeePath, employeeDb);
+            TryValidateModel(employeeToPath);
+
+            if (!ModelState.IsValid)
+            {
+                _logger.LogInformation("Invalid model state for patch document.");
+                return UnprocessableEntity(ModelState);
+            }
+
+            _mapper.Map(employeeToPath, employeeDb);
             
             await _repository.Save();
 

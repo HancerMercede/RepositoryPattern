@@ -2,39 +2,23 @@
 using Persistence.Context;
 
 namespace Repository;
-public class RepositoryManager:IRepositoryManager
+
+public sealed class RepositoryManager:IRepositoryManager
 {
-    private RepositoryContext? _repositoryContext;
-	private ICompanyRepository? _companyRepository;
-	private IEmployeeRepository? _employeeRepository;
+    private readonly RepositoryContext? _repositoryContext;
+	private readonly Lazy<ICompanyRepository>? _companyRepository;
+	private readonly Lazy<IEmployeeRepository>? _employeeRepository;
+	
 	public RepositoryManager(RepositoryContext repositoryContext)
 	{
 		_repositoryContext = repositoryContext;
+		_companyRepository = new Lazy<ICompanyRepository>(() => new CompanyRepository(_repositoryContext));
+		_employeeRepository = new Lazy<IEmployeeRepository>(() => new EmployeeRepository(_repositoryContext));
 	}
 
-
-
-	public ICompanyRepository Company 
-	{ 
-		get 
-		{
-			if (_companyRepository is null)
-				_companyRepository = new CompanyRepository(_repositoryContext!);
-
-			return _companyRepository;
-		}
-	}
-    public IEmployeeRepository Employee
-	{
-
-		get
-		{
-			if (_employeeRepository is null)
-				_employeeRepository = new EmployeeRepository(_repositoryContext!);
-
-			return _employeeRepository;
-		}
-	}
-
-	public async Task Save() => await _repositoryContext.SaveChangesAsync();
+	public ICompanyRepository Company => _companyRepository?.Value!;
+    public IEmployeeRepository Employee => _employeeRepository?.Value!;
+    
+    
+	public async Task Save() => await _repositoryContext?.SaveChangesAsync()!;
 }

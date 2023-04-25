@@ -1,0 +1,128 @@
+2023-04-25 15:41:22.530 -04:00 [INF] Now listening on: https://localhost:7079
+2023-04-25 15:41:22.592 -04:00 [INF] Now listening on: http://localhost:5215
+2023-04-25 15:41:22.600 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-25 15:41:22.602 -04:00 [INF] Hosting environment: Development
+2023-04-25 15:41:22.603 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-04-25 15:41:23.906 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger - -
+2023-04-25 15:41:24.082 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger - - - 301 0 - 179.5653ms
+2023-04-25 15:41:24.147 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-04-25 15:41:24.412 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 271.7526ms
+2023-04-25 15:41:24.570 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/swagger-ui.css - -
+2023-04-25 15:41:24.570 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/swagger-ui-bundle.js - -
+2023-04-25 15:41:24.572 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/swagger-ui-standalone-preset.js - -
+2023-04-25 15:41:25.624 -04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-04-25 15:41:25.624 -04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-04-25 15:41:25.734 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/swagger-ui.css - - - 200 143943 text/css 1164.1761ms
+2023-04-25 15:41:25.734 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 1162.0969ms
+2023-04-25 15:41:25.758 -04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-04-25 15:41:25.763 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/swagger-ui-bundle.js - - - 200 1096145 application/javascript 1193.0582ms
+2023-04-25 15:41:26.221 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-04-25 15:41:26.308 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/favicon-32x32.png - -
+2023-04-25 15:41:26.310 -04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-04-25 15:41:26.312 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/favicon-32x32.png - - - 200 628 image/png 4.8251ms
+2023-04-25 15:41:26.446 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 225.0871ms
+2023-04-25 15:42:59.987 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-04-25 15:43:00.024 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-25 15:43:00.070 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-25 15:43:00.672 -04:00 [INF] Getting all the companies.
+2023-04-25 15:43:04.386 -04:00 [INF] Executed DbCommand (207ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-04-25 15:43:10.253 -04:00 [INF] Mapping to companiesDtos.
+2023-04-25 15:43:10.402 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-25 15:43:10.640 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 10560.5487ms
+2023-04-25 15:43:10.645 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-25 15:43:10.662 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 826 application/json;+charset=utf-8 10675.4157ms
+2023-04-25 15:43:53.578 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids} - -
+2023-04-25 15:43:53.580 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-25 15:43:53.600 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-25 15:44:05.110 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture) in 11503.2915ms
+2023-04-25 15:44:05.132 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-25 15:44:05.141 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 32
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 30
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-25 15:44:05.173 -04:00 [ERR] Something went wrong: System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 32
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 30
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-25 15:44:05.188 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids} - - - 500 - application/json 11610.0716ms
+2023-04-25 15:44:16.102 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - -
+2023-04-25 15:44:16.106 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-25 15:44:16.113 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-25 15:48:31.001 -04:00 [INF] Now listening on: https://localhost:7079
+2023-04-25 15:48:31.063 -04:00 [INF] Now listening on: http://localhost:5215
+2023-04-25 15:48:31.073 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-25 15:48:31.076 -04:00 [INF] Hosting environment: Development
+2023-04-25 15:48:31.078 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-04-25 15:48:31.467 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-04-25 15:48:31.672 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 209.5736ms
+2023-04-25 15:48:31.993 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-04-25 15:48:32.227 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 234.3912ms
+2023-04-25 15:48:51.181 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7079/api/v1/Company/Collection application/json-patch+json 393
+2023-04-25 15:48:51.194 -04:00 [INF] CORS policy execution successful.
+2023-04-25 15:48:51.204 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.CreateCompanyCollection (RepositoryPatternArquitecture)'
+2023-04-25 15:48:51.255 -04:00 [INF] Route matched with {action = "CreateCompanyCollection", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Dtos.DtoModels.CompanyDto]] CreateCompanyCollection(System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyCreateDto]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-25 15:49:10.463 -04:00 [INF] Executed DbCommand (204ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 60), @p2='?' (Size = 4000), @p3='?' (Size = 60), @p4='?' (DbType = Guid), @p5='?' (Size = 60), @p6='?' (Size = 4000), @p7='?' (Size = 60), @p8='?' (DbType = Guid), @p9='?' (DbType = Int32), @p10='?' (DbType = Guid), @p11='?' (Size = 30), @p12='?' (Size = 20), @p13='?' (DbType = Guid), @p14='?' (DbType = Int32), @p15='?' (DbType = Guid), @p16='?' (Size = 30), @p17='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Companies] ([CompanyId], [Address], [Country], [Name])
+VALUES (@p0, @p1, @p2, @p3),
+(@p4, @p5, @p6, @p7);
+INSERT INTO [Employees] ([EmployeeId], [Age], [CompanyId], [Name], [Position])
+VALUES (@p8, @p9, @p10, @p11, @p12),
+(@p13, @p14, @p15, @p16, @p17);
+2023-04-25 15:49:15.858 -04:00 [INF] Executing CreatedAtRouteResult, writing value of type 'System.Collections.Generic.List`1[[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-25 15:49:15.952 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.CreateCompanyCollection (RepositoryPatternArquitecture) in 24687.6607ms
+2023-04-25 15:49:15.956 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.CreateCompanyCollection (RepositoryPatternArquitecture)'
+2023-04-25 15:49:15.974 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7079/api/v1/Company/Collection application/json-patch+json 393 - 201 179 application/json;+charset=utf-8 24793.0476ms
+2023-04-25 15:49:47.674 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-04-25 15:49:47.677 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-25 15:49:47.685 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-25 15:49:47.694 -04:00 [INF] Getting all the companies.
+2023-04-25 15:49:48.286 -04:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-04-25 15:49:53.416 -04:00 [INF] Mapping to companiesDtos.
+2023-04-25 15:49:53.566 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-25 15:49:53.570 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 5879.6638ms
+2023-04-25 15:49:53.573 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-25 15:49:53.576 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 1004 application/json;+charset=utf-8 5901.8859ms

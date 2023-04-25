@@ -1,0 +1,43 @@
+[33mcommit feb8e1f7da3ada87510d72175144e71688c92637[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Hancer <hancermercedes@gmail.com>
+Date:   Wed Apr 5 22:40:59 2023 -0400
+
+    Mapping the fullAddress property with Mapster and registering the service in the program class
+
+[33mcommit e4dda69831847edd7f84c1fbbaa0b03937f3dcd7[m
+Merge: fd7b267 56b4409
+Author: Hancer <hancermercedes@gmail.com>
+Date:   Wed Apr 5 18:32:09 2023 -0400
+
+    Merge branch 'master' of https://github.com/HancerMercede/RepoPatternArquitecture
+
+[33mcommit fd7b267a94dba1ba65d14980adcea4e470017637[m
+Author: Hancer <hancermercedes@gmail.com>
+Date:   Wed Apr 5 18:24:33 2023 -0400
+
+    Updating the code or better say  refactoring to .NET 6 Version.
+
+[33mcommit 56b440976ce9477ee17b94372c746f8dfecaf7f9[m
+Author: Hancer <hancermercedes@gmail.com>
+Date:   Wed Apr 5 18:24:33 2023 -0400
+
+    Updating the code or better say refactogin to .NET 6 Version.
+
+[33mcommit 3a72307d34b4bae72019442c0881afecb10abac5[m
+Author: Hancer <hancermercedes@gmail.com>
+Date:   Mon Mar 27 16:36:11 2023 -0400
+
+    Making some new changes to the arquitecture.
+    Updatings from .NET 6 version book
+
+[33mcommit e91b082f2f63f366e0943bffaadd097354848c26[m
+Author: Hancer <hancermercedes@gmail.com>
+Date:   Sat Mar 25 21:18:14 2023 -0400
+
+    Commiting all changes
+
+[33mcommit 15904695d386d7a45d090768868f4763dcbcafa4[m
+Author: Hancer <hancermercedes@gmail.com>
+Date:   Wed Mar 8 10:16:24 2023 -0400
+
+    First Commit adding all

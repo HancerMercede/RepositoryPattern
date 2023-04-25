@@ -1,9 +1,6 @@
-﻿#nullable disable
-namespace Dtos.DtoModels;
+﻿namespace Dtos.DtoModels;
 
-public class EmployeeUpdateDto
+public class EmployeeUpdateDto:EmployeeForManipulationDto
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
-    public string Position { get; set; }
+
 }

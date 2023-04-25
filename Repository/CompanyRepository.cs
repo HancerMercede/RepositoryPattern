@@ -7,7 +7,8 @@ namespace Repository;
 
 public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
 {
-    public CompanyRepository(RepositoryContext repositoryContext) 
+    public 
+        CompanyRepository(RepositoryContext repositoryContext) 
         : base(repositoryContext)
     {
 
@@ -28,7 +29,7 @@ public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
         var company = await FindByCondiction(c => c.Id == Guid.Parse(Id),
             trackChanges)
             .Include(e => e.Employees)
-            .SingleOrDefaultAsync();
+            .FirstOrDefaultAsync();
 
         return company!;
     }
@@ -51,7 +52,7 @@ public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
     public async Task DeleteCompany(string Id, bool trackChanges)
     {
         var dbcompany = await FindByCondiction(c => c.Id == Guid.Parse(Id), trackChanges)
-            .SingleOrDefaultAsync();
+            .FirstOrDefaultAsync();
 
         await Delete(dbcompany!);
     }

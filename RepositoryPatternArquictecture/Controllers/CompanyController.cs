@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
-using Contracts.Interfaces;
 using Dtos.DtoModels;
 using Entities.Models;
-using Microsoft.AspNetCore.Mvc;
+using Mapster;
 using RepositoryPatternArquitecture.ModelBinders;
 
 namespace RepositoryPatternArquitecture.Controllers;
 
-[Route("api/v1/[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
+[ApiVersion("1.0")]
 [ApiController]
-[Produces("application/json")]
+[Produces(contentType:"application/json", "application/xml")]
 public class CompanyController : ControllerBase
 {
     private readonly IRepositoryManager _repository;
@@ -32,31 +32,27 @@ public class CompanyController : ControllerBase
         var companies = await _repository.Company.GetAll(trackChanges: false);
 
         if (companies is null)
+        {
             return NotFound();
-
+        }
+        
         _logger.LogInformation("Mapping to companiesDtos.");
-        var companiesDtos = _mapper.Map<IEnumerable<CompanyDto>>(companies);
-        //Proyection with select 
-        /* var companiesDtos = companies.Select(c => new CompanyDto
-         {
-             Id = c.Id,
-             Name = c.Name,
-             FullAddress = string.Join(' ',c.Address, c.Country)
-         }).ToList();*/
+        //var companiesDtos = _mapper.Map<IEnumerable<CompanyDto>>(companies);
 
+        var companiesDtos = companies.Adapt<IEnumerable<CompanyDto>>();
+      
         return Ok(companiesDtos);
     }
 
     [HttpGet("Collection/{Ids}", Name = "CompanyCollection")]
     [ProducesResponseType(200)]
     [ProducesResponseType(404)]
-    public async Task<ActionResult<IEnumerable<CompanyDto>>> GetByIds([ModelBinder(BinderType = typeof(ArrayModelBinder))]IEnumerable<Guid> Ids)
+    public async Task<ActionResult<IEnumerable<CompanyDto>>> GetByIds([ModelBinder(BinderType = typeof(ArrayModelBinder))]
+        IEnumerable<Guid> Ids)
     {
         var dbcompanies = await _repository.Company.GetByIds(Ids, trackChanges: false);
-
-        var dtos = _mapper.Map<IEnumerable<CompanyDto>>(dbcompanies);
-
-        return Ok(dtos);
+        var companyDto = dbcompanies.Adapt<CompanyDto>();
+        return Ok(companyDto);
     }
 
     [HttpGet("{Id}", Name = "GetById")]
@@ -71,7 +67,6 @@ public class CompanyController : ControllerBase
             _logger.LogInformation($"Company with Id: {Id} does not exist in the database.");
             return NotFound($"Company with Id: {Id} does not exist in the database.");
         }
-
 
         var companyDto = _mapper.Map<CompanyDto>(company);
 
