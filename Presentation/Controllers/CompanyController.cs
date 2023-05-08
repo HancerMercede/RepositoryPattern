@@ -2,9 +2,12 @@
 using Dtos.DtoModels;
 using Entities.Models;
 using Mapster;
-using RepositoryPatternArquitecture.ModelBinders;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+using Microsoft.Extensions.Logging;
+using Service.Contracts.Interfaces;
 
-namespace RepositoryPatternArquitecture.Controllers;
+namespace Presentation.Controllers;
 
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiVersion("1.0")]
@@ -12,12 +15,12 @@ namespace RepositoryPatternArquitecture.Controllers;
 [Produces(contentType:"application/json", "application/xml")]
 public class CompanyController : ControllerBase
 {
-    private readonly IRepositoryManager _repository;
+    private readonly IServiceManager _serviceManager;
     private readonly IMapper _mapper;
     private readonly ILogger<CompanyController> _logger;
-    public CompanyController(IRepositoryManager repository, IMapper mapper, ILogger<CompanyController> logger)
+    public CompanyController(IServiceManager serviceManager, IMapper mapper, ILogger<CompanyController> logger)
     {
-        _repository = repository;
+        _serviceManager = serviceManager;
         _mapper = mapper;
         _logger = logger;
     }
@@ -29,7 +32,7 @@ public class CompanyController : ControllerBase
     public async Task<ActionResult<IEnumerable<CompanyDto>>> GetAll()
     {
         _logger.LogInformation("Getting all the companies.");
-        var companies = await _repository.Company.GetAll(trackChanges: false);
+        var companies = await _serviceManager.CompanyService.GetAll(trackChanges: false);
 
         if (companies is null)
         {
@@ -47,10 +50,10 @@ public class CompanyController : ControllerBase
     [HttpGet("Collection/{Ids}", Name = "CompanyCollection")]
     [ProducesResponseType(200)]
     [ProducesResponseType(404)]
-    public async Task<ActionResult<IEnumerable<CompanyDto>>> GetByIds([ModelBinder(BinderType = typeof(ArrayModelBinder))]
+    public async Task<ActionResult<IEnumerable<CompanyDto>>> GetByIds([ModelBinder(BinderType = typeof(ArrayModelBinder<>))]
         IEnumerable<Guid> Ids)
     {
-        var dbcompanies = await _repository.Company.GetByIds(Ids, trackChanges: false);
+        var dbcompanies = await _serviceManager.CompanyService.GetByIds(Ids, trackChanges: false);
         var companyDto = dbcompanies.Adapt<CompanyDto>();
         return Ok(companyDto);
     }
@@ -60,7 +63,7 @@ public class CompanyController : ControllerBase
     [ProducesResponseType(404)]
     public async Task<ActionResult<CompanyDto>> Get(string Id)
     {
-        var company = await _repository.Company.GetByCondiction(Id, trackChanges: false);
+        var company = await _serviceManager.CompanyService.GetByCondiction(Id, trackChanges: false);
 
         if (company is null)
         {
@@ -83,8 +86,8 @@ public class CompanyController : ControllerBase
 
         var dbEntity = _mapper.Map<Company>(model);
 
-        await _repository.Company.CreateCompany(dbEntity);
-        await _repository.Save();
+        await _serviceManager.CompanyService.CreateCompany(dbEntity);
+       // await _serviceManager.Save();
 
         var dto = _mapper.Map<CompanyDto>(dbEntity);
         return CreatedAtRoute("GetById", new { Id = dto.Id }, dto);
@@ -102,10 +105,10 @@ public class CompanyController : ControllerBase
 
         foreach (var company in dbcompanies)
         {
-            await _repository.Company.CreateCompany(company);
+            await _serviceManager.CompanyService.CreateCompany(company);
         }
 
-        await _repository.Save();
+        //await _repository.Save();
 
         var dtos = _mapper.Map<IEnumerable<CompanyDto>>(dbcompanies);
         var ids = string.Join(',', dtos.Select(c => c.Id));
@@ -124,14 +127,14 @@ public class CompanyController : ControllerBase
             return BadRequest();
         }
 
-        var dbEntity = await _repository.Company.GetByCondiction(CompanyId, trackChanges: true);
+        var dbEntity = await _serviceManager.CompanyService.GetByCondiction(CompanyId, trackChanges: true);
         if (dbEntity is null)
         { 
             return NotFound();
         }
 
         _mapper.Map(model, dbEntity);
-        await _repository.Save();
+       // await _repository.Save();
 
         return NoContent();
     }
@@ -139,8 +142,8 @@ public class CompanyController : ControllerBase
     [HttpDelete("{Id}")]
     public async Task<IActionResult> Delete(string Id)
     {
-        await _repository.Company.DeleteCompany(Id, trackChanges:true);
-        await _repository.Save();
+        await _serviceManager.CompanyService.DeleteCompany(Id, trackChanges:true);
+        //await _repository.Save();
 
         return NoContent(); 
     }

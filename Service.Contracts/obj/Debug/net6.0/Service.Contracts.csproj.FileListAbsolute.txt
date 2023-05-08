@@ -10,3 +10,6 @@ C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\Serv
 C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\refint\Service.Contracts.dll
 C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\Service.Contracts.pdb
 C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\ref\Service.Contracts.dll
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\bin\Debug\net6.0\Entities.dll
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\bin\Debug\net6.0\Entities.pdb
+C:\Users\HANCER MERCEDE\source\repos\src\Service.Contracts\obj\Debug\net6.0\Service.Contracts.csproj.CopyComplete

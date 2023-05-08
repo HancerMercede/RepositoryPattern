@@ -156,7 +156,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Entities\\Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

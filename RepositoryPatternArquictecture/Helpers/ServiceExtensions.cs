@@ -1,5 +1,9 @@
 ﻿
 // ReSharper disable All
+
+using Service;
+using Service.Contracts.Interfaces;
+
 namespace RepositoryPatternArquitecture.Helpers;
 
 public static class ServiceExtensions
@@ -28,4 +32,7 @@ public static class ServiceExtensions
 
     public static void ConfigureRepositoryManager(this IServiceCollection services) =>
         services.AddScoped<IRepositoryManager, RepositoryManager>();
+
+    public static void ConfigureServiceManager(this IServiceCollection services) =>
+        services.AddScoped<IServiceManager, ServiceManager>();
 }

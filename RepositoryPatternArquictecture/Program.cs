@@ -1,3 +1,4 @@
+using Presentation;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ builder.Services.ConfiguredSqlContext(connection!);
 builder.Services.ConfiguredCors();
 builder.Services.ConfiguredIISIntegration();
 builder.Services.ConfigureRepositoryManager();
+builder.Services.ConfigureServiceManager();
 
 // Mapster
 builder.Services.RegisterMapsterConfiguration();
@@ -21,7 +23,8 @@ builder.Services.AddControllers(config =>
 {
     config.RespectBrowserAcceptHeader = true;
     config.ReturnHttpNotAcceptable = true;
-}).AddNewtonsoftJson()
+}).AddApplicationPart(typeof(AssemblyReference).Assembly)
+    .AddNewtonsoftJson()
 .AddXmlDataContractSerializerFormatters()
   .AddJsonOptions(opt =>
     opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);

@@ -118,3 +118,9 @@ C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\obj\Debu
 C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\obj\Debug\net6.0\RepositoryPatternArquitecture.pdb
 C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\obj\Debug\net6.0\RepositoryPatternArquitecture.genruntimeconfig.cache
 C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\obj\Debug\net6.0\ref\RepositoryPatternArquitecture.dll
+C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\bin\Debug\net6.0\Presentation.dll
+C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\bin\Debug\net6.0\Service.Contracts.dll
+C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\bin\Debug\net6.0\Service.dll
+C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\bin\Debug\net6.0\Presentation.pdb
+C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\bin\Debug\net6.0\Service.pdb
+C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\bin\Debug\net6.0\Service.Contracts.pdb
