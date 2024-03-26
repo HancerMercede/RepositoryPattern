@@ -1,0 +1,53 @@
+2023-05-29 14:06:24.888 -04:00 [INF] Now listening on: https://localhost:7079
+2023-05-29 14:06:24.951 -04:00 [INF] Now listening on: http://localhost:5215
+2023-05-29 14:06:24.956 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-29 14:06:24.957 -04:00 [INF] Hosting environment: Development
+2023-05-29 14:06:24.958 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-05-29 14:06:29.747 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-05-29 14:06:30.089 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 344.3907ms
+2023-05-29 14:06:30.210 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/swagger-ui.css - -
+2023-05-29 14:06:30.210 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2023-05-29 14:06:30.211 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/swagger-ui-standalone-preset.js - -
+2023-05-29 14:06:30.212 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/swagger-ui-bundle.js - -
+2023-05-29 14:06:30.216 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12028 application/javascript;+charset=utf-8 5.6507ms
+2023-05-29 14:06:30.219 -04:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2023-05-29 14:06:30.219 -04:00 [INF] The file /swagger-ui-bundle.js was not modified
+2023-05-29 14:06:30.219 -04:00 [INF] The file /swagger-ui.css was not modified
+2023-05-29 14:06:30.221 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/swagger-ui-standalone-preset.js - - - 304 - application/javascript 10.1447ms
+2023-05-29 14:06:30.222 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/swagger-ui-bundle.js - - - 304 - application/javascript 10.1136ms
+2023-05-29 14:06:30.224 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/swagger-ui.css - - - 304 - text/css 14.0644ms
+2023-05-29 14:06:30.394 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2023-05-29 14:06:30.484 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 90.2375ms
+2023-05-29 14:06:30.709 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-05-29 14:06:30.819 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/favicon-32x32.png - -
+2023-05-29 14:06:30.822 -04:00 [INF] The file /favicon-32x32.png was not modified
+2023-05-29 14:06:30.824 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/favicon-32x32.png - - - 304 - image/png 4.8524ms
+2023-05-29 14:06:30.873 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 163.8754ms
+2023-05-29 14:08:58.715 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-05-29 14:08:58.727 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 - - 12.2004ms
+2023-05-29 14:20:53.097 -04:00 [INF] Now listening on: https://localhost:7079
+2023-05-29 14:20:53.143 -04:00 [INF] Now listening on: http://localhost:5215
+2023-05-29 14:20:53.147 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-29 14:20:53.149 -04:00 [INF] Hosting environment: Development
+2023-05-29 14:20:53.150 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-05-29 14:20:54.346 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-05-29 14:20:54.666 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 325.4698ms
+2023-05-29 14:20:54.796 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2023-05-29 14:20:54.803 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12028 application/javascript;+charset=utf-8 6.8194ms
+2023-05-29 14:20:54.923 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2023-05-29 14:20:54.971 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 47.2028ms
+2023-05-29 14:20:55.254 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-05-29 14:20:55.470 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 216.0519ms
+2023-05-29 14:25:29.005 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-05-29 14:25:29.022 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2023-05-29 14:25:29.055 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller Presentation.Controllers.CompanyController (Presentation).
+2023-05-29 14:25:29.691 -04:00 [INF] Getting all the companies.
+2023-05-29 14:25:33.396 -04:00 [INF] Executed DbCommand (140ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-05-29 14:25:33.454 -04:00 [INF] Mapping to companiesDtos.
+2023-05-29 14:25:33.551 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-29 14:25:33.750 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAll (Presentation) in 4683.8846ms
+2023-05-29 14:25:33.753 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2023-05-29 14:25:33.765 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 1004 application/json;+charset=utf-8 4759.3248ms

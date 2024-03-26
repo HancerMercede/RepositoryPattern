@@ -1,23 +1,17 @@
-﻿using AutoMapper;
-using Dtos.DtoModels;
-using Entities.Models;
-using Mapster;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
-using Microsoft.Extensions.Logging;
-using Service.Contracts.Interfaces;
+﻿
 
 namespace Presentation.Controllers;
 
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiVersion("1.0")]
 [ApiController]
-[Produces(contentType:"application/json", "application/xml")]
+[Produces(contentType: "application/json", "application/xml")]
 public class CompanyController : ControllerBase
 {
     private readonly IServiceManager _serviceManager;
     private readonly IMapper _mapper;
     private readonly ILogger<CompanyController> _logger;
+  
     public CompanyController(IServiceManager serviceManager, IMapper mapper, ILogger<CompanyController> logger)
     {
         _serviceManager = serviceManager;
@@ -28,6 +22,7 @@ public class CompanyController : ControllerBase
     [HttpGet(Name = "GetCompanies")]
     [ProducesResponseType(200)]
     [ProducesResponseType(404)]
+    
 
     public async Task<ActionResult<IEnumerable<CompanyDto>>> GetAll()
     {
@@ -71,7 +66,8 @@ public class CompanyController : ControllerBase
             return NotFound($"Company with Id: {Id} does not exist in the database.");
         }
 
-        var companyDto = _mapper.Map<CompanyDto>(company);
+        //var companyDto = _mapper.Map<CompanyDto>(company);
+        var companyDto = company.Adapt<CompanyDto>();
 
         return Ok(companyDto);
     }
@@ -87,7 +83,7 @@ public class CompanyController : ControllerBase
         var dbEntity = _mapper.Map<Company>(model);
 
         await _serviceManager.CompanyService.CreateCompany(dbEntity);
-       // await _serviceManager.Save();
+        await _serviceManager.CompanyService.SaveChanges();
 
         var dto = _mapper.Map<CompanyDto>(dbEntity);
         return CreatedAtRoute("GetById", new { Id = dto.Id }, dto);
@@ -109,6 +105,7 @@ public class CompanyController : ControllerBase
         }
 
         //await _repository.Save();
+        await _serviceManager.CompanyService.SaveChanges();
 
         var dtos = _mapper.Map<IEnumerable<CompanyDto>>(dbcompanies);
         var ids = string.Join(',', dtos.Select(c => c.Id));
@@ -122,20 +119,18 @@ public class CompanyController : ControllerBase
     [ProducesResponseType(400)]
     public async Task<IActionResult> Update(string CompanyId, [FromBody] CompanyUpdateDto model)
     {
-        if (model is null)
-        {
-            return BadRequest();
-        }
+
+        if (model is null) { _logger.LogError("Error: the model can be null"); return BadRequest("Error: the model can be null"); }
+       
 
         var dbEntity = await _serviceManager.CompanyService.GetByCondiction(CompanyId, trackChanges: true);
-        if (dbEntity is null)
-        { 
-            return NotFound();
-        }
 
-        _mapper.Map(model, dbEntity);
-       // await _repository.Save();
+        if (dbEntity is null) return NotFound();
 
+
+        // _mapper.Map(model, dbEntity);
+        model.Adapt(dbEntity);
+        await _serviceManager.CompanyService.SaveChanges();
         return NoContent();
     }
 
@@ -143,8 +138,7 @@ public class CompanyController : ControllerBase
     public async Task<IActionResult> Delete(string Id)
     {
         await _serviceManager.CompanyService.DeleteCompany(Id, trackChanges:true);
-        //await _repository.Save();
-
+        await _serviceManager.CompanyService.SaveChanges();  
         return NoContent(); 
     }
 

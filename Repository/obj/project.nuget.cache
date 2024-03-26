@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GfQL0HpBIr64DX9NcLhoXMXIMT3cs4dWUV0PZjTJpgGb+Lpf/rrVHMjjYnLQ/4T9kp9lY5hnujlxdVskvzgTLQ==",
+  "dgSpecHash": "5K6qS85lFn01WsbB7qe1+cPpB8MmT0suVsr0baNcuZy7tPYpgELX5Nul5YIf2KCGApzl2CeW8BgzRwjcJf3JBg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Repository\\Repository.csproj",
+  "projectFilePath": "E:\\Mis Archivos\\RepositoryPattern\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

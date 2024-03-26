@@ -7,6 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Helpers\globalUsings.cs~RFcf0d4f.TMP" />
+    </ItemGroup>
+
+    <ItemGroup>
       <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
       <PackageReference Include="Mapster" Version="7.3.0" />
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />

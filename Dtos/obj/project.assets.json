@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Dtos\\Dtos.csproj",
+      "projectUniqueName": "E:\\Mis Archivos\\RepositoryPattern\\Dtos\\Dtos.csproj",
       "projectName": "Dtos",
-      "projectPath": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Dtos\\Dtos.csproj",
+      "projectPath": "E:\\Mis Archivos\\RepositoryPattern\\Dtos\\Dtos.csproj",
       "packagesPath": "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Dtos\\obj\\",
+      "outputPath": "E:\\Mis Archivos\\RepositoryPattern\\Dtos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.314\\RuntimeIdentifierGraph.json"
       }
     }
   }

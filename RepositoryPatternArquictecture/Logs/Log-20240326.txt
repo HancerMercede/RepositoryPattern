@@ -1,0 +1,342 @@
+2024-03-26 14:18:54.844 -04:00 [INF] Now listening on: https://localhost:7079
+2024-03-26 14:18:54.969 -04:00 [INF] Now listening on: http://localhost:5215
+2024-03-26 14:18:54.989 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-26 14:18:54.993 -04:00 [INF] Hosting environment: Development
+2024-03-26 14:18:54.996 -04:00 [INF] Content root path: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\
+2024-03-26 14:18:59.959 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger - -
+2024-03-26 14:19:00.233 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger - - - 301 0 - 281.3308ms
+2024-03-26 14:19:00.251 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2024-03-26 14:19:01.093 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 842.2557ms
+2024-03-26 14:19:01.107 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/swagger-ui-bundle.js - -
+2024-03-26 14:19:01.108 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/swagger-ui.css - -
+2024-03-26 14:19:01.108 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/swagger-ui-standalone-preset.js - -
+2024-03-26 14:19:01.166 -04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-03-26 14:19:01.231 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/swagger-ui.css - - - 200 143943 text/css 122.3073ms
+2024-03-26 14:19:01.241 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 14:19:01.308 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12390 application/javascript;+charset=utf-8 66.3689ms
+2024-03-26 14:19:01.313 -04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-03-26 14:19:01.313 -04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-03-26 14:19:01.318 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 210.0274ms
+2024-03-26 14:19:01.323 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/swagger-ui-bundle.js - - - 200 1096145 application/javascript 216.1676ms
+2024-03-26 14:19:01.333 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2024-03-26 14:19:01.484 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 151.8531ms
+2024-03-26 14:19:01.659 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2024-03-26 14:19:01.696 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/favicon-32x32.png - -
+2024-03-26 14:19:01.699 -04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-03-26 14:19:01.704 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/favicon-32x32.png - - - 200 628 image/png 7.9814ms
+2024-03-26 14:19:02.138 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 479.1825ms
+2024-03-26 14:20:51.440 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2024-03-26 14:20:51.502 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 14:20:51.552 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 14:20:53.615 -04:00 [INF] Getting all the companies.
+2024-03-26 14:20:59.780 -04:00 [INF] Executed DbCommand (173ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2024-03-26 14:21:00.113 -04:00 [INF] Mapping to companiesDtos.
+2024-03-26 14:21:00.355 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 14:21:00.913 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAll (Presentation) in 9344.7594ms
+2024-03-26 14:21:00.919 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 14:21:00.956 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 1004 application/json;+charset=utf-8 9516.0695ms
+2024-03-26 14:21:45.854 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2024-03-26 14:21:45.864 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 14:21:45.869 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 14:21:51.181 -04:00 [INF] Getting all the companies.
+2024-03-26 14:21:53.191 -04:00 [INF] Executed DbCommand (135ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2024-03-26 14:22:10.256 -04:00 [INF] Mapping to companiesDtos.
+2024-03-26 14:22:18.960 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 14:22:26.026 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAll (Presentation) in 40151.9992ms
+2024-03-26 14:22:26.037 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 14:22:26.044 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 1004 application/json;+charset=utf-8 40190.5368ms
+2024-03-26 16:17:58.064 -04:00 [INF] Now listening on: https://localhost:7079
+2024-03-26 16:17:58.176 -04:00 [INF] Now listening on: http://localhost:5215
+2024-03-26 16:17:58.185 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-26 16:17:58.187 -04:00 [INF] Hosting environment: Development
+2024-03-26 16:17:58.189 -04:00 [INF] Content root path: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\
+2024-03-26 16:17:58.739 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2024-03-26 16:17:59.145 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 411.6778ms
+2024-03-26 16:17:59.310 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 16:17:59.318 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12390 application/javascript;+charset=utf-8 7.4031ms
+2024-03-26 16:17:59.321 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2024-03-26 16:17:59.364 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.8585ms
+2024-03-26 16:17:59.532 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2024-03-26 16:17:59.698 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 165.8637ms
+2024-03-26 16:18:16.719 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2024-03-26 16:18:16.744 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 16:18:16.786 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 16:18:19.989 -04:00 [INF] Getting all the companies.
+2024-03-26 16:18:23.274 -04:00 [INF] Executed DbCommand (104ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2024-03-26 16:18:23.380 -04:00 [INF] Mapping to companiesDtos.
+2024-03-26 16:18:23.533 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 16:18:23.753 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAll (Presentation) in 6957.1614ms
+2024-03-26 16:18:23.758 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 16:18:23.790 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 1004 application/json;+charset=utf-8 7070.5118ms
+2024-03-26 16:19:04.742 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - -
+2024-03-26 16:19:04.745 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.Get (Presentation)'
+2024-03-26 16:19:04.766 -04:00 [INF] Route matched with {action = "Get", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Dtos.DtoModels.CompanyDto]] Get(System.String) on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 16:19:07.665 -04:00 [INF] Executed DbCommand (584ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(1) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2024-03-26 16:19:07.696 -04:00 [INF] Executing OkObjectResult, writing value of type 'Dtos.DtoModels.CompanyDto'.
+2024-03-26 16:19:07.698 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.Get (Presentation) in 2928.2716ms
+2024-03-26 16:19:07.701 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.Get (Presentation)'
+2024-03-26 16:19:07.703 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - - - 200 125 application/json;+charset=utf-8 2960.4938ms
+2024-03-26 16:20:42.971 -04:00 [INF] Request starting HTTP/2 PUT https://localhost:7079/api/v1/Company?CompanyId=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 application/json-patch+json 105
+2024-03-26 16:20:43.010 -04:00 [INF] CORS policy execution successful.
+2024-03-26 16:20:43.013 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.Update (Presentation)'
+2024-03-26 16:20:43.025 -04:00 [INF] Route matched with {action = "Update", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String, Dtos.DtoModels.CompanyUpdateDto) on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 16:20:52.467 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(1) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2024-03-26 16:21:06.560 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-03-26 16:21:06.561 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.Update (Presentation) in 23532.5522ms
+2024-03-26 16:21:06.563 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.Update (Presentation)'
+2024-03-26 16:21:06.566 -04:00 [INF] Request finished HTTP/2 PUT https://localhost:7079/api/v1/Company?CompanyId=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 application/json-patch+json 105 - 204 - - 23594.8670ms
+2024-03-26 16:21:15.338 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - -
+2024-03-26 16:21:15.339 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.Get (Presentation)'
+2024-03-26 16:21:15.342 -04:00 [INF] Route matched with {action = "Get", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Dtos.DtoModels.CompanyDto]] Get(System.String) on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 16:21:16.902 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(1) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2024-03-26 16:21:16.908 -04:00 [INF] Executing OkObjectResult, writing value of type 'Dtos.DtoModels.CompanyDto'.
+2024-03-26 16:21:16.910 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.Get (Presentation) in 1565.7459ms
+2024-03-26 16:21:16.916 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.Get (Presentation)'
+2024-03-26 16:21:16.919 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - - - 200 125 application/json;+charset=utf-8 1581.0048ms
+2024-03-26 16:21:49.088 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2024-03-26 16:21:49.127 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 38.6580ms
+2024-03-26 16:21:49.180 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 16:21:49.180 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2024-03-26 16:21:49.183 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12390 application/javascript;+charset=utf-8 2.8633ms
+2024-03-26 16:21:49.197 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.2388ms
+2024-03-26 16:21:49.357 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2024-03-26 16:21:49.381 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 23.8747ms
+2024-03-26 16:22:02.743 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2024-03-26 16:22:02.745 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 16:22:02.751 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 16:22:04.325 -04:00 [INF] Getting all the companies.
+2024-03-26 16:22:04.337 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2024-03-26 16:22:04.349 -04:00 [INF] Mapping to companiesDtos.
+2024-03-26 16:22:04.351 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 16:22:04.354 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAll (Presentation) in 1600.0108ms
+2024-03-26 16:22:04.357 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 16:22:04.359 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 1004 application/json;+charset=utf-8 1616.6974ms
+2024-03-26 16:23:49.464 -04:00 [INF] Request starting HTTP/2 PUT https://localhost:7079/api/v1/Company?CompanyId=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 application/json-patch+json 114
+2024-03-26 16:23:49.481 -04:00 [INF] CORS policy execution successful.
+2024-03-26 16:23:49.495 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.Update (Presentation)'
+2024-03-26 16:23:49.509 -04:00 [INF] Route matched with {action = "Update", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String, Dtos.DtoModels.CompanyUpdateDto) on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 16:23:51.556 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(1) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2024-03-26 16:23:53.608 -04:00 [INF] Executed DbCommand (138ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (Size = 60), @p1='?' (Size = 60), @p3='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Companies] SET [Address] = @p0, [Name] = @p1
+OUTPUT 1
+WHERE [CompanyId] = @p2;
+DELETE FROM [Employees]
+OUTPUT 1
+WHERE [EmployeeId] = @p3;
+2024-03-26 16:24:04.427 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-03-26 16:24:04.429 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.Update (Presentation) in 14916.4814ms
+2024-03-26 16:24:04.432 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.Update (Presentation)'
+2024-03-26 16:24:04.435 -04:00 [INF] Request finished HTTP/2 PUT https://localhost:7079/api/v1/Company?CompanyId=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 application/json-patch+json 114 - 204 - - 14970.7441ms
+2024-03-26 16:24:12.717 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2024-03-26 16:24:12.719 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 16:24:12.721 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 16:24:14.329 -04:00 [INF] Getting all the companies.
+2024-03-26 16:24:14.334 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2024-03-26 16:24:14.338 -04:00 [INF] Mapping to companiesDtos.
+2024-03-26 16:24:14.340 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 16:24:14.343 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAll (Presentation) in 1616.7689ms
+2024-03-26 16:24:14.346 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 16:24:14.348 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 1005 application/json;+charset=utf-8 1630.4264ms
+2024-03-26 16:32:07.542 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2024-03-26 16:32:07.564 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 22.2294ms
+2024-03-26 16:32:07.608 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 16:32:07.609 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2024-03-26 16:32:07.611 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12390 application/javascript;+charset=utf-8 2.5524ms
+2024-03-26 16:32:07.626 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.0734ms
+2024-03-26 16:32:07.932 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2024-03-26 16:32:07.947 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 15.3168ms
+2024-03-26 16:32:17.176 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2024-03-26 16:32:17.178 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 16:32:17.187 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 16:32:20.765 -04:00 [INF] Getting all the companies.
+2024-03-26 16:32:21.037 -04:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2024-03-26 16:32:21.041 -04:00 [INF] Mapping to companiesDtos.
+2024-03-26 16:32:21.043 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 16:32:21.045 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAll (Presentation) in 3855.407ms
+2024-03-26 16:32:21.049 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 16:32:21.051 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 1005 application/json;+charset=utf-8 3875.1737ms
+2024-03-26 16:34:14.309 -04:00 [INF] Request starting HTTP/2 PUT https://localhost:7079/api/v1/Company?CompanyId=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 application/json-patch+json 108
+2024-03-26 16:34:14.320 -04:00 [INF] CORS policy execution successful.
+2024-03-26 16:34:14.329 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.Update (Presentation)'
+2024-03-26 16:34:14.335 -04:00 [INF] Route matched with {action = "Update", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String, Dtos.DtoModels.CompanyUpdateDto) on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 16:34:21.906 -04:00 [INF] Executed DbCommand (128ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(1) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2024-03-26 16:34:38.057 -04:00 [INF] Executed DbCommand (147ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (Size = 4000), @p1='?' (Size = 60)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Companies] SET [Country] = @p0, [Name] = @p1
+OUTPUT 1
+WHERE [CompanyId] = @p2;
+2024-03-26 16:34:40.702 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-03-26 16:34:40.704 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.Update (Presentation) in 26365.4315ms
+2024-03-26 16:34:40.707 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.Update (Presentation)'
+2024-03-26 16:34:40.710 -04:00 [INF] Request finished HTTP/2 PUT https://localhost:7079/api/v1/Company?CompanyId=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 application/json-patch+json 108 - 204 - - 26400.8191ms
+2024-03-26 16:35:00.107 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - -
+2024-03-26 16:35:00.113 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.Get (Presentation)'
+2024-03-26 16:35:00.119 -04:00 [INF] Route matched with {action = "Get", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Dtos.DtoModels.CompanyDto]] Get(System.String) on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 16:35:00.135 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(1) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2024-03-26 16:35:00.140 -04:00 [INF] Executing OkObjectResult, writing value of type 'Dtos.DtoModels.CompanyDto'.
+2024-03-26 16:35:00.142 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.Get (Presentation) in 19.1167ms
+2024-03-26 16:35:00.148 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.Get (Presentation)'
+2024-03-26 16:35:00.150 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - - - 200 124 application/json;+charset=utf-8 44.5624ms
+2024-03-26 16:53:14.388 -04:00 [INF] Now listening on: https://localhost:7079
+2024-03-26 16:53:14.452 -04:00 [INF] Now listening on: http://localhost:5215
+2024-03-26 16:53:14.471 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-26 16:53:14.473 -04:00 [INF] Hosting environment: Development
+2024-03-26 16:53:14.475 -04:00 [INF] Content root path: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\
+2024-03-26 16:53:15.030 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2024-03-26 16:53:15.448 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 421.5799ms
+2024-03-26 16:53:15.459 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2024-03-26 16:53:15.465 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12390 application/javascript;+charset=utf-8 5.4337ms
+2024-03-26 16:53:15.467 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2024-03-26 16:53:15.491 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.4634ms
+2024-03-26 16:53:15.644 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2024-03-26 16:53:15.799 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 154.4695ms
+2024-03-26 16:53:41.905 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2024-03-26 16:53:41.934 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 16:53:41.972 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller Presentation.Controllers.CompanyController (Presentation).
+2024-03-26 16:53:42.471 -04:00 [INF] Getting all the companies.
+2024-03-26 16:53:45.653 -04:00 [INF] Executed DbCommand (114ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2024-03-26 16:53:45.768 -04:00 [INF] Mapping to companiesDtos.
+2024-03-26 16:53:45.930 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 16:53:46.145 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAll (Presentation) in 4154.0161ms
+2024-03-26 16:53:46.149 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2024-03-26 16:53:46.190 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 1003 application/json;+charset=utf-8 4284.5753ms
+2024-03-26 16:54:02.489 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee - -
+2024-03-26 16:54:02.493 -04:00 [INF] Executing endpoint 'Presentation.Controllers.EmployeeController.GetAll (Presentation)'
+2024-03-26 16:54:02.514 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.EmployeeDto]]] GetAll(System.String) on controller Presentation.Controllers.EmployeeController (Presentation).
+2024-03-26 16:54:02.949 -04:00 [INF] Executed DbCommand (69ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(1) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2024-03-26 16:54:02.969 -04:00 [INF] Getting all the employees for company Id 41ca47d3-0c31-47c4-bb61-7aad1cca61e5.
+2024-03-26 16:54:02.983 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__Parse_0
+ORDER BY [e].[Name]
+2024-03-26 16:54:02.988 -04:00 [INF] Mapping to employeesDtos.
+2024-03-26 16:54:02.994 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Employee, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.EmployeeDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 16:54:02.999 -04:00 [INF] Executed action Presentation.Controllers.EmployeeController.GetAll (Presentation) in 481.2279ms
+2024-03-26 16:54:03.007 -04:00 [INF] Executed endpoint 'Presentation.Controllers.EmployeeController.GetAll (Presentation)'
+2024-03-26 16:54:03.009 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee - - - 200 2 application/json;+charset=utf-8 520.8501ms
+2024-03-26 16:54:21.527 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee - -
+2024-03-26 16:54:21.531 -04:00 [INF] Executing endpoint 'Presentation.Controllers.EmployeeController.GetAll (Presentation)'
+2024-03-26 16:54:21.534 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.EmployeeDto]]] GetAll(System.String) on controller Presentation.Controllers.EmployeeController (Presentation).
+2024-03-26 16:54:23.960 -04:00 [INF] Executed DbCommand (24ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(1) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2024-03-26 16:54:25.177 -04:00 [INF] Getting all the employees for company Id 41ca47d3-0c31-47c4-bb61-7aad1cca61e5.
+2024-03-26 16:54:25.764 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__Parse_0
+ORDER BY [e].[Name]
+2024-03-26 16:54:31.730 -04:00 [INF] Mapping to employeesDtos.
+2024-03-26 16:54:36.403 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Employee, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.EmployeeDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 16:54:36.407 -04:00 [INF] Executed action Presentation.Controllers.EmployeeController.GetAll (Presentation) in 14868.0657ms
+2024-03-26 16:54:36.409 -04:00 [INF] Executed endpoint 'Presentation.Controllers.EmployeeController.GetAll (Presentation)'
+2024-03-26 16:54:36.411 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee - - - 200 2 application/json;+charset=utf-8 14884.2445ms
+2024-03-26 16:54:51.366 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/company/f3960d30-f489-444b-4459-08db0f80cbd9/Employee - -
+2024-03-26 16:54:51.368 -04:00 [INF] Executing endpoint 'Presentation.Controllers.EmployeeController.GetAll (Presentation)'
+2024-03-26 16:54:51.371 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.EmployeeDto]]] GetAll(System.String) on controller Presentation.Controllers.EmployeeController (Presentation).
+2024-03-26 16:54:53.002 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(1) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2024-03-26 16:54:53.022 -04:00 [INF] Getting all the employees for company Id f3960d30-f489-444b-4459-08db0f80cbd9.
+2024-03-26 16:54:53.026 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__Parse_0
+ORDER BY [e].[Name]
+2024-03-26 16:54:53.030 -04:00 [INF] Mapping to employeesDtos.
+2024-03-26 16:54:53.033 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Employee, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.EmployeeDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-26 16:54:53.048 -04:00 [INF] Executed action Presentation.Controllers.EmployeeController.GetAll (Presentation) in 1673.8321ms
+2024-03-26 16:54:53.054 -04:00 [INF] Executed endpoint 'Presentation.Controllers.EmployeeController.GetAll (Presentation)'
+2024-03-26 16:54:53.056 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/company/f3960d30-f489-444b-4459-08db0f80cbd9/Employee - - - 200 158 application/json;+charset=utf-8 1690.6773ms

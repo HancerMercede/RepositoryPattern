@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IenrmxdidlNhshkICqoH7lfHdDLn+JuAzrNDFKcU2EOh7ETr+ilY3aYXrMH0IMpItSIVlLamO2cYwRkrLrtDxA==",
+  "dgSpecHash": "ask2u5ANcQlbV/fAXKAnZabw0fpixD+7qx/tEcfYlOV6TQZ/0NMV8umNn1w/5YOx3G8JUcLiVGgRbFNRL3pXmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Persistence\\Persistence.csproj",
+  "projectFilePath": "E:\\Mis Archivos\\RepositoryPattern\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

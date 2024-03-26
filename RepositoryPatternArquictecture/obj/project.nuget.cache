@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NuLDSam8/cxzCh8lzU8AfKELOsNHcwQ41GktA7mpjXdEHjAhOOV2idIevobZyhuINzeSvOpLiQaLaCXeRulfbA==",
+  "dgSpecHash": "6vuaBRsp+jfrDVNt9klVmITAkkVeyHn7v2IBxP+2tCfql62Mn0wDw87SmgQvpAF4P4dZ4/Jn5QTQ1DvPtHR0uQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\RepositoryPatternArquictecture\\RepositoryPatternArquitecture.csproj",
+  "projectFilePath": "E:\\Mis Archivos\\RepositoryPattern\\RepositoryPatternArquictecture\\RepositoryPatternArquitecture.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

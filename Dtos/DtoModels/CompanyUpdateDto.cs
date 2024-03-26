@@ -1,7 +1,7 @@
 ﻿#nullable disable
 namespace Dtos.DtoModels
 {
-    public class CompanyUpdateDto
+    public record CompanyUpdateDto
     {
         public string Name { get; set; }
         public string Address { get; set; }

@@ -10,4 +10,6 @@ public interface ICompanyService
     Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> Ids, bool trackChanges);
 
     Task DeleteCompany(string Id, bool trackChanges);
+
+    Task SaveChanges();
 }

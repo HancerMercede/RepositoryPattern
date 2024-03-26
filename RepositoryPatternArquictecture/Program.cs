@@ -65,8 +65,8 @@ else
     app.UseHsts();
 
 
-var logger = app.Logger;
-app.ConfigureExceptionHandler(logger);
+
+app.ConfigureExceptionHandler(app.Logger);
 
 app.UseHttpsRedirection();
 
@@ -74,7 +74,12 @@ app.UseStaticFiles();
 
 app.UseCors("AllowAll");
 
+
 app.UseAuthorization();
+//app.Run(async context =>
+//{
+//    await context.Response.WriteAsync("Hello from the middlewate");
+//});
 
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {

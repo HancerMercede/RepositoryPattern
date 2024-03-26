@@ -7,6 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Interfaces\IEmployeeService.cs~RFa7374f.TMP" />
+      <None Remove="Interfaces\IEmployeeService.cs~RFb0a252.TMP" />
+      <None Remove="Interfaces\IEmployeeService.cs~RFb568eb.TMP" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\Entities\Entities.csproj" />
     </ItemGroup>
 

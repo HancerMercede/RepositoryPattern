@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dtos.DtoModels;
 
-public class CompanyDto
+public record CompanyDto
 {
 
     [Column("CompanyId")]

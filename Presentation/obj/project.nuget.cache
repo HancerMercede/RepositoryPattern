@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Wa6c2VR8qGOMqjLvr3srxPypuLeCwneNUf9wbr9sBayrSXvk/yCnSYuzA0U6Dh1d6qQGHTE4Ee2JmvxAED9eMg==",
+  "dgSpecHash": "RBjmR5WsJfv3dEs7NCakXbtTs3CM/iaV7pqvnRw9WBmysk1+5K+UA3TBQGEHNbN8rB/zTU5WyDqS6SkCHn5rmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Presentation\\Presentation.csproj",
+  "projectFilePath": "E:\\Mis Archivos\\RepositoryPattern\\Presentation\\Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

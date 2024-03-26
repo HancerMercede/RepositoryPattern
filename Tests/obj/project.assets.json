@@ -6288,11 +6288,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Tests\\Tests.csproj",
+      "projectUniqueName": "E:\\Mis Archivos\\RepositoryPattern\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Tests\\Tests.csproj",
+      "projectPath": "E:\\Mis Archivos\\RepositoryPattern\\Tests\\Tests.csproj",
       "packagesPath": "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Tests\\obj\\",
+      "outputPath": "E:\\Mis Archivos\\RepositoryPattern\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6314,8 +6314,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Contracts\\Contracts.csproj": {
-              "projectPath": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Contracts\\Contracts.csproj"
+            "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Contracts.csproj": {
+              "projectPath": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Contracts.csproj"
             }
           }
         }
@@ -6371,7 +6371,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.314\\RuntimeIdentifierGraph.json"
       }
     }
   }

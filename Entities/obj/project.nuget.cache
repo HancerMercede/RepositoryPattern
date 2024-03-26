@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VVVk4pQrPKISUjeElrodVyQLhfK0fRcKPA1MTRHR6fVonnYKAMdsoZ82CoP5Gk37+l2ICZAjcBdFknvTXybBQQ==",
+  "dgSpecHash": "WJexj7Bv9aZP+ajPZtHKigKm0SxrD9/vaiB4FID70kdKbxRd5EwKyPOmexPEwnHepYB655QOUHS1z7ZnaSWe8Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HANCER MERCEDE\\source\\repos\\src\\Entities\\Entities.csproj",
+  "projectFilePath": "E:\\Mis Archivos\\RepositoryPattern\\Entities\\Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

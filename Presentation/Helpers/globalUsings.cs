@@ -1,0 +1,9 @@
+﻿global using AutoMapper;
+global using Dtos.DtoModels;
+global using Entities.Models;
+global using Mapster;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+global using Microsoft.Extensions.Logging;
+global using Service.Contracts.Interfaces;
+global using Contracts.Interfaces;

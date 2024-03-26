@@ -20,21 +20,26 @@ internal sealed class CompanyService:ICompanyService
 
     public async Task<Company> GetByCondiction(string Id, bool trackChanges)
     {
-        throw new NotImplementedException();
+       return await _repositoryManager.Company.GetByCondiction(Id, trackChanges);
     }
 
     public async Task<Company> CreateCompany(Company company)
     {
-        throw new NotImplementedException();
+        return await _repositoryManager.Company.CreateCompany(company);
     }
 
     public async Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> Ids, bool trackChanges)
     {
-        throw new NotImplementedException();
+        return await _repositoryManager.Company.GetByIds(Ids, trackChanges);
     }
 
     public async Task DeleteCompany(string Id, bool trackChanges)
     {
-        throw new NotImplementedException();
+        await _repositoryManager.Company.DeleteCompany(Id, trackChanges);
+    }
+
+    public async Task SaveChanges()
+    {
+        await _repositoryManager.Save();
     }
 }
