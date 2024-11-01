@@ -1,0 +1,276 @@
+2023-02-17 19:35:42.079 -04:00 [INF] Now listening on: https://localhost:7079
+2023-02-17 19:35:42.118 -04:00 [INF] Now listening on: http://localhost:5215
+2023-02-17 19:35:42.122 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-17 19:35:42.123 -04:00 [INF] Hosting environment: Development
+2023-02-17 19:35:42.125 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture
+2023-02-17 19:35:44.502 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-02-17 19:35:44.794 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 300.3169ms
+2023-02-17 19:35:44.809 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2023-02-17 19:35:44.818 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12028 application/javascript;+charset=utf-8 8.3803ms
+2023-02-17 19:35:44.865 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2023-02-17 19:35:44.980 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 114.9995ms
+2023-02-17 19:35:45.033 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-02-17 19:35:45.219 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 185.3132ms
+2023-02-17 19:38:16.472 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids} - -
+2023-02-17 19:38:16.493 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-02-17 19:38:16.578 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-02-17 19:38:46.902 -04:00 [INF] Now listening on: https://localhost:7079
+2023-02-17 19:38:47.084 -04:00 [INF] Now listening on: http://localhost:5215
+2023-02-17 19:38:47.087 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-17 19:38:47.089 -04:00 [INF] Hosting environment: Development
+2023-02-17 19:38:47.091 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture
+2023-02-17 19:38:47.844 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-02-17 19:38:48.187 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 343.2068ms
+2023-02-17 19:38:48.212 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2023-02-17 19:38:48.222 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12028 application/javascript;+charset=utf-8 9.5604ms
+2023-02-17 19:38:48.296 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2023-02-17 19:38:48.386 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 89.8772ms
+2023-02-17 19:38:48.478 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-02-17 19:38:48.684 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 205.6563ms
+2023-02-17 19:39:11.945 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-02-17 19:39:11.962 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 19:39:11.995 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-02-17 19:39:12.480 -04:00 [INF] Getting all the companies.
+2023-02-17 19:39:14.803 -04:00 [INF] Executed DbCommand (82ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-02-17 19:39:14.863 -04:00 [INF] Mapping to companiesDtos.
+2023-02-17 19:39:14.907 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-02-17 19:39:14.947 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 2942.3321ms
+2023-02-17 19:39:14.951 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 19:39:14.968 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 - application/json;+charset=utf-8 3022.9196ms
+2023-02-17 19:39:36.556 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee - -
+2023-02-17 19:39:36.569 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.EmployeeController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 19:39:36.589 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.EmployeeDto]]] GetAll(System.String) on controller RepositoryPatternArquitecture.Controllers.EmployeeController (RepositoryPatternArquitecture).
+2023-02-17 19:39:40.464 -04:00 [INF] Executed DbCommand (43ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2023-02-17 19:39:40.479 -04:00 [INF] Getting all the employees for company Id 41ca47d3-0c31-47c4-bb61-7aad1cca61e5.
+2023-02-17 19:39:45.317 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__Parse_0
+ORDER BY [e].[Name]
+2023-02-17 19:39:45.321 -04:00 [INF] Mapping to employeesDtos.
+2023-02-17 19:39:45.331 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dtos.DtoModels.EmployeeDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-02-17 19:39:45.337 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.EmployeeController.GetAll (RepositoryPatternArquitecture) in 8743.5725ms
+2023-02-17 19:39:45.340 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.EmployeeController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 19:39:45.343 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee - - - 200 - application/json;+charset=utf-8 8786.6596ms
+2023-02-17 19:41:08.242 -04:00 [INF] Request starting HTTP/2 PUT https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee/270fa6f5-bb6b-420f-a025-2b8d13007f40 application/json 78
+2023-02-17 19:41:08.250 -04:00 [INF] CORS policy execution successful.
+2023-02-17 19:41:08.254 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.EmployeeController.Update (RepositoryPatternArquitecture)'
+2023-02-17 19:41:08.260 -04:00 [INF] Route matched with {action = "Update", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String, System.String, Dtos.DtoModels.EmployeeUpdateDto) on controller RepositoryPatternArquitecture.Controllers.EmployeeController (RepositoryPatternArquitecture).
+2023-02-17 19:41:08.317 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2023-02-17 19:41:08.341 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__Parse_0='?' (DbType = Guid), @__Parse_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__Parse_0 AND [e].[EmployeeId] = @__Parse_1
+2023-02-17 19:41:08.568 -04:00 [INF] Executed DbCommand (19ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Employees] SET [Age] = @p0, [Position] = @p1
+OUTPUT 1
+WHERE [EmployeeId] = @p2;
+2023-02-17 19:41:08.600 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-02-17 19:41:08.602 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.EmployeeController.Update (RepositoryPatternArquitecture) in 338.2139ms
+2023-02-17 19:41:08.603 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.EmployeeController.Update (RepositoryPatternArquitecture)'
+2023-02-17 19:41:08.607 -04:00 [INF] Request finished HTTP/2 PUT https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee/270fa6f5-bb6b-420f-a025-2b8d13007f40 application/json 78 - 204 - - 365.5156ms
+2023-02-17 19:41:26.930 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee - -
+2023-02-17 19:41:26.949 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.EmployeeController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 19:41:26.952 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.EmployeeDto]]] GetAll(System.String) on controller RepositoryPatternArquitecture.Controllers.EmployeeController (RepositoryPatternArquitecture).
+2023-02-17 19:41:26.971 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2023-02-17 19:41:26.978 -04:00 [INF] Getting all the employees for company Id 41ca47d3-0c31-47c4-bb61-7aad1cca61e5.
+2023-02-17 19:41:26.989 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__Parse_0
+ORDER BY [e].[Name]
+2023-02-17 19:41:26.996 -04:00 [INF] Mapping to employeesDtos.
+2023-02-17 19:41:27.000 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dtos.DtoModels.EmployeeDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-02-17 19:41:27.007 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.EmployeeController.GetAll (RepositoryPatternArquitecture) in 49.3402ms
+2023-02-17 19:41:27.011 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.EmployeeController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 19:41:27.016 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee - - - 200 - application/json;+charset=utf-8 85.4504ms
+2023-02-17 20:09:55.934 -04:00 [INF] Now listening on: https://localhost:7079
+2023-02-17 20:09:56.017 -04:00 [INF] Now listening on: http://localhost:5215
+2023-02-17 20:09:56.022 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-17 20:09:56.024 -04:00 [INF] Hosting environment: Development
+2023-02-17 20:09:56.026 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture
+2023-02-17 20:09:57.180 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-02-17 20:09:57.456 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 279.6837ms
+2023-02-17 20:09:57.471 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2023-02-17 20:09:57.477 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12028 application/javascript;+charset=utf-8 5.4316ms
+2023-02-17 20:09:57.509 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2023-02-17 20:09:57.573 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 63.3329ms
+2023-02-17 20:09:57.642 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-02-17 20:09:57.850 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 207.4975ms
+2023-02-17 20:10:10.897 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-02-17 20:10:10.914 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 20:10:10.957 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-02-17 20:10:11.509 -04:00 [INF] Getting all the companies.
+2023-02-17 20:10:13.857 -04:00 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-02-17 20:10:13.925 -04:00 [INF] Mapping to companiesDtos.
+2023-02-17 20:10:13.957 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-02-17 20:10:13.995 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 3029.898ms
+2023-02-17 20:10:13.999 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 20:10:14.019 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 - application/json;+charset=utf-8 3122.6815ms
+2023-02-17 20:12:21.643 -04:00 [INF] Request starting HTTP/2 PUT https://localhost:7079/api/v1/Company?CompanyId=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 application/json 232
+2023-02-17 20:12:21.650 -04:00 [INF] CORS policy execution successful.
+2023-02-17 20:12:21.654 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.Update (RepositoryPatternArquitecture)'
+2023-02-17 20:12:21.676 -04:00 [INF] Route matched with {action = "Update", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String, Dtos.DtoModels.CompanyUpdateDto) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-02-17 20:12:21.776 -04:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-02-17 20:12:21.787 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.Update (RepositoryPatternArquitecture) in 106.9803ms
+2023-02-17 20:12:21.790 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.Update (RepositoryPatternArquitecture)'
+2023-02-17 20:12:21.792 -04:00 [INF] Request finished HTTP/2 PUT https://localhost:7079/api/v1/Company?CompanyId=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 application/json 232 - 400 - application/json;+charset=utf-8 149.3909ms
+2023-02-17 20:12:43.266 -04:00 [INF] Request starting HTTP/2 PUT https://localhost:7079/api/v1/Company?CompanyId=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 application/json 226
+2023-02-17 20:12:43.413 -04:00 [INF] CORS policy execution successful.
+2023-02-17 20:12:43.415 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.Update (RepositoryPatternArquitecture)'
+2023-02-17 20:12:43.417 -04:00 [INF] Route matched with {action = "Update", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String, Dtos.DtoModels.CompanyUpdateDto) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-02-17 20:12:47.560 -04:00 [INF] Executed DbCommand (70ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2023-02-17 20:13:10.163 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-02-17 20:13:10.164 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.Update (RepositoryPatternArquitecture) in 26743.9895ms
+2023-02-17 20:13:10.167 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.Update (RepositoryPatternArquitecture)'
+2023-02-17 20:13:10.169 -04:00 [INF] Request finished HTTP/2 PUT https://localhost:7079/api/v1/Company?CompanyId=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 application/json 226 - 204 - - 26903.4449ms
+2023-02-17 20:13:43.536 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee - -
+2023-02-17 20:13:43.546 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.EmployeeController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 20:13:43.555 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.EmployeeDto]]] GetAll(System.String) on controller RepositoryPatternArquitecture.Controllers.EmployeeController (RepositoryPatternArquitecture).
+2023-02-17 20:13:43.605 -04:00 [INF] Executed DbCommand (15ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2023-02-17 20:13:43.610 -04:00 [INF] Getting all the employees for company Id 41ca47d3-0c31-47c4-bb61-7aad1cca61e5.
+2023-02-17 20:13:43.627 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__Parse_0
+ORDER BY [e].[Name]
+2023-02-17 20:13:43.631 -04:00 [INF] Mapping to employeesDtos.
+2023-02-17 20:13:43.638 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dtos.DtoModels.EmployeeDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-02-17 20:13:43.644 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.EmployeeController.GetAll (RepositoryPatternArquitecture) in 85.7833ms
+2023-02-17 20:13:43.647 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.EmployeeController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 20:13:43.649 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee - - - 200 - application/json;+charset=utf-8 113.1742ms
+2023-02-17 20:15:00.429 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-02-17 20:15:00.489 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 60.6418ms
+2023-02-17 20:15:00.527 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2023-02-17 20:15:00.527 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2023-02-17 20:15:00.530 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12028 application/javascript;+charset=utf-8 3.2327ms
+2023-02-17 20:15:00.612 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 84.6939ms
+2023-02-17 20:15:01.010 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-02-17 20:15:01.044 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/favicon-32x32.png - -
+2023-02-17 20:15:01.054 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 44.0882ms
+2023-02-17 20:15:01.075 -04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-02-17 20:15:01.077 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/favicon-32x32.png - - - 200 628 image/png 33.6157ms
+2023-02-17 20:15:16.799 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-02-17 20:15:16.801 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 20:15:16.809 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-02-17 20:15:16.813 -04:00 [INF] Getting all the companies.
+2023-02-17 20:15:16.828 -04:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-02-17 20:15:16.833 -04:00 [INF] Mapping to companiesDtos.
+2023-02-17 20:15:16.835 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-02-17 20:15:16.841 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 28.1275ms
+2023-02-17 20:15:16.843 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 20:15:16.846 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 - application/json;+charset=utf-8 46.6788ms
+2023-02-17 20:15:32.039 -04:00 [INF] Request starting HTTP/2 PUT https://localhost:7079/api/v1/Company?CompanyId=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 application/json 226
+2023-02-17 20:15:32.042 -04:00 [INF] CORS policy execution successful.
+2023-02-17 20:15:32.044 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.Update (RepositoryPatternArquitecture)'
+2023-02-17 20:15:32.050 -04:00 [INF] Route matched with {action = "Update", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(System.String, Dtos.DtoModels.CompanyUpdateDto) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-02-17 20:15:34.544 -04:00 [INF] Executed DbCommand (129ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2023-02-17 20:15:49.396 -04:00 [INF] Executed DbCommand (17ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (Size = 60), @p1='?' (Size = 60), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Int32), @p6='?' (DbType = Guid), @p7='?' (Size = 30), @p8='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Companies] SET [Address] = @p0, [Name] = @p1
+OUTPUT 1
+WHERE [CompanyId] = @p2;
+DELETE FROM [Employees]
+OUTPUT 1
+WHERE [EmployeeId] = @p3;
+INSERT INTO [Employees] ([EmployeeId], [Age], [CompanyId], [Name], [Position])
+VALUES (@p4, @p5, @p6, @p7, @p8);
+2023-02-17 20:15:50.996 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-02-17 20:15:50.999 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.Update (RepositoryPatternArquitecture) in 18945.1611ms
+2023-02-17 20:15:51.001 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.Update (RepositoryPatternArquitecture)'
+2023-02-17 20:15:51.003 -04:00 [INF] Request finished HTTP/2 PUT https://localhost:7079/api/v1/Company?CompanyId=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 application/json 226 - 204 - - 18963.5349ms
+2023-02-17 20:16:14.426 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee - -
+2023-02-17 20:16:14.454 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.EmployeeController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 20:16:14.501 -04:00 [INF] Route matched with {action = "GetAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.EmployeeDto]]] GetAll(System.String) on controller RepositoryPatternArquitecture.Controllers.EmployeeController (RepositoryPatternArquitecture).
+2023-02-17 20:16:14.517 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(2) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2023-02-17 20:16:24.764 -04:00 [INF] Getting all the employees for company Id 41ca47d3-0c31-47c4-bb61-7aad1cca61e5.
+2023-02-17 20:16:40.067 -04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM [Employees] AS [e]
+WHERE [e].[CompanyId] = @__Parse_0
+ORDER BY [e].[Name]
+2023-02-17 20:16:41.205 -04:00 [INF] Mapping to employeesDtos.
+2023-02-17 20:16:44.147 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dtos.DtoModels.EmployeeDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-02-17 20:16:46.997 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.EmployeeController.GetAll (RepositoryPatternArquitecture) in 32492.6958ms
+2023-02-17 20:16:47.000 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.EmployeeController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 20:16:47.003 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/company/41ca47d3-0c31-47c4-bb61-7aad1cca61e5/Employee - - - 200 - application/json;+charset=utf-8 32577.9676ms
+2023-02-17 20:20:49.895 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-02-17 20:20:49.900 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 20:20:49.912 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-02-17 20:20:49.918 -04:00 [INF] Getting all the companies.
+2023-02-17 20:20:49.993 -04:00 [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-02-17 20:20:50.001 -04:00 [INF] Mapping to companiesDtos.
+2023-02-17 20:20:50.004 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-02-17 20:20:50.008 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 90.3412ms
+2023-02-17 20:20:50.013 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-02-17 20:20:50.017 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 - application/json;+charset=utf-8 122.3279ms

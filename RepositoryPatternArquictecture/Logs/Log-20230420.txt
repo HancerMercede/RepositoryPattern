@@ -1,0 +1,707 @@
+2023-04-20 20:26:52.547 -04:00 [INF] Now listening on: https://localhost:7079
+2023-04-20 20:26:52.615 -04:00 [INF] Now listening on: http://localhost:5215
+2023-04-20 20:26:52.624 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-20 20:26:52.625 -04:00 [INF] Hosting environment: Development
+2023-04-20 20:26:52.627 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-04-20 20:26:57.891 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-04-20 20:26:58.707 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 822.1938ms
+2023-04-20 20:26:58.780 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2023-04-20 20:26:58.787 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12028 application/javascript;+charset=utf-8 6.1338ms
+2023-04-20 20:26:58.874 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2023-04-20 20:26:59.006 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 132.6332ms
+2023-04-20 20:26:59.170 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-04-20 20:26:59.403 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 233.6549ms
+2023-04-20 20:27:07.135 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-04-20 20:27:07.164 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-20 20:27:07.219 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 20:27:07.904 -04:00 [INF] Getting all the companies.
+2023-04-20 20:27:11.616 -04:00 [INF] Executed DbCommand (174ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-04-20 20:27:11.714 -04:00 [INF] Mapping to companiesDtos.
+2023-04-20 20:27:11.877 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-20 20:27:12.148 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 4919.4756ms
+2023-04-20 20:27:12.152 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-20 20:27:12.183 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 826 application/json;+charset=utf-8 5047.1777ms
+2023-04-20 20:28:58.112 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/19527884-6d45-46a5-d8e3-08db0fa59840 - -
+2023-04-20 20:28:58.146 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.Get (RepositoryPatternArquitecture)'
+2023-04-20 20:28:58.169 -04:00 [INF] Route matched with {action = "Get", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Dtos.DtoModels.CompanyDto]] Get(System.String) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 20:29:01.744 -04:00 [INF] Executed DbCommand (113ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CompanyId], [t].[Address], [t].[Country], [t].[Name], [e].[EmployeeId], [e].[Age], [e].[CompanyId], [e].[Name], [e].[Position]
+FROM (
+    SELECT TOP(1) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+    FROM [Companies] AS [c]
+    WHERE [c].[CompanyId] = @__Parse_0
+) AS [t]
+LEFT JOIN [Employees] AS [e] ON [t].[CompanyId] = [e].[CompanyId]
+ORDER BY [t].[CompanyId]
+2023-04-20 20:29:01.790 -04:00 [INF] Executing OkObjectResult, writing value of type 'Dtos.DtoModels.CompanyDto'.
+2023-04-20 20:29:01.794 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.Get (RepositoryPatternArquitecture) in 3619.8527ms
+2023-04-20 20:29:01.797 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.Get (RepositoryPatternArquitecture)'
+2023-04-20 20:29:01.799 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/19527884-6d45-46a5-d8e3-08db0fa59840 - - - 200 110 application/json;+charset=utf-8 3686.7253ms
+2023-04-20 21:56:49.482 -04:00 [INF] Now listening on: https://localhost:7079
+2023-04-20 21:56:49.559 -04:00 [INF] Now listening on: http://localhost:5215
+2023-04-20 21:56:49.565 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-20 21:56:49.567 -04:00 [INF] Hosting environment: Development
+2023-04-20 21:56:49.568 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-04-20 21:56:50.365 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-04-20 21:56:50.750 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 391.6662ms
+2023-04-20 21:56:51.074 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-04-20 21:56:51.253 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 178.6850ms
+2023-04-20 21:58:41.001 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-04-20 21:58:41.032 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-20 21:58:41.121 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 21:58:41.728 -04:00 [INF] Getting all the companies.
+2023-04-20 21:58:45.375 -04:00 [INF] Executed DbCommand (191ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-04-20 21:58:45.478 -04:00 [INF] Mapping to companiesDtos.
+2023-04-20 21:58:45.652 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-20 21:58:45.939 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 4802.6695ms
+2023-04-20 21:58:45.946 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-20 21:58:45.978 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 826 application/json;+charset=utf-8 4976.4279ms
+2023-04-20 22:06:32.057 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=3fa85f64-5717-4562-b3fc-2c963f66afa6&Ids=19527884-6d45-46a5-d8e3-08db0fa59840 - -
+2023-04-20 22:06:32.062 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:06:32.102 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:06:32.164 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture) in 54.1399ms
+2023-04-20 22:06:32.169 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:06:32.181 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:06:32.286 -04:00 [ERR] Something went wrong: System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:06:32.307 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=3fa85f64-5717-4562-b3fc-2c963f66afa6&Ids=19527884-6d45-46a5-d8e3-08db0fa59840 - - - 500 - application/json 249.2550ms
+2023-04-20 22:06:57.943 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=48fca700-c53b-43a5-bdbe-08db0f9cb76e&Ids=19527884-6d45-46a5-d8e3-08db0fa59840 - -
+2023-04-20 22:06:57.949 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:06:57.952 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:06:57.964 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture) in 4.3107ms
+2023-04-20 22:06:57.968 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:06:57.973 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:06:57.999 -04:00 [ERR] Something went wrong: System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:06:58.013 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=48fca700-c53b-43a5-bdbe-08db0f9cb76e&Ids=19527884-6d45-46a5-d8e3-08db0fa59840 - - - 500 - application/json 69.3163ms
+2023-04-20 22:12:33.601 -04:00 [INF] Application is shutting down...
+2023-04-20 22:14:12.178 -04:00 [INF] Now listening on: https://localhost:7079
+2023-04-20 22:14:12.252 -04:00 [INF] Now listening on: http://localhost:5215
+2023-04-20 22:14:12.261 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-20 22:14:12.264 -04:00 [INF] Hosting environment: Development
+2023-04-20 22:14:12.266 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-04-20 22:14:13.038 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-04-20 22:14:13.373 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 338.2393ms
+2023-04-20 22:14:13.568 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-04-20 22:14:13.841 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 272.5615ms
+2023-04-20 22:15:35.069 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-04-20 22:15:35.103 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-20 22:15:35.167 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:15:35.740 -04:00 [INF] Getting all the companies.
+2023-04-20 22:15:38.930 -04:00 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-04-20 22:15:39.041 -04:00 [INF] Mapping to companiesDtos.
+2023-04-20 22:15:39.336 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-20 22:15:39.587 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 4406.3215ms
+2023-04-20 22:15:39.591 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-20 22:15:39.646 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 826 application/json;+charset=utf-8 4577.8263ms
+2023-04-20 22:16:30.712 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5&Ids=59107458-68d7-4ca2-36d7-08db0f75ff67 - -
+2023-04-20 22:16:30.718 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:16:30.745 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:16:30.792 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture) in 40.4433ms
+2023-04-20 22:16:30.795 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:16:30.804 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:16:30.878 -04:00 [ERR] Something went wrong: System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:16:30.896 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5&Ids=59107458-68d7-4ca2-36d7-08db0f75ff67 - - - 500 - application/json 183.7822ms
+2023-04-20 22:16:38.767 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5&Ids=59107458-68d7-4ca2-36d7-08db0f75ff67 - -
+2023-04-20 22:16:38.772 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:16:38.774 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:16:38.788 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture) in 5.1203ms
+2023-04-20 22:16:38.792 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:16:38.795 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:16:38.821 -04:00 [ERR] Something went wrong: System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:16:38.834 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5&Ids=59107458-68d7-4ca2-36d7-08db0f75ff67 - - - 500 - application/json 67.1733ms
+2023-04-20 22:16:56.238 -04:00 [INF] Application is shutting down...
+2023-04-20 22:17:04.326 -04:00 [INF] Now listening on: https://localhost:7079
+2023-04-20 22:17:04.387 -04:00 [INF] Now listening on: http://localhost:5215
+2023-04-20 22:17:04.395 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-20 22:17:04.398 -04:00 [INF] Hosting environment: Development
+2023-04-20 22:17:04.400 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-04-20 22:17:05.090 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-04-20 22:17:05.453 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 363.7211ms
+2023-04-20 22:17:05.707 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-04-20 22:17:05.951 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 244.6520ms
+2023-04-20 22:17:10.030 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5&Ids=59107458-68d7-4ca2-36d7-08db0f75ff67 - -
+2023-04-20 22:17:10.055 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:17:10.132 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:17:10.661 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture) in 517.1617ms
+2023-04-20 22:17:10.669 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:17:10.678 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:17:10.787 -04:00 [ERR] Something went wrong: System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:17:10.808 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5&Ids=59107458-68d7-4ca2-36d7-08db0f75ff67 - - - 500 - application/json 778.5850ms
+2023-04-20 22:17:23.425 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5&Ids=59107458-68d7-4ca2-36d7-08db0f75ff67 - -
+2023-04-20 22:17:23.430 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:17:23.432 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:17:23.460 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture) in 20.8161ms
+2023-04-20 22:17:23.464 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:17:23.471 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:17:23.505 -04:00 [ERR] Something went wrong: System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:17:23.519 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5&Ids=59107458-68d7-4ca2-36d7-08db0f75ff67 - - - 500 - application/json 93.9365ms
+2023-04-20 22:17:24.478 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5&Ids=59107458-68d7-4ca2-36d7-08db0f75ff67 - -
+2023-04-20 22:17:24.482 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:17:24.485 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:17:24.498 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture) in 6.5105ms
+2023-04-20 22:17:24.503 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:17:24.509 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:17:24.537 -04:00 [ERR] Something went wrong: System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:17:24.548 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5&Ids=59107458-68d7-4ca2-36d7-08db0f75ff67 - - - 500 - application/json 70.1406ms
+2023-04-20 22:17:51.523 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5&Ids=59107458-68d7-4ca2-36d7-08db0f75ff67 - -
+2023-04-20 22:17:51.527 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:17:51.530 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:17:51.539 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture) in 0.8249ms
+2023-04-20 22:17:51.542 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:17:51.546 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:17:51.573 -04:00 [ERR] Something went wrong: System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:17:51.586 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5&Ids=59107458-68d7-4ca2-36d7-08db0f75ff67 - - - 500 - application/json 62.1822ms
+2023-04-20 22:17:59.894 -04:00 [INF] Application is shutting down...
+2023-04-20 22:18:58.509 -04:00 [INF] Now listening on: https://localhost:7079
+2023-04-20 22:18:58.565 -04:00 [INF] Now listening on: http://localhost:5215
+2023-04-20 22:18:58.572 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-20 22:18:58.576 -04:00 [INF] Hosting environment: Development
+2023-04-20 22:18:58.578 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-04-20 22:18:58.867 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-04-20 22:18:59.123 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 257.6735ms
+2023-04-20 22:18:59.305 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-04-20 22:18:59.499 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 194.0821ms
+2023-04-20 22:19:10.601 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-04-20 22:19:10.620 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-20 22:19:10.672 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:19:11.215 -04:00 [INF] Getting all the companies.
+2023-04-20 22:19:14.221 -04:00 [INF] Executed DbCommand (106ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-04-20 22:19:14.309 -04:00 [INF] Mapping to companiesDtos.
+2023-04-20 22:19:14.592 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-20 22:19:14.869 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 4184.0853ms
+2023-04-20 22:19:14.874 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-20 22:19:14.901 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 826 application/json;+charset=utf-8 4299.7231ms
+2023-04-20 22:20:12.025 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - -
+2023-04-20 22:20:12.030 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:20:12.059 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:20:12.097 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture) in 32.096ms
+2023-04-20 22:20:12.102 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:20:12.111 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:20:12.164 -04:00 [ERR] Something went wrong: System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:20:12.184 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - - - 500 - application/json 159.0039ms
+2023-04-20 22:21:25.964 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - -
+2023-04-20 22:21:25.968 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:21:25.973 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:21:25.982 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture) in 4.9612ms
+2023-04-20 22:21:25.987 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:21:25.990 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:21:26.016 -04:00 [ERR] Something went wrong: System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:21:26.028 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - - - 500 - application/json 63.3154ms
+2023-04-20 22:21:27.232 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - -
+2023-04-20 22:21:27.236 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:21:27.242 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:21:27.249 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture) in 1.1263ms
+2023-04-20 22:21:27.254 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:21:27.257 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:21:27.283 -04:00 [ERR] Something went wrong: System.FormatException: Expected 0x prefix.
+   at System.Guid.GuidResult.SetFailure(Boolean overflow, String failureMessageID)
+   at System.Guid.TryParseExactX(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.TryParseGuid(ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid..ctor(String g)
+   at System.ComponentModel.GuidConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at System.ComponentModel.TypeConverter.ConvertFromString(String text)
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.<>c__DisplayClass0_0.<BindModelAsync>b__0(String x) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 33
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at RepositoryPatternArquitecture.ModelBinders.ArrayModelBinder.BindModelAsync(ModelBindingContext bindingContext) in C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\ModelBinders\ArrayModelBinder.cs:line 31
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-04-20 22:21:27.292 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - - - 500 - application/json 59.3141ms
+2023-04-20 22:22:54.880 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-04-20 22:22:54.898 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 17.4748ms
+2023-04-20 22:22:56.357 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-04-20 22:22:56.384 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 27.1911ms
+2023-04-20 22:23:15.225 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-04-20 22:23:15.337 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 112.7485ms
+2023-04-20 22:23:15.783 -04:00 [INF] Application is shutting down...
+2023-04-20 22:23:19.375 -04:00 [INF] Now listening on: https://localhost:7079
+2023-04-20 22:23:19.454 -04:00 [INF] Now listening on: http://localhost:5215
+2023-04-20 22:23:19.470 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-20 22:23:19.472 -04:00 [INF] Hosting environment: Development
+2023-04-20 22:23:19.474 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-04-20 22:23:19.707 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-04-20 22:23:20.162 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 458.8112ms
+2023-04-20 22:23:26.848 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-04-20 22:23:26.884 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-20 22:23:26.934 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:23:27.452 -04:00 [INF] Getting all the companies.
+2023-04-20 22:23:31.225 -04:00 [INF] Executed DbCommand (229ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-04-20 22:23:31.357 -04:00 [INF] Mapping to companiesDtos.
+2023-04-20 22:23:31.524 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-20 22:23:31.817 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 4870.8724ms
+2023-04-20 22:23:31.821 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-20 22:23:31.857 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 826 application/json;+charset=utf-8 5009.2184ms
+2023-04-20 22:23:58.875 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=b3b848e9-62d1-4079-36d8-08db0f75ff67 - -
+2023-04-20 22:23:58.881 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:23:58.896 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-20 22:24:45.854 -04:00 [INF] Now listening on: https://localhost:7079
+2023-04-20 22:24:45.907 -04:00 [INF] Now listening on: http://localhost:5215
+2023-04-20 22:24:45.916 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-20 22:24:45.917 -04:00 [INF] Hosting environment: Development
+2023-04-20 22:24:45.918 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-04-20 22:24:47.210 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-04-20 22:24:47.791 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 585.6001ms
+2023-04-20 22:24:47.839 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2023-04-20 22:24:47.853 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12028 application/javascript;+charset=utf-8 13.1791ms
+2023-04-20 22:24:47.917 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2023-04-20 22:24:48.038 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 120.2752ms
+2023-04-20 22:24:48.126 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-04-20 22:24:48.337 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 211.4089ms
+2023-04-20 22:25:15.377 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=b3b848e9-62d1-4079-36d8-08db0f75ff67 - -
+2023-04-20 22:25:15.411 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetByIds (RepositoryPatternArquitecture)'
+2023-04-20 22:25:15.484 -04:00 [INF] Route matched with {action = "GetByIds", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetByIds(System.Collections.Generic.IEnumerable`1[System.Guid]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).

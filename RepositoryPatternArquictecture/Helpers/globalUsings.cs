@@ -1,0 +1,10 @@
+﻿global using Contracts.Interfaces;
+global using Microsoft.EntityFrameworkCore;
+global using Persistence.Context;
+global using Repository;
+global using Microsoft.AspNetCore.Mvc;
+global using RepositoryPatternArquitecture.Helpers;
+global using System.Text.Json.Serialization;
+global using Microsoft.AspNetCore.HttpOverrides;
+global using Microsoft.AspNetCore.Mvc.Versioning;
+global using RepositoryPatternArquitecture.Configurations;

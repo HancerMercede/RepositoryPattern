@@ -1,0 +1,80 @@
+2023-04-19 16:33:32.483 -04:00 [INF] Now listening on: https://localhost:7079
+2023-04-19 16:33:32.525 -04:00 [INF] Now listening on: http://localhost:5215
+2023-04-19 16:33:32.530 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-19 16:33:32.532 -04:00 [INF] Hosting environment: Development
+2023-04-19 16:33:32.533 -04:00 [INF] Content root path: C:\Users\HANCER MERCEDE\source\repos\src\RepositoryPatternArquictecture\
+2023-04-19 16:33:34.346 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-04-19 16:33:34.625 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 282.3819ms
+2023-04-19 16:33:34.675 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2023-04-19 16:33:34.681 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12028 application/javascript;+charset=utf-8 5.7588ms
+2023-04-19 16:33:34.778 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2023-04-19 16:33:34.840 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 61.9194ms
+2023-04-19 16:33:34.997 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-04-19 16:33:35.154 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 157.2743ms
+2023-04-19 16:34:19.256 -04:00 [INF] Request starting HTTP/2 POST https://localhost:7079/api/v1/Company/Collection application/json-patch+json 198
+2023-04-19 16:34:19.266 -04:00 [INF] CORS policy execution successful.
+2023-04-19 16:34:19.272 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.CreateCompanyCollection (RepositoryPatternArquitecture)'
+2023-04-19 16:34:19.305 -04:00 [INF] Route matched with {action = "CreateCompanyCollection", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Dtos.DtoModels.CompanyDto]] CreateCompanyCollection(System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyCreateDto]) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-19 16:34:20.919 -04:00 [INF] Executed DbCommand (55ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 60), @p2='?' (Size = 4000), @p3='?' (Size = 60), @p4='?' (DbType = Guid), @p5='?' (DbType = Int32), @p6='?' (DbType = Guid), @p7='?' (Size = 30), @p8='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Companies] ([CompanyId], [Address], [Country], [Name])
+VALUES (@p0, @p1, @p2, @p3);
+INSERT INTO [Employees] ([EmployeeId], [Age], [CompanyId], [Name], [Position])
+VALUES (@p4, @p5, @p6, @p7, @p8);
+2023-04-19 16:34:20.959 -04:00 [INF] Executing CreatedAtRouteResult, writing value of type 'System.Collections.Generic.List`1[[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-19 16:34:21.015 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.CreateCompanyCollection (RepositoryPatternArquitecture) in 1703.5262ms
+2023-04-19 16:34:21.018 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.CreateCompanyCollection (RepositoryPatternArquitecture)'
+2023-04-19 16:34:21.025 -04:00 [INF] Request finished HTTP/2 POST https://localhost:7079/api/v1/Company/Collection application/json-patch+json 198 - 201 93 application/json;+charset=utf-8 1769.5808ms
+2023-04-19 16:34:54.612 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-04-19 16:34:54.613 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-19 16:34:54.618 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-19 16:34:54.623 -04:00 [INF] Getting all the companies.
+2023-04-19 16:34:54.897 -04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-04-19 16:34:54.914 -04:00 [INF] Mapping to companiesDtos.
+2023-04-19 16:34:54.966 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-19 16:34:54.969 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 346.7016ms
+2023-04-19 16:34:54.972 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-19 16:34:54.973 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 918 application/json;+charset=utf-8 361.5717ms
+2023-04-19 16:35:30.887 -04:00 [INF] Request starting HTTP/2 DELETE https://localhost:7079/api/vb334f42f-cf84-4f06-6131-08db4115743f"/Company/1 - -
+2023-04-19 16:35:30.890 -04:00 [INF] CORS policy execution successful.
+2023-04-19 16:35:30.891 -04:00 [INF] Request finished HTTP/2 DELETE https://localhost:7079/api/vb334f42f-cf84-4f06-6131-08db4115743f"/Company/1 - - - 404 0 - 4.7171ms
+2023-04-19 16:35:45.065 -04:00 [INF] Request starting HTTP/2 DELETE https://localhost:7079/api/vb334f42f-cf84-4f06-6131-08db4115743f/Company/1 - -
+2023-04-19 16:35:45.066 -04:00 [INF] CORS policy execution successful.
+2023-04-19 16:35:45.068 -04:00 [INF] Request finished HTTP/2 DELETE https://localhost:7079/api/vb334f42f-cf84-4f06-6131-08db4115743f/Company/1 - - - 404 0 - 3.0547ms
+2023-04-19 16:36:08.877 -04:00 [INF] Request starting HTTP/2 DELETE https://localhost:7079/api/vb334f42f-cf84-4f06-6131-08db4115743f/Company/1 - -
+2023-04-19 16:36:08.879 -04:00 [INF] CORS policy execution successful.
+2023-04-19 16:36:08.881 -04:00 [INF] Request finished HTTP/2 DELETE https://localhost:7079/api/vb334f42f-cf84-4f06-6131-08db4115743f/Company/1 - - - 404 0 - 4.5088ms
+2023-04-19 16:36:20.304 -04:00 [INF] Request starting HTTP/2 DELETE https://localhost:7079/api/v1/Company/b334f42f-cf84-4f06-6131-08db4115743f - -
+2023-04-19 16:36:20.307 -04:00 [INF] CORS policy execution successful.
+2023-04-19 16:36:20.309 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.Delete (RepositoryPatternArquitecture)'
+2023-04-19 16:36:20.318 -04:00 [INF] Route matched with {action = "Delete", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.String) on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-19 16:36:20.394 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__Parse_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+WHERE [c].[CompanyId] = @__Parse_0
+2023-04-19 16:36:20.441 -04:00 [INF] Executed DbCommand (24ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Companies]
+OUTPUT 1
+WHERE [CompanyId] = @p0;
+2023-04-19 16:36:20.468 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-04-19 16:36:20.470 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.Delete (RepositoryPatternArquitecture) in 149.1918ms
+2023-04-19 16:36:20.473 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.Delete (RepositoryPatternArquitecture)'
+2023-04-19 16:36:20.475 -04:00 [INF] Request finished HTTP/2 DELETE https://localhost:7079/api/v1/Company/b334f42f-cf84-4f06-6131-08db4115743f - - - 204 - - 171.0176ms
+2023-04-19 16:36:41.091 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-04-19 16:36:41.094 -04:00 [INF] Executing endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-19 16:36:41.097 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller RepositoryPatternArquitecture.Controllers.CompanyController (RepositoryPatternArquitecture).
+2023-04-19 16:36:41.102 -04:00 [INF] Getting all the companies.
+2023-04-19 16:36:41.119 -04:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-04-19 16:36:41.126 -04:00 [INF] Mapping to companiesDtos.
+2023-04-19 16:36:41.128 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-19 16:36:41.133 -04:00 [INF] Executed action RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture) in 31.2868ms
+2023-04-19 16:36:41.137 -04:00 [INF] Executed endpoint 'RepositoryPatternArquitecture.Controllers.CompanyController.GetAll (RepositoryPatternArquitecture)'
+2023-04-19 16:36:41.140 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 826 application/json;+charset=utf-8 48.8589ms

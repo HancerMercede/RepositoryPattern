@@ -1,0 +1,9 @@
+2024-04-06 16:02:32.600 -04:00 [INF] Getting all the companies.
+2024-04-06 16:02:34.765 -04:00 [INF] Mapping to companiesDtos.
+2024-04-06 16:02:34.850 -04:00 [INF] Returning the result to the client.
+2024-04-06 16:02:51.307 -04:00 [INF] Getting all the employees for company Id 41ca47d3-0c31-47c4-bb61-7aad1cca61e5.
+2024-04-06 16:02:51.336 -04:00 [INF] Mapping to employeesDtos.
+2024-04-06 16:42:17.632 -04:00 [INF] Getting all the companies.
+2024-04-06 16:42:18.748 -04:00 [INF] Sending the request headers information.
+2024-04-06 16:42:18.756 -04:00 [INF] Mapping to companiesDtos.
+2024-04-06 16:42:18.807 -04:00 [INF] Returning the result to the client.

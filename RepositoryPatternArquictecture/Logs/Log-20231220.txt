@@ -1,0 +1,77 @@
+2023-12-20 21:13:28.526 -04:00 [INF] Now listening on: https://localhost:7079
+2023-12-20 21:13:28.577 -04:00 [INF] Now listening on: http://localhost:5215
+2023-12-20 21:13:28.588 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-12-20 21:13:28.591 -04:00 [INF] Hosting environment: Development
+2023-12-20 21:13:28.592 -04:00 [INF] Content root path: D:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\
+2023-12-20 21:13:29.053 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger - -
+2023-12-20 21:13:29.197 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger - - - 301 0 - 147.2354ms
+2023-12-20 21:13:29.233 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/index.html - -
+2023-12-20 21:13:29.583 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/index.html - - - 200 - text/html;charset=utf-8 349.3543ms
+2023-12-20 21:13:29.702 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/swagger-ui.css - -
+2023-12-20 21:13:29.704 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/swagger-ui-bundle.js - -
+2023-12-20 21:13:29.711 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/swagger-ui-standalone-preset.js - -
+2023-12-20 21:13:30.486 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - -
+2023-12-20 21:13:30.502 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_framework/aspnetcore-browser-refresh.js - - - 200 12390 application/javascript;+charset=utf-8 15.8729ms
+2023-12-20 21:13:30.536 -04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-12-20 21:13:30.536 -04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-12-20 21:13:30.536 -04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-12-20 21:13:30.538 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 827.1256ms
+2023-12-20 21:13:30.539 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/swagger-ui.css - - - 200 143943 text/css 837.6072ms
+2023-12-20 21:13:30.541 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/swagger-ui-bundle.js - - - 200 1096145 application/javascript 836.9218ms
+2023-12-20 21:13:30.687 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/_vs/browserLink - -
+2023-12-20 21:13:30.743 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 55.9135ms
+2023-12-20 21:13:30.885 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - -
+2023-12-20 21:13:30.906 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/swagger/favicon-32x32.png - -
+2023-12-20 21:13:30.907 -04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-12-20 21:13:30.910 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/favicon-32x32.png - - - 200 628 image/png 3.7922ms
+2023-12-20 21:13:31.026 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 140.8619ms
+2023-12-20 21:14:47.464 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company - -
+2023-12-20 21:14:47.491 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2023-12-20 21:14:47.512 -04:00 [INF] Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Dtos.DtoModels.CompanyDto]]] GetAll() on controller Presentation.Controllers.CompanyController (Presentation).
+2023-12-20 21:14:48.430 -04:00 [INF] Getting all the companies.
+2023-12-20 21:14:51.624 -04:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [Companies] AS [c]
+ORDER BY [c].[Name]
+2023-12-20 21:14:51.695 -04:00 [INF] Mapping to companiesDtos.
+2023-12-20 21:14:51.792 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Entities.Models.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Dtos.DtoModels.CompanyDto, Dtos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-12-20 21:14:51.971 -04:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAll (Presentation) in 4451.9065ms
+2023-12-20 21:14:51.974 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAll (Presentation)'
+2023-12-20 21:14:51.993 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company - - - 200 1004 application/json;+charset=utf-8 4528.4120ms
+2023-12-20 21:15:32.798 -04:00 [INF] Request starting HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - -
+2023-12-20 21:15:32.800 -04:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetByIds (Presentation)'
+2023-12-20 21:15:32.810 -04:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetByIds (Presentation)'
+2023-12-20 21:15:32.815 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinder`1[TElement]'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder..ctor(Type binderType)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider.GetBinder(ModelBinderProviderContext context)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory.CreateBinderCoreUncached(DefaultModelBinderProviderContext providerContext, Object token)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory.CreateBinder(ModelBinderFactoryContext context)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.GetParameterBindingInfo(IModelBinderFactory modelBinderFactory, IModelMetadataProvider modelMetadataProvider, ControllerActionDescriptor actionDescriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.CreateBinderDelegate(ParameterBinder parameterBinder, IModelBinderFactory modelBinderFactory, IModelMetadataProvider modelMetadataProvider, ControllerActionDescriptor actionDescriptor, MvcOptions mvcOptions)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerRequestDelegateFactory.<>c__DisplayClass12_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-12-20 21:15:32.827 -04:00 [ERR] Something went wrong: System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinder`1[TElement]'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinder..ctor(Type binderType)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider.GetBinder(ModelBinderProviderContext context)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory.CreateBinderCoreUncached(DefaultModelBinderProviderContext providerContext, Object token)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory.CreateBinder(ModelBinderFactoryContext context)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.GetParameterBindingInfo(IModelBinderFactory modelBinderFactory, IModelMetadataProvider modelMetadataProvider, ControllerActionDescriptor actionDescriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.CreateBinderDelegate(ParameterBinder parameterBinder, IModelBinderFactory modelBinderFactory, IModelMetadataProvider modelMetadataProvider, ControllerActionDescriptor actionDescriptor, MvcOptions mvcOptions)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerRequestDelegateFactory.<>c__DisplayClass12_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2023-12-20 21:15:32.833 -04:00 [INF] Request finished HTTP/2 GET https://localhost:7079/api/v1/Company/Collection/{Ids}?Ids=41ca47d3-0c31-47c4-bb61-7aad1cca61e5 - - - 500 - application/json 35.1126ms

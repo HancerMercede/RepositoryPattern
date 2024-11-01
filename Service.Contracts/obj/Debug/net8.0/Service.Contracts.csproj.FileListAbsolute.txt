@@ -1,0 +1,17 @@
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\bin\Debug\net8.0\Service.Contracts.deps.json
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\bin\Debug\net8.0\Service.Contracts.dll
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\bin\Debug\net8.0\Service.Contracts.pdb
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\bin\Debug\net8.0\Entities.dll
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\bin\Debug\net8.0\Shared.dll
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\bin\Debug\net8.0\Entities.pdb
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\bin\Debug\net8.0\Shared.pdb
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\Service.Contracts.csproj.AssemblyReference.cache
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\Service.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\Service.Contracts.AssemblyInfoInputs.cache
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\Service.Contracts.AssemblyInfo.cs
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\Service.Contracts.csproj.CoreCompileInputs.cache
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\Service..DEC3DE55.Up2Date
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\Service.Contracts.dll
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\refint\Service.Contracts.dll
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\Service.Contracts.pdb
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\ref\Service.Contracts.dll

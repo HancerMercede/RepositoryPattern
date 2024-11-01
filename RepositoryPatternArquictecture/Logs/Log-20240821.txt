@@ -1,0 +1,8 @@
+2024-08-21 12:48:23.439 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2024-08-21 12:48:52.696 -04:00 [INF] Getting all the companies.
+2024-08-21 12:48:55.706 -04:00 [INF] Sending the request headers information.
+2024-08-21 12:48:59.512 -04:00 [INF] Mapping to companiesDtos.
+2024-08-21 12:49:01.348 -04:00 [INF] Returning the result to the client.
+2024-08-21 12:49:26.988 -04:00 [INF] Getting all the companies by id.
+2024-08-21 12:49:28.237 -04:00 [INF] Verify if the company exist.
+2024-08-21 12:49:30.171 -04:00 [INF] Company with Id: 41ca47d3-0c31-47c4-bb61-7aad1cca61e4 does not exist in the database.

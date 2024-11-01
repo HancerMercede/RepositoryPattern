@@ -1,0 +1,7 @@
+version: '3.0'
+services:
+  repositoryarquitecture:
+  image:  7133a2f40a9a
+  ports:
+    - "8080:5000"
+    - "8081:5001"z

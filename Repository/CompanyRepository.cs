@@ -1,0 +1,68 @@
+﻿using Contracts.Interfaces;
+using Entities.Models;
+using Microsoft.EntityFrameworkCore;
+using Persistence.Context;
+using Shared.RequestFeatures;
+using Shared.Shared;
+
+namespace Repository;
+
+public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
+{
+    public 
+        CompanyRepository(RepositoryContext repositoryContext) 
+        : base(repositoryContext)
+    {
+
+    }
+
+    public async Task<PageList<Company>> GetAll(PaginationParameters paginationParameters, bool trackChanges)
+    {
+        var companies = await FindAll(trackChanges)
+           .OrderBy(c => c.Name)
+           .ToListAsync();
+
+        var pagination = PageList<Company>.ToPageList(companies, paginationParameters.PageNumber, paginationParameters.PageSize);
+
+
+        return pagination;
+    }
+
+    public async Task<Company> GetByCondiction(string Id, bool trackChanges)
+    {
+        var company = await FindByCondiction(c => c.Id == Guid.Parse(Id),
+            trackChanges)
+            .Include(e => e.Employees)
+            .FirstOrDefaultAsync();
+
+        return company!;
+    }
+
+    public async Task<Company> CreateCompany(Company company)
+    {
+        await Create(company);
+        return company;
+    }
+
+    public async Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> Ids, bool trackChanges)
+    {
+        var companies = await FindByCondiction(x => Ids.Contains(x.Id), trackChanges)
+            .OrderBy(x=>x.Name)
+            .ToListAsync();
+
+        return companies;
+    }
+
+    public async Task DeleteCompany(string Id, bool trackChanges)
+    {
+        var dbcompany = await FindByCondiction(c => c.Id == Guid.Parse(Id), trackChanges)
+            .FirstOrDefaultAsync();
+
+        await Delete(dbcompany!);
+    }
+
+    public Task<PageList<Company>> GetAll(Company pagination, bool trackChanges)
+    {
+        throw new NotImplementedException();
+    }
+}
