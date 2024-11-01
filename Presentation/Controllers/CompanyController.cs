@@ -44,7 +44,7 @@ public class CompanyController : ControllerBase
         return Ok(companiesDto);
     }
 
-    [HttpGet("Collection/{Ids}", Name = "CompanyCollection")]
+    [HttpGet("Collection/{ids}", Name = "CompanyCollection")]
     [ProducesResponseType(200)]
     [ProducesResponseType(404)]
     public async Task<ActionResult<IEnumerable<CompanyDto>>> GetByIds([ModelBinder(BinderType = typeof(ArrayModelBinder<>))]
@@ -62,19 +62,19 @@ public class CompanyController : ControllerBase
     
     
 
-    [HttpGet("{Id}", Name = "GetById")]
+    [HttpGet("{id}", Name = "GetById")]
     [ProducesResponseType(200)]
     [ProducesResponseType(404)]
-    public async Task<ActionResult<CompanyDto>> Get(string Id)
+    public async Task<ActionResult<CompanyDto>> Get(string id)
     {
         _logger.LogInformation("Getting all the companies by id.");
-        var company = await _serviceManager.CompanyService.GetByCondiction(Id, false);
+        var company = await _serviceManager.CompanyService.GetByCondiction(id, trackChanges:false);
 
         _logger.LogInformation("Verify if the company exist.");
         if (company is null)
         {
-            _logger.LogInformation($"Company with Id: {Id} does not exist in the database.");
-            return NotFound($"Company with Id: {Id} does not exist in the database.");
+            _logger.LogInformation($"Company with Id: {id} does not exist in the database.");
+            return NotFound($"Company with Id: {id} does not exist in the database.");
         }
 
         //var companyDto = _mapper.Map<CompanyDto>(company);
@@ -88,7 +88,7 @@ public class CompanyController : ControllerBase
     [HttpPost(Name = "CreateCompany")]
     [ProducesResponseType(201)]
     [ProducesResponseType(400)]
-    public async Task<ActionResult<CompanyDto>> Create([FromBody] CompanyCreateDto model)
+    public async Task<ActionResult<CompanyDto>> Create([FromBody] CompanyCreateDto? model)
     {
         if (model is null)
             return BadRequest();
@@ -102,7 +102,7 @@ public class CompanyController : ControllerBase
         return CreatedAtRoute("GetById", new { Id = dto.Id }, dto);
     }
     [HttpPost("Collection")]
-    public async Task<ActionResult<CompanyDto>> CreateCompanyCollection([FromBody] IEnumerable<CompanyCreateDto> companies)
+    public async Task<ActionResult<CompanyDto>> CreateCompanyCollection([FromBody] IEnumerable<CompanyCreateDto>? companies)
     {
         if (companies is null)
         {
@@ -129,7 +129,7 @@ public class CompanyController : ControllerBase
     [ProducesResponseType(204)]
     [ProducesResponseType(404)]
     [ProducesResponseType(400)]
-    public async Task<IActionResult> Update(string companyId, [FromBody] CompanyUpdateDto model)
+    public async Task<IActionResult> Update(string companyId, [FromBody] CompanyUpdateDto? model)
     {
 
         if (model is null) { _logger.LogError("Error: the model can be null"); return BadRequest("Error: the model can be null"); }
