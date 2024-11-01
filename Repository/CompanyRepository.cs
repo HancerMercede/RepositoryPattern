@@ -33,7 +33,7 @@ public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
         var company = await FindByCondiction(c => c.Id == Guid.Parse(Id),
             trackChanges)
             .Include(e => e.Employees)
-            .FirstOrDefaultAsync();
+            .SingleOrDefaultAsync();
 
         return company!;
     }

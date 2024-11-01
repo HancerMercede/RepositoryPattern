@@ -20,11 +20,13 @@
     <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
+    <branch-grouping />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/RepositoryPatternArquictecture" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/294078ecfce6fdb942ecfee089f09717de7a6fcfe5efd9fdb6f4f93c0fb4813/ActionMethodExecutor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c960bbdd47d8ec89f4b07dbedf1e6d21d031b0112c2f602c8dfdafb82535c2be/FromQueryAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fb367341658aaedd7de424d4c9189db33c4387e268dcc4011918569442ab12/AsyncTaskMethodBuilderT.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -41,7 +43,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;.NET Launch Settings Profile.RepositoryPatternArquitecture: CompanyEmployees.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.RepositoryPatternArquitecture: https.executor&quot;: &quot;Debug&quot;,
+    &quot;.NET Launch Settings Profile.RepositoryPatternArquitecture: https.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
@@ -52,11 +54,13 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [],
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
+    ],
     &quot;DatabaseDriversLRU&quot;: [
       &quot;sqlserver&quot;
     ]
@@ -139,7 +143,7 @@
       <workItem from="1682451625399" duration="11246000" />
       <workItem from="1683505259963" duration="4044000" />
       <workItem from="1730467202100" duration="3193000" />
-      <workItem from="1730474582511" duration="7666000" />
+      <workItem from="1730474582511" duration="9320000" />
     </task>
     <servers />
   </component>
@@ -202,6 +206,14 @@
                       </list>
                     </value>
                   </entry>
+                  <entry key="date">
+                    <value>
+                      <list>
+                        <option value="1730414207293" />
+                        <option value="" />
+                      </list>
+                    </value>
+                  </entry>
                   <entry key="user">
                     <value>
                       <list>
@@ -225,26 +237,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Presentation/Controllers/CompanyController.cs</url>
-          <line>26</line>
-          <properties documentPath="E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\CompanyController.cs" containingFunctionPresentation="Method 'GetAll'">
-            <startOffsets>
-              <option value="868" />
-            </startOffsets>
-            <endOffsets>
-              <option value="869" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Presentation/Controllers/CompanyController.cs</url>
-          <line>68</line>
+          <line>66</line>
           <properties documentPath="E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\CompanyController.cs" containingFunctionPresentation="Method 'Get'">
             <startOffsets>
-              <option value="2492" />
+              <option value="2450" />
             </startOffsets>
             <endOffsets>
-              <option value="2493" />
+              <option value="2451" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="9" />

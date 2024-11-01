@@ -3716,3 +3716,4 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2024-11-01 18:33:54.897 -04:00 [INF] Getting all the companies by id.
 2024-11-01 18:33:55.782 -04:00 [INF] Verify if the company exist.
 2024-11-01 18:33:59.324 -04:00 [INF] Company with Id: 41ca47d3-0c31-47c4-bb61-7aad1cca61e4 does not exist in the database.
+2024-11-01 18:54:22.794 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.

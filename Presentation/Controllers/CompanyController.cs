@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace Presentation.Controllers;
+﻿namespace Presentation.Controllers;
 
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiVersion("1.0")]
@@ -37,7 +35,7 @@ public class CompanyController : ControllerBase
         if (!dbEntities.companies.Any()) return NotFound();
 
 
-        _logger.LogInformation("Mapping to companiesDtos.");
+        _logger.LogInformation("Mapping to companiesDto.");
         var companiesDto = dbEntities.companies.Adapt<IEnumerable<CompanyDto>>();
 
         _logger.LogInformation("Returning the result to the client.");
@@ -53,7 +51,7 @@ public class CompanyController : ControllerBase
         _logger.LogInformation("Getting all the companies by ids.");
         var companies = await _serviceManager.CompanyService.GetByIds(ids, trackChanges: false);
        
-        _logger.LogInformation("Mapping to companies dtos.");
+        _logger.LogInformation("Mapping to companies Dto.");
         var companiesDto = companies.Adapt<IEnumerable<CompanyDto>>();
 
         _logger.LogInformation("Returning the result to the client.");
@@ -68,7 +66,7 @@ public class CompanyController : ControllerBase
     public async Task<ActionResult<CompanyDto>> Get(string id)
     {
         _logger.LogInformation("Getting all the companies by id.");
-        var company = await _serviceManager.CompanyService.GetByCondiction(id, trackChanges:false);
+        var company = await _serviceManager.CompanyService.GetByCondition(id, trackChanges:false);
 
         _logger.LogInformation("Verify if the company exist.");
         if (company is null)
@@ -99,7 +97,7 @@ public class CompanyController : ControllerBase
         await _serviceManager.CompanyService.SaveChanges();
 
         var dto = _mapper.Map<CompanyDto>(dbEntity);
-        return CreatedAtRoute("GetById", new { Id = dto.Id }, dto);
+        return CreatedAtRoute("GetById", new { id = dto.Id }, dto);
     }
     [HttpPost("Collection")]
     public async Task<ActionResult<CompanyDto>> CreateCompanyCollection([FromBody] IEnumerable<CompanyCreateDto>? companies)
@@ -119,10 +117,10 @@ public class CompanyController : ControllerBase
         
         await _serviceManager.CompanyService.SaveChanges();
         
-        var dtos = dbcompanies.Adapt<IEnumerable<CompanyDto>>();
-        var ids = string.Join(',', dtos.Select(c => c.Id));
+        var companiesDto = dbcompanies.Adapt<IEnumerable<CompanyDto>>();
+        var ids = string.Join(',', companiesDto.Select(c => c.Id));
 
-        return CreatedAtRoute("CompanyCollection", new { ids }, dtos);
+        return CreatedAtRoute("CompanyCollection", new { ids }, companiesDto);
 
     }
     [HttpPut]
@@ -135,7 +133,7 @@ public class CompanyController : ControllerBase
         if (model is null) { _logger.LogError("Error: the model can be null"); return BadRequest("Error: the model can be null"); }
        
 
-        var dbEntity = await _serviceManager.CompanyService.GetByCondiction(companyId, trackChanges: true);
+        var dbEntity = await _serviceManager.CompanyService.GetByCondition(companyId, trackChanges: true);
 
         if (dbEntity is null) return NotFound();
 

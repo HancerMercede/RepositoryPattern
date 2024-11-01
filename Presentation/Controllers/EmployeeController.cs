@@ -23,10 +23,10 @@ public class EmployeeController : ControllerBase
     [ProducesResponseType(200)]
     [ProducesResponseType(404)]
     [ProducesResponseType(403)]
-    public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetAll(string companyId,[FromQuery] PaginationParameters PaginationParameters)
+    public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetAll(string companyId,[FromQuery] PaginationParameters paginationParameters)
     {
 
-        var existCompany = await _service.CompanyService.GetByCondiction(companyId, trackChanges: false);
+        var existCompany = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
         
         if (existCompany is null)
         {
@@ -36,7 +36,7 @@ public class EmployeeController : ControllerBase
 
 
         _logger.LogInformation($"Getting all the employees for company Id {companyId}.");
-        var employees = await _service.EmployeeService.GetAll(companyId, PaginationParameters, trackChanges: false);
+        var employees = await _service.EmployeeService.GetAll(companyId, paginationParameters, trackChanges: false);
 
         _logger.LogInformation("Adding the information to request headers.");
         var queryable = employees.Employees.AsQueryable();
@@ -62,7 +62,7 @@ public class EmployeeController : ControllerBase
     [ProducesResponseType(400)]
     public async Task<ActionResult<EmployeeDto>> Get(string companyId, string Id)
     {
-        var existCompany = await _service.CompanyService.GetByCondiction(companyId, trackChanges: false);
+        var existCompany = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
 
         if (existCompany is null)
         {
@@ -100,7 +100,7 @@ public class EmployeeController : ControllerBase
             return UnprocessableEntity(ModelState);
         }
 
-        var Existcompany = await _service.CompanyService.GetByCondiction(companyId, trackChanges: false);
+        var Existcompany = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
 
         if (Existcompany is null)
         {
@@ -123,7 +123,7 @@ public class EmployeeController : ControllerBase
     [ProducesResponseType(404)]
     public async Task<IActionResult> Delete(string companyId, string Id)
     {
-        var existcompany = await _service.CompanyService.GetByCondiction(companyId, trackChanges: false);
+        var existcompany = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
 
         if (existcompany is null)
         {
@@ -155,7 +155,7 @@ public class EmployeeController : ControllerBase
             return UnprocessableEntity(ModelState);
         }
 
-        var company = await _service.CompanyService.GetByCondiction(companyId, trackChanges: false);
+        var company = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
         if (company is null)
         {
             _logger.LogInformation($"The company with Id: {companyId} does not exist in the database.");
@@ -178,11 +178,11 @@ public class EmployeeController : ControllerBase
         return NoContent();
     }
 
-    [HttpPatch("{Id}")]
+    [HttpPatch("{id}")]
     [ProducesResponseType(204)]
     [ProducesResponseType(404)]
     [ProducesResponseType(400)]
-    public async Task<IActionResult> Path(string CompanyId, string Id, [FromBody] JsonPatchDocument<EmployeeUpdateDto> pacthDoc)
+    public async Task<IActionResult> Path(string companyId, string id, [FromBody] JsonPatchDocument<EmployeeUpdateDto> pacthDoc)
     {
 
         if (pacthDoc is null)
@@ -191,18 +191,18 @@ public class EmployeeController : ControllerBase
             return BadRequest("The model can not be null");
         }
 
-        var company = await _service.CompanyService.GetByCondiction(CompanyId, trackChanges: false);
+        var company = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
         if (company is null)
         {
-            _logger.LogInformation($"The company with Id:{CompanyId} does not exist.");
-            return NotFound($"The company with Id:{CompanyId} does not exist.");
+            _logger.LogInformation($"The company with Id:{companyId} does not exist.");
+            return NotFound($"The company with Id:{companyId} does not exist.");
         }
-        // Here i have to track the entity to change the state to modified and being able to save the changes.
-        var employeeDb = await _service.EmployeeService.GetByCondiction(CompanyId, Id, trackChanges: true);
+        // Here I have to track the entity to change the state to modified and being able to save the changes.
+        var employeeDb = await _service.EmployeeService.GetByCondiction(companyId, id, trackChanges: true);
         if (employeeDb is null)
         {
-            _logger.LogInformation($"The employee with Id:{Id} does not exist in the database.");
-            return NotFound($"The employee with Id:{Id} does not exist in the database.");
+            _logger.LogInformation($"The employee with Id:{id} does not exist in the database.");
+            return NotFound($"The employee with Id:{id} does not exist in the database.");
         }
 
         var employeeToPath = _mapper.Map<EmployeeUpdateDto>(employeeDb);
