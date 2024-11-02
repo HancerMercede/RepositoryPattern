@@ -127,16 +127,12 @@ public class CompanyController : ControllerBase
     [ProducesResponseType(400)]
     public async Task<IActionResult> Update(string companyId, [FromBody] CompanyUpdateDto? model)
     {
-
         if (model is null) { _logger.LogError("Error: the model can be null"); throw new CompanyBadRequestException(); }
-       
-
+        
         var dbEntity = await _serviceManager.CompanyService.GetByCondition(companyId, trackChanges: true);
 
         if (dbEntity is null) return NotFound();
-
-
-        // _mapper.Map(model, dbEntity);
+        
         model.Adapt(dbEntity);
         await _serviceManager.CompanyService.SaveChanges();
         return NoContent();

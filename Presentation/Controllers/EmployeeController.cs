@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.JsonPatch;
+﻿using Entities.Exceptions;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Presentation.Controllers;
 
@@ -31,10 +32,8 @@ public class EmployeeController : ControllerBase
         if (existCompany is null)
         {
             _logger.LogInformation($"The company with Id: {companyId} does not exist in the database.");
-            return NotFound($"The company with Id: {companyId} does not exist in the database.");
+            throw new CompanyNotFoundException(Guid.Parse(companyId));
         }
-
-
         _logger.LogInformation($"Getting all the employees for company Id {companyId}.");
         var employees = await _service.EmployeeService.GetAll(companyId, paginationParameters, trackChanges: false);
 
@@ -67,7 +66,7 @@ public class EmployeeController : ControllerBase
         if (existCompany is null)
         {
             _logger.LogInformation($"The company with Id: {companyId} does not exist in the database.");
-            return NotFound($"The company with Id: {companyId} does not exist in the database.");
+            throw new CompanyNotFoundException(Guid.Parse(companyId));
         }
 
         var employee = await _service.EmployeeService.GetByCondition(companyId, id, trackChanges: false);
@@ -105,7 +104,7 @@ public class EmployeeController : ControllerBase
         if (existcompany is null)
         {
             _logger.LogInformation($"The company with Id: {companyId} does not exist in the database.");
-            return NotFound($"The company with Id: {companyId} does not exist in the database.");
+            throw new CompanyNotFoundException(Guid.Parse(companyId));
         }
 
         var dbEntity = _mapper.Map<Employee>(model);
@@ -128,7 +127,7 @@ public class EmployeeController : ControllerBase
         if (existcompany is null)
         {
             _logger.LogInformation($"The company with Id: {companyId} does not exist in the database.");
-            return NotFound($"The company with Id: {companyId} does not exist in the database.");
+            throw new CompanyNotFoundException(Guid.Parse(companyId));
         }
 
         await _service.EmployeeService.DeleteEmployee(companyId, id, trackChanges: true);
@@ -155,11 +154,11 @@ public class EmployeeController : ControllerBase
             return UnprocessableEntity(ModelState);
         }
 
-        var company = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
-        if (company is null)
+        var existcompany = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
+        if (existcompany is null)
         {
             _logger.LogInformation($"The company with Id: {companyId} does not exist in the database.");
-            return BadRequest($"The company with Id: {companyId} does not exist in the database.");
+            throw new CompanyNotFoundException(Guid.Parse(companyId));
         }
 
         // Modelo conectado aqui para que ef pueda seguir los cambios que recibe la entidad
@@ -191,11 +190,11 @@ public class EmployeeController : ControllerBase
             return BadRequest("The model can not be null");
         }
 
-        var company = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
-        if (company is null)
+        var existcompany = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
+        if (existcompany is null)
         {
             _logger.LogInformation($"The company with Id:{companyId} does not exist.");
-            return NotFound($"The company with Id:{companyId} does not exist.");
+            throw new CompanyNotFoundException(Guid.Parse(companyId));
         }
         // Here I have to track the entity to change the state to modified and being able to save the changes.
         var employeeDb = await _service.EmployeeService.GetByCondition(companyId, id, trackChanges: true);
