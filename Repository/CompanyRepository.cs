@@ -30,7 +30,7 @@ public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
 
     public async Task<Company> GetByCondition(string id, bool trackChanges)
     {
-        var company = await FindByCondiction(c => c.Id == Guid.Parse(id),
+        var company = await FindByCondition(c => c.Id == Guid.Parse(id),
             trackChanges)
             .Include(e => e.Employees)
             .SingleOrDefaultAsync();
@@ -46,7 +46,7 @@ public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
 
     public async Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
     {
-        var companies = await FindByCondiction(x => ids.Contains(x.Id), trackChanges)
+        var companies = await FindByCondition(x => ids.Contains(x.Id), trackChanges)
             .OrderBy(x=>x.Name)
             .ToListAsync();
 
@@ -55,7 +55,7 @@ public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
 
     public async Task DeleteCompany(string id, bool trackChanges)
     {
-        var company = await FindByCondiction(c => c.Id == Guid.Parse(id), trackChanges)
+        var company = await FindByCondition(c => c.Id == Guid.Parse(id), trackChanges)
             .FirstOrDefaultAsync();
 
         await Delete(company!);

@@ -18,7 +18,7 @@ public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
     public async Task<PageList<Employee>> GetAll(string companyId, PaginationParameters paginationParameters, bool trackChanges)
     
     {
-        var employees = await FindByCondiction(c => c.CompanyId == Guid.Parse(companyId), trackChanges)
+        var employees = await FindByCondition(c => c.CompanyId == Guid.Parse(companyId), trackChanges)
             .OrderBy(e => e.Name)
             .ToListAsync();
 
@@ -30,7 +30,7 @@ public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
     
     public async Task<Employee> GetByCondition(string companyId, string employeeId, bool trackChanges)
     {
-        var employee = await FindByCondiction(c => c.CompanyId == Guid.Parse(companyId) 
+        var employee = await FindByCondition(c => c.CompanyId == Guid.Parse(companyId) 
                                                && c.Id == Guid.Parse(employeeId), trackChanges)
                                               .SingleOrDefaultAsync();
         return employee!;
@@ -46,7 +46,7 @@ public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
 
     public async Task DeleteEmployee(string companyId, string id, bool trackChanges)
     {
-        var dbEntity = await FindByCondiction(c => c.CompanyId == Guid.Parse(companyId) && c.Id == Guid.Parse(id), trackChanges)
+        var dbEntity = await FindByCondition(c => c.CompanyId == Guid.Parse(companyId) && c.Id == Guid.Parse(id), trackChanges)
             .SingleOrDefaultAsync();
 
         await Delete(dbEntity!);

@@ -10,6 +10,5 @@ public interface IEmployeeService
     Task<Employee> GetByCondition(string companyId, string id, bool trackChanges);
     Task<Employee> CreateEmployee(string companyId, Employee employee);
     Task DeleteEmployee(string companyId, string id, bool trackChanges);
-
     Task SaveChanges();
 }

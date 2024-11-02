@@ -50,7 +50,7 @@ public class EmployeeController : ControllerBase
 
 
         _logger.LogInformation("Mapping to employeesDtos.");
-        var employeesDtos = employees.Employees.Adapt<IEnumerable<EmployeeDto>>();
+        var employeesDtos = employees.Employees.Adapt<IEnumerable<EmployeeToShowToClientDto>>();
 
         return Ok(employeesDtos);
     }
@@ -74,10 +74,10 @@ public class EmployeeController : ControllerBase
         if (employee is null)
         {
             _logger.LogInformation($"The employee with the Id:{id} does not exist in the database.");
-            return NotFound($"The employee with the Id:{id} does not exist in the database.");
+            throw new EmployeeNotFoundException(Guid.Parse(id));
         }
 
-        var employeeDto = employee.Adapt<EmployeeDto>();
+        var employeeDto = employee.Adapt<EmployeeToShowToClientDto>();
 
         return Ok(employeeDto);
     }
@@ -129,7 +129,15 @@ public class EmployeeController : ControllerBase
             _logger.LogInformation($"The company with Id: {companyId} does not exist in the database.");
             throw new CompanyNotFoundException(Guid.Parse(companyId));
         }
+         var employeeExist = await _service.EmployeeService.GetByCondition(companyId, id, trackChanges: false);
 
+         if (employeeExist is null)
+         {
+             _logger.LogInformation($"The employee with Id: {companyId} does not exist in the database.");
+             throw new EmployeeNotFoundException(Guid.Parse(id));
+         }
+         
+         _logger.LogInformation($"Deleting the employee for company {companyId}");
         await _service.EmployeeService.DeleteEmployee(companyId, id, trackChanges: true);
         await _service.EmployeeService.SaveChanges();
 

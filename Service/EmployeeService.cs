@@ -25,8 +25,9 @@ public class EmployeeService:IEmployeeService
         return (Employees: employees, metaData: metadata); 
     }
 
-    public async Task<Employee> GetByCondition(string companyId, string id, bool trackChanges) => 
-        await _repositoryManager.Employee.GetByCondition(companyId, id,trackChanges);
+    public async Task<Employee> GetByCondition(string companyId, string id, bool trackChanges) =>
+    await _repositoryManager.Employee.GetByCondition(companyId, id,trackChanges);
+   
 
     public async Task SaveChanges()
     {
