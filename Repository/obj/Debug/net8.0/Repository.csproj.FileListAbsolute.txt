@@ -19,3 +19,4 @@ E:\Mis Archivos\RepositoryPattern\Repository\obj\Debug\net8.0\Repository.dll
 E:\Mis Archivos\RepositoryPattern\Repository\obj\Debug\net8.0\refint\Repository.dll
 E:\Mis Archivos\RepositoryPattern\Repository\obj\Debug\net8.0\Repository.pdb
 E:\Mis Archivos\RepositoryPattern\Repository\obj\Debug\net8.0\ref\Repository.dll
+E:\Mis Archivos\RepositoryPattern\Repository\obj\Debug\net8.0\Repository.sourcelink.json

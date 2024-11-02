@@ -17,26 +17,14 @@ internal sealed class CompanyService:ICompanyService
         return (companies, metaData);
     }
 
-    public async Task<Company> GetByCondition(string id, bool trackChanges)
-    {
-       return await _repositoryManager.Company.GetByCondiction(id, trackChanges);
-    }
+    public async Task<Company> GetByCondition(string id, bool trackChanges) => await _repositoryManager.Company.GetByCondiction(id, trackChanges);
 
-    public async Task<Company> CreateCompany(Company company)
-    {
-        return await _repositoryManager.Company.CreateCompany(company);
-    }
+    public async Task<Company> CreateCompany(Company company) => await _repositoryManager.Company.CreateCompany(company);
 
-    public async Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
-    {
-        return await _repositoryManager.Company.GetByIds(ids, trackChanges);
-    }
+    public async Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> ids, bool trackChanges) => await _repositoryManager.Company.GetByIds(ids, trackChanges);
 
-    public async Task DeleteCompany(string id, bool trackChanges)
-    {
-        await _repositoryManager.Company.DeleteCompany(id, trackChanges);
-    }
-
+    public async Task DeleteCompany(string id, bool trackChanges) => await _repositoryManager.Company.DeleteCompany(id, trackChanges);
+    
     public async Task SaveChanges()
     {
         await _repositoryManager.Save();
