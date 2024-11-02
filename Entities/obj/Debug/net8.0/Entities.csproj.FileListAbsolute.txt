@@ -9,3 +9,4 @@ E:\Mis Archivos\RepositoryPattern\Entities\obj\Debug\net8.0\Entities.dll
 E:\Mis Archivos\RepositoryPattern\Entities\obj\Debug\net8.0\refint\Entities.dll
 E:\Mis Archivos\RepositoryPattern\Entities\obj\Debug\net8.0\Entities.pdb
 E:\Mis Archivos\RepositoryPattern\Entities\obj\Debug\net8.0\ref\Entities.dll
+E:\Mis Archivos\RepositoryPattern\Entities\obj\Debug\net8.0\Entities.sourcelink.json

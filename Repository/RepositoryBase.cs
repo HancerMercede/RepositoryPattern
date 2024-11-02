@@ -28,7 +28,6 @@ public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     public async Task Create(T entity) => await _repositoryContext.Set<T>().AddAsync(entity);
 
     public async Task Update(T entity) => await Task.FromResult(_repositoryContext.Set<T>().Update(entity));
-
     public async Task Delete(T entity) => await Task.FromResult(_repositoryContext.Set<T>().Remove(entity));
 
 }

@@ -28,9 +28,9 @@ public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
         return pagination;
     }
 
-    public async Task<Company> GetByCondiction(string Id, bool trackChanges)
+    public async Task<Company> GetByCondition(string id, bool trackChanges)
     {
-        var company = await FindByCondiction(c => c.Id == Guid.Parse(Id),
+        var company = await FindByCondiction(c => c.Id == Guid.Parse(id),
             trackChanges)
             .Include(e => e.Employees)
             .SingleOrDefaultAsync();
@@ -38,27 +38,27 @@ public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
         return company!;
     }
 
-    public async Task<Company> CreateCompany(Company company)
+    public async Task<Company> CreateRecord(Company company)
     {
         await Create(company);
         return company;
     }
 
-    public async Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> Ids, bool trackChanges)
+    public async Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
     {
-        var companies = await FindByCondiction(x => Ids.Contains(x.Id), trackChanges)
+        var companies = await FindByCondiction(x => ids.Contains(x.Id), trackChanges)
             .OrderBy(x=>x.Name)
             .ToListAsync();
 
         return companies;
     }
 
-    public async Task DeleteCompany(string Id, bool trackChanges)
+    public async Task DeleteCompany(string id, bool trackChanges)
     {
-        var dbcompany = await FindByCondiction(c => c.Id == Guid.Parse(Id), trackChanges)
+        var company = await FindByCondiction(c => c.Id == Guid.Parse(id), trackChanges)
             .FirstOrDefaultAsync();
 
-        await Delete(dbcompany!);
+        await Delete(company!);
     }
 
     public Task<PageList<Company>> GetAll(Company pagination, bool trackChanges)

@@ -19,3 +19,4 @@ E:\Mis Archivos\RepositoryPattern\Service\obj\Debug\net8.0\Service.dll
 E:\Mis Archivos\RepositoryPattern\Service\obj\Debug\net8.0\refint\Service.dll
 E:\Mis Archivos\RepositoryPattern\Service\obj\Debug\net8.0\Service.pdb
 E:\Mis Archivos\RepositoryPattern\Service\obj\Debug\net8.0\ref\Service.dll
+E:\Mis Archivos\RepositoryPattern\Service\obj\Debug\net8.0\Service.sourcelink.json

@@ -9,3 +9,4 @@ E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net8.0\Dtos.dll
 E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net8.0\refint\Dtos.dll
 E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net8.0\Dtos.pdb
 E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net8.0\ref\Dtos.dll
+E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net8.0\Dtos.sourcelink.json

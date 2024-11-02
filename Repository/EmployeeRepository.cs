@@ -15,10 +15,10 @@ public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
 
     }
 
-    public async Task<PageList<Employee>> GetAll(string CompanyId, PaginationParameters paginationParameters, bool trackChanges)
+    public async Task<PageList<Employee>> GetAll(string companyId, PaginationParameters paginationParameters, bool trackChanges)
     
     {
-        var employees = await FindByCondiction(c => c.CompanyId == Guid.Parse(CompanyId), trackChanges)
+        var employees = await FindByCondiction(c => c.CompanyId == Guid.Parse(companyId), trackChanges)
             .OrderBy(e => e.Name)
             .ToListAsync();
 
@@ -28,36 +28,27 @@ public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
         return pagination;
     }
     
-    public async Task<Employee> GetByCondiction(string CompanyId, string EmployeeId, bool trackChanges)
+    public async Task<Employee> GetByCondition(string companyId, string employeeId, bool trackChanges)
     {
-        var employee = await FindByCondiction(c => c.CompanyId == Guid.Parse(CompanyId) 
-                                               && c.Id == Guid.Parse(EmployeeId), trackChanges)
+        var employee = await FindByCondiction(c => c.CompanyId == Guid.Parse(companyId) 
+                                               && c.Id == Guid.Parse(employeeId), trackChanges)
                                               .SingleOrDefaultAsync();
         return employee!;
     }
 
-    public async Task<Employee> CreateEmployeeForCompany(string CompanyId, Employee employee)
+    public async Task<Employee> CreateEmployeeForCompany(string companyId, Employee employee)
     {
-        employee.CompanyId = Guid.Parse(CompanyId);
+        employee.CompanyId = Guid.Parse(companyId);
         await Create(employee);
 
         return employee;
     }
 
-    public async Task DeleteEmployee(string CompanyId, string Id, bool trackChanges)
+    public async Task DeleteEmployee(string companyId, string id, bool trackChanges)
     {
-        var dbEntity = await FindByCondiction(c => c.CompanyId == Guid.Parse(CompanyId) && c.Id == Guid.Parse(Id), trackChanges)
+        var dbEntity = await FindByCondiction(c => c.CompanyId == Guid.Parse(companyId) && c.Id == Guid.Parse(id), trackChanges)
             .SingleOrDefaultAsync();
 
         await Delete(dbEntity!);
     }
-    // I'm not using this Method Now
-    /* public async Task UpdateEmployee(string CompanyId, string Id, bool trackChanges)
-     {
-
-         var dbEntity = await FindByCondiction(c => c.CompanyId == Guid.Parse(CompanyId) && c.Id == Guid.Parse(Id), trackChanges)
-             .SingleOrDefaultAsync();
-
-         await Update(dbEntity!);
-     }*/
 }

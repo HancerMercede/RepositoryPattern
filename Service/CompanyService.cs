@@ -8,7 +8,6 @@ internal sealed class CompanyService:ICompanyService
     {
         _repositoryManager = repositoryManager;
     }
-
     public async Task<(IEnumerable<Company> companies, MetaData metaData)> GetAll(PaginationParameters pagination, bool trackChanges)
     {
         var companies = await _repositoryManager.Company.GetAll(pagination, trackChanges);
@@ -16,10 +15,9 @@ internal sealed class CompanyService:ICompanyService
 
         return (companies, metaData);
     }
+    public async Task<Company> GetByCondition(string id, bool trackChanges) => await _repositoryManager.Company.GetByCondition(id, trackChanges);
 
-    public async Task<Company> GetByCondition(string id, bool trackChanges) => await _repositoryManager.Company.GetByCondiction(id, trackChanges);
-
-    public async Task<Company> CreateCompany(Company company) => await _repositoryManager.Company.CreateCompany(company);
+    public async Task<Company> CreateCompany(Company company) => await _repositoryManager.Company.CreateRecord(company);
 
     public async Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> ids, bool trackChanges) => await _repositoryManager.Company.GetByIds(ids, trackChanges);
 

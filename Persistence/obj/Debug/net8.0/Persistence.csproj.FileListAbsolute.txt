@@ -15,3 +15,4 @@ E:\Mis Archivos\RepositoryPattern\Persistence\obj\Debug\net8.0\refint\Persistenc
 E:\Mis Archivos\RepositoryPattern\Persistence\obj\Debug\net8.0\Persistence.pdb
 E:\Mis Archivos\RepositoryPattern\Persistence\obj\Debug\net8.0\Persistence.genruntimeconfig.cache
 E:\Mis Archivos\RepositoryPattern\Persistence\obj\Debug\net8.0\ref\Persistence.dll
+E:\Mis Archivos\RepositoryPattern\Persistence\obj\Debug\net8.0\Persistence.sourcelink.json

@@ -56,11 +56,11 @@ public class EmployeeController : ControllerBase
         return Ok(employeesDtos);
     }
 
-    [HttpGet("{Id}", Name = "GetEmployeeForCompany")]
+    [HttpGet("{id}", Name = "GetEmployeeForCompany")]
     [ProducesResponseType(200)]
     [ProducesResponseType(404)]
     [ProducesResponseType(400)]
-    public async Task<ActionResult<EmployeeDto>> Get(string companyId, string Id)
+    public async Task<ActionResult<EmployeeDto>> Get(string companyId, string id)
     {
         var existCompany = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
 
@@ -70,12 +70,12 @@ public class EmployeeController : ControllerBase
             return NotFound($"The company with Id: {companyId} does not exist in the database.");
         }
 
-        var employee = await _service.EmployeeService.GetByCondiction(companyId, Id, trackChanges: false);
+        var employee = await _service.EmployeeService.GetByCondition(companyId, id, trackChanges: false);
 
         if (employee is null)
         {
-            _logger.LogInformation($"The employee with the Id:{Id} does not exist in the database.");
-            return NotFound($"The employee with the Id:{Id} does not exist in the database.");
+            _logger.LogInformation($"The employee with the Id:{id} does not exist in the database.");
+            return NotFound($"The employee with the Id:{id} does not exist in the database.");
         }
 
         var employeeDto = employee.Adapt<EmployeeDto>();
@@ -100,9 +100,9 @@ public class EmployeeController : ControllerBase
             return UnprocessableEntity(ModelState);
         }
 
-        var Existcompany = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
+        var existcompany = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
 
-        if (Existcompany is null)
+        if (existcompany is null)
         {
             _logger.LogInformation($"The company with Id: {companyId} does not exist in the database.");
             return NotFound($"The company with Id: {companyId} does not exist in the database.");
@@ -115,13 +115,13 @@ public class EmployeeController : ControllerBase
 
         var dto = dbEntity.Adapt<EmployeeDto>();
 
-        return CreatedAtRoute("GetEmployeeForCompany", new { companyId = dto.CompanyId, Id = dto.Id }, dto);
+        return CreatedAtRoute("GetEmployeeForCompany", new { companyId = dto.CompanyId, id = dto.Id }, dto);
     }
 
-    [HttpDelete("{Id}")]
+    [HttpDelete("{id}")]
     [ProducesResponseType(204)]
     [ProducesResponseType(404)]
-    public async Task<IActionResult> Delete(string companyId, string Id)
+    public async Task<IActionResult> Delete(string companyId, string id)
     {
         var existcompany = await _service.CompanyService.GetByCondition(companyId, trackChanges: false);
 
@@ -131,7 +131,7 @@ public class EmployeeController : ControllerBase
             return NotFound($"The company with Id: {companyId} does not exist in the database.");
         }
 
-        await _service.EmployeeService.DeleteEmployee(companyId, Id, trackChanges: true);
+        await _service.EmployeeService.DeleteEmployee(companyId, id, trackChanges: true);
         await _service.EmployeeService.SaveChanges();
 
         return NoContent();
@@ -163,7 +163,7 @@ public class EmployeeController : ControllerBase
         }
 
         // Modelo conectado aqui para que ef pueda seguir los cambios que recibe la entidad
-        var dbEntity = await _service.EmployeeService.GetByCondiction(companyId, id, trackChanges: true);
+        var dbEntity = await _service.EmployeeService.GetByCondition(companyId, id, trackChanges: true);
         if (dbEntity is null)
         {
             _logger.LogInformation($"The employee with Id: {id} does not exist in the database.");
@@ -198,7 +198,7 @@ public class EmployeeController : ControllerBase
             return NotFound($"The company with Id:{companyId} does not exist.");
         }
         // Here I have to track the entity to change the state to modified and being able to save the changes.
-        var employeeDb = await _service.EmployeeService.GetByCondiction(companyId, id, trackChanges: true);
+        var employeeDb = await _service.EmployeeService.GetByCondition(companyId, id, trackChanges: true);
         if (employeeDb is null)
         {
             _logger.LogInformation($"The employee with Id:{id} does not exist in the database.");
@@ -207,7 +207,7 @@ public class EmployeeController : ControllerBase
 
         var employeeToPath = _mapper.Map<EmployeeUpdateDto>(employeeDb);
 
-        pacthDoc.ApplyTo(employeeToPath, (Microsoft.AspNetCore.JsonPatch.Adapters.IObjectAdapter)ModelState);
+        pacthDoc.ApplyTo(employeeToPath, (Microsoft.AspNetCore.JsonPatch.Adapters.IObjectAdapter) ModelState);
 
         TryValidateModel(employeeToPath);
 
