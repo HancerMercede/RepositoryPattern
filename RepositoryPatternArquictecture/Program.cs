@@ -18,6 +18,12 @@ builder.Services.RegisterMapsterConfiguration();
 // Automapper
 builder.Services.AddAutoMapper(typeof(Program));
 
+// Api Behavior Options
+// builder.Services.Configure<ApiBehaviorOptions>(opts =>
+// {
+//     opts.SuppressModelStateInvalidFilter = true;
+// });
+
 // Adding Content Negotiation and Ignoring the reference cycles.
 builder.Services.AddControllers(config =>
 {

@@ -60,9 +60,4 @@ public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
 
         await Delete(company!);
     }
-
-    public Task<PageList<Company>> GetAll(Company pagination, bool trackChanges)
-    {
-        throw new NotImplementedException();
-    }
 }
