@@ -1,4 +1,6 @@
-﻿namespace Service;
+﻿using Entities.Exceptions;
+
+namespace Service;
 
 public class EmployeeService:IEmployeeService
 {
@@ -9,11 +11,21 @@ public class EmployeeService:IEmployeeService
         _repositoryManager = repositoryManager;
     }
 
-    public async Task<Employee> CreateEmployee(string companyId, Employee employee) =>
-        await _repositoryManager.Employee.CreateEmployeeForCompany(companyId, employee);
+    public async Task<Employee> CreateEmployee(string companyId, Employee employee)
+    {
+        if (employee is null)
+            throw new EmployeeBadRequestException();
+        
+        return  await _repositoryManager.Employee.CreateEmployeeForCompany(companyId, employee);
+    }
+
+   
 
     public async Task DeleteEmployee(string companyId, string id, bool trackChanges)
     {
+        if (id is null)
+            throw new EmployeeNotFoundException(Guid.Parse(id));
+        
         await _repositoryManager.Employee.DeleteEmployee(companyId, id, trackChanges);
     }
 
@@ -25,10 +37,19 @@ public class EmployeeService:IEmployeeService
         return (Employees: employees, metaData: metadata); 
     }
 
-    public async Task<Employee> GetByCondition(string companyId, string id, bool trackChanges) =>
-    await _repositoryManager.Employee.GetByCondition(companyId, id,trackChanges);
-   
+    public async Task<Employee> GetByCondition(string companyId, string id, bool trackChanges)
+    {
+        if (id is null)
+            throw new IdParametersBadRequestException();
 
+        var employeeDb = await _repositoryManager.Employee.GetByCondition(companyId, id,trackChanges);
+        
+        if (employeeDb is null)
+            throw new EmployeeNotFoundException(Guid.Parse(id));
+        
+        return employeeDb;
+    }
+    
     public async Task SaveChanges()
     {
         await _repositoryManager.Save();

@@ -1,12 +1,12 @@
-﻿global using AutoMapper;
-global using Dtos.DtoModels;
+﻿global using Dtos.DtoModels;
 global using Entities.Models;
 global using Mapster;
 global using Microsoft.AspNetCore.Mvc;
-global using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 global using Microsoft.Extensions.Logging;
 global using Service.Contracts.Interfaces;
 global using Presentation.Helpers;
 global using Shared.Shared;
 global using Entities.Exceptions;
 global using Presentation.ModelBinders;
+global using Microsoft.AspNetCore.JsonPatch;
+global using Microsoft.AspNetCore.JsonPatch.Adapters;
