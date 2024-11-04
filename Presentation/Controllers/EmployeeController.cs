@@ -89,15 +89,15 @@ public class EmployeeController(IServiceManager serviceManager, IMapper mapper, 
             return UnprocessableEntity(ModelState);
         }
 
-        var existcompany = await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: true);
+        var existCompany = await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: false);
 
-        if (existcompany is null)
+        if (existCompany is null)
         {
             logger.LogInformation($"The company with Id: {companyId} does not exist in the database.");
             throw new CompanyNotFoundException(Guid.Parse(companyId));
         }
 
-        var dbEntity = mapper.Map<Employee>(model);
+        var dbEntity = model.Adapt<Employee>();
 
         await serviceManager.EmployeeService.CreateEmployee(companyId, dbEntity);
         await serviceManager.EmployeeService.SaveChanges();

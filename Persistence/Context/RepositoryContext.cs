@@ -4,10 +4,8 @@ using System.Reflection;
 
 namespace Persistence.Context;
 
-public class RepositoryContext:DbContext
+public class RepositoryContext(DbContextOptions<RepositoryContext> options) : DbContext(options)
 {
-	public RepositoryContext(DbContextOptions<RepositoryContext> options)
-		:base(options){}
 	protected DbSet<Company> Companies { get; set; }
 	protected DbSet<Employee> Employees { get; set; }
 

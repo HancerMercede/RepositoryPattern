@@ -1,12 +1,10 @@
-﻿using Entities.Exceptions;
-
-namespace Presentation.Controllers;
+﻿namespace Presentation.Controllers;
 
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiVersion("1.0")]
 [ApiController]
 [Produces(contentType: "application/json", "application/xml")]
-public class CompanyController(IServiceManager serviceManager, IMapper mapper, ILogger<CompanyController> logger)
+public class CompanyController(IServiceManager serviceManager, ILogger<CompanyController> logger)
     : ControllerBase
 {
     [HttpGet(Name = "GetCompanies")]
@@ -32,11 +30,10 @@ public class CompanyController(IServiceManager serviceManager, IMapper mapper, I
         return Ok(companiesDto);
     }
 
-    [HttpGet("Collection/{ids}", Name = "CompanyCollection")]
+    [HttpGet("collection/({ids})", Name = "CompanyCollection")]
     [ProducesResponseType(200)]
     [ProducesResponseType(404)]
-    public async Task<ActionResult<IEnumerable<CompanyDto>>> GetByIds([ModelBinder(BinderType = typeof(ArrayModelBinder<>))]
-        IEnumerable<Guid> ids)
+    public async Task<ActionResult<IEnumerable<CompanyDto>>> GetByIds([ModelBinder(BinderType = typeof(ArrayModelBinder))]IEnumerable<Guid> ids)
     {
         logger.LogInformation("Getting all the companies by ids.");
         var companies = await serviceManager.CompanyService.GetByIds(ids, trackChanges: false);
@@ -48,8 +45,6 @@ public class CompanyController(IServiceManager serviceManager, IMapper mapper, I
         return Ok(companiesDto);
     }
     
-    
-
     [HttpGet("{id}", Name = "GetById")]
     [ProducesResponseType(200)]
     [ProducesResponseType(404)]
@@ -58,13 +53,6 @@ public class CompanyController(IServiceManager serviceManager, IMapper mapper, I
         logger.LogInformation("Getting the company by id.");
         var company = await serviceManager.CompanyService.GetByCondition(id, trackChanges:false);
 
-        logger.LogInformation("Verify if the company exist.");
-        if (company is null)
-        {
-            logger.LogInformation($"Company with Id: {id} does not exist in the database.");
-            throw new CompanyNotFoundException(Guid.Parse(id));
-        }
-        
         logger.LogInformation("Mapping to the dto.");
         var companyDto = company.Adapt<CompanyDto>();
 
@@ -75,25 +63,23 @@ public class CompanyController(IServiceManager serviceManager, IMapper mapper, I
     [HttpPost(Name = "CreateCompany")]
     [ProducesResponseType(201)]
     [ProducesResponseType(400)]
-    public async Task<ActionResult<CompanyDto>> Create([FromBody] CompanyCreateDto? model)
+    public async Task<ActionResult<CompanyDto>> Create([FromBody] CompanyCreateDto model)
     {
-        if (model is null || string.IsNullOrWhiteSpace(model.Name?.Trim()) || string.IsNullOrEmpty(model.Name?.Trim()))
-            throw new CompanyBadRequestException();
-
         if (!ModelState.IsValid)
         {
             logger.LogInformation($"Invalid model state for object {typeof(CompanyCreateDto)}");
             return UnprocessableEntity(ModelState);
         }
 
-        var dbEntity = mapper.Map<Company>(model);
+        var dbEntity = model.Adapt<Company>();
 
         await serviceManager.CompanyService.CreateCompany(dbEntity);
         await serviceManager.CompanyService.SaveChanges();
 
-        var dto = mapper.Map<CompanyDto>(dbEntity);
+        var dto = dbEntity.Adapt<CompanyDto>();
         return CreatedAtRoute("GetById", new { id = dto.Id }, dto);
     }
+    
     [HttpPost("Collection")]
     public async Task<ActionResult<CompanyDto>> CreateCompanyCollection([FromBody] IEnumerable<CompanyCreateDto>? companies)
     {
@@ -103,16 +89,16 @@ public class CompanyController(IServiceManager serviceManager, IMapper mapper, I
             throw new CompanyBadRequestException();
         }
 
-        var dbcompanies = mapper.Map<IEnumerable<Company>>(companies);
+        var dbCompanies = companies.Adapt<IEnumerable<Company>>();
 
-        foreach (var company in dbcompanies)
+        foreach (var company in dbCompanies)
         {
             await serviceManager.CompanyService.CreateCompany(company);
         }
         
         await serviceManager.CompanyService.SaveChanges();
         
-        var companiesDto = dbcompanies.Adapt<IEnumerable<CompanyDto>>();
+        var companiesDto = dbCompanies.Adapt<IEnumerable<CompanyDto>>();
         var ids = string.Join(',', companiesDto.Select(c => c.Id));
 
         return CreatedAtRoute("CompanyCollection", new { ids }, companiesDto);
@@ -139,9 +125,6 @@ public class CompanyController(IServiceManager serviceManager, IMapper mapper, I
     public async Task<IActionResult> Delete(string id)
     {   var companyExist = await serviceManager.CompanyService.GetByCondition(id, trackChanges: false);
         
-        if (companyExist is null)
-            throw new CompanyNotFoundException(Guid.Parse(id));
-        
         await serviceManager.CompanyService.DeleteCompany(id, trackChanges:true);
         await serviceManager.CompanyService.SaveChanges();  
         return NoContent(); 
@@ -150,3 +133,5 @@ public class CompanyController(IServiceManager serviceManager, IMapper mapper, I
     
    
 }
+
+

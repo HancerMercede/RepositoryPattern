@@ -21,7 +21,6 @@ public abstract class RepositoryBase<T>(RepositoryContext repositoryContext) : I
 
 
     public async Task Create(T entity) => await repositoryContext.Set<T>().AddAsync(entity);
-
     public async Task Update(T entity) => await Task.FromResult(repositoryContext.Set<T>().Update(entity));
     public async Task Delete(T entity) => await Task.FromResult(repositoryContext.Set<T>().Remove(entity));
 

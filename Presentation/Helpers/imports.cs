@@ -8,3 +8,5 @@ global using Microsoft.Extensions.Logging;
 global using Service.Contracts.Interfaces;
 global using Presentation.Helpers;
 global using Shared.Shared;
+global using Entities.Exceptions;
+global using Presentation.ModelBinders;

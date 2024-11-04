@@ -1,7 +1,4 @@
-﻿using Contracts.Interfaces;
-using Persistence.Context;
-
-namespace Repository;
+﻿namespace Repository;
 
 public sealed class RepositoryManager:IRepositoryManager
 {

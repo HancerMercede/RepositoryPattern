@@ -1,11 +1,4 @@
-﻿using Contracts.Interfaces;
-using Entities.Models;
-using Microsoft.EntityFrameworkCore;
-using Persistence.Context;
-using Shared.RequestFeatures;
-using Shared.Shared;
-
-namespace Repository;
+﻿namespace Repository;
 
 public class CompanyRepository(RepositoryContext repositoryContext)
     : RepositoryBase<Company>(repositoryContext), ICompanyRepository
