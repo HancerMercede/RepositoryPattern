@@ -81,14 +81,9 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
     }
     
     [HttpPost("Collection")]
-    public async Task<ActionResult<CompanyDto>> CreateCompanyCollection([FromBody] IEnumerable<CompanyCreateDto>? companies)
+    public async Task<ActionResult<CompanyDto>> CreateCompanyCollection([FromBody] IEnumerable<CompanyCreateDto> companies)
     {
-        if (companies is null)
-        {
-            logger.LogError("Companies must not be null");
-            throw new CompanyBadRequestException();
-        }
-
+        logger.LogInformation("Creating a dto collection.");
         var dbCompanies = companies.Adapt<IEnumerable<Company>>();
 
         foreach (var company in dbCompanies)
@@ -108,13 +103,11 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
     [ProducesResponseType(204)]
     [ProducesResponseType(404)]
     [ProducesResponseType(400)]
-    public async Task<IActionResult> Update(string companyId, [FromBody] CompanyUpdateDto? model)
+    public async Task<IActionResult> Update(string companyId, [FromBody] CompanyUpdateDto model)
     {
         if (model is null) { logger.LogError("Error: the model can be null"); throw new CompanyBadRequestException(); }
         
         var dbEntity = await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: true);
-
-        if (dbEntity is null) return NotFound();
         
         model.Adapt(dbEntity);
         await serviceManager.CompanyService.SaveChanges();
