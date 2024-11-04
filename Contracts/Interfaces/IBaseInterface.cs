@@ -8,5 +8,5 @@ public interface IBaseInterface<T, U> where T : class where U : class
     Task<T> GetByCondition(string id, bool trackChanges);
     Task<T> CreateRecord(T model);
     Task<IEnumerable<T>> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
-    Task DeleteCompany(string id, bool trackChanges);
+    Task DeleteRecord(string id, bool trackChanges);
 }

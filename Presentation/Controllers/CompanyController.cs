@@ -79,7 +79,13 @@ public class CompanyController(IServiceManager serviceManager, IMapper mapper, I
     {
         if (model is null || string.IsNullOrWhiteSpace(model.Name?.Trim()) || string.IsNullOrEmpty(model.Name?.Trim()))
             throw new CompanyBadRequestException();
-        
+
+        if (!ModelState.IsValid)
+        {
+            logger.LogInformation($"Invalid model state for object {typeof(CompanyCreateDto)}");
+            return UnprocessableEntity(ModelState);
+        }
+
         var dbEntity = mapper.Map<Company>(model);
 
         await serviceManager.CompanyService.CreateCompany(dbEntity);
@@ -112,7 +118,7 @@ public class CompanyController(IServiceManager serviceManager, IMapper mapper, I
         return CreatedAtRoute("CompanyCollection", new { ids }, companiesDto);
 
     }
-    [HttpPut]
+    [HttpPut("{companyId}")]
     [ProducesResponseType(204)]
     [ProducesResponseType(404)]
     [ProducesResponseType(400)]

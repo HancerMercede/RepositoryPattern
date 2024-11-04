@@ -877,3 +877,28 @@ Entities.Exceptions.CompanyBadRequestException: The model can not be null, pleas
 2024-11-02 21:23:31.499 -04:00 [INF] Sending the request headers information.
 2024-11-02 21:23:31.508 -04:00 [INF] Mapping to companiesDto.
 2024-11-02 21:23:31.595 -04:00 [INF] Returning the result to the client.
+2024-11-02 22:27:06.451 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2024-11-02 22:27:15.543 -04:00 [INF] Invalid model state for object Dtos.DtoModels.EmployeeCreateDto.
+2024-11-02 22:27:57.177 -04:00 [INF] Invalid model state for object Dtos.DtoModels.EmployeeCreateDto.
+2024-11-02 22:36:24.598 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2024-11-02 22:36:36.299 -04:00 [INF] Invalid model state for object Dtos.DtoModels.CompanyCreateDto
+2024-11-02 22:37:46.857 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2024-11-02 22:38:30.919 -04:00 [INF] Invalid model state for object Dtos.DtoModels.EmployeeCreateDto.
+2024-11-02 22:45:15.697 -04:00 [INF] Getting the company by id.
+2024-11-02 22:45:15.706 -04:00 [INF] Verify if the company exist.
+2024-11-02 22:45:15.707 -04:00 [INF] Mapping to the dto.
+2024-11-02 22:45:15.715 -04:00 [INF] Returning the result to the client.
+2024-11-02 22:45:28.045 -04:00 [INF] Getting all the employees for company Id 34ceb4f6-bcc7-4b3c-141c-08dcfb94622a.
+2024-11-02 22:45:28.063 -04:00 [INF] Adding the information to request headers.
+2024-11-02 22:45:28.072 -04:00 [INF] Mapping to employeesDtos.
+2024-11-02 22:45:57.745 -04:00 [INF] Getting the company by id.
+2024-11-02 22:45:57.750 -04:00 [INF] Verify if the company exist.
+2024-11-02 22:45:57.751 -04:00 [INF] Mapping to the dto.
+2024-11-02 22:45:57.752 -04:00 [INF] Returning the result to the client.
+2024-11-02 22:48:51.141 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2024-11-02 22:50:23.982 -04:00 [INF] Getting all the employees for company Id fd3bbd42-6321-4273-5ddd-08dcfb972664.
+2024-11-02 22:50:24.004 -04:00 [INF] Adding the information to request headers.
+2024-11-02 22:50:24.013 -04:00 [INF] Mapping to employeesDtos.
+2024-11-02 22:53:16.425 -04:00 [INF] Getting all the employees for company Id fd3bbd42-6321-4273-5ddd-08dcfb972664.
+2024-11-02 22:53:16.429 -04:00 [INF] Adding the information to request headers.
+2024-11-02 22:53:16.430 -04:00 [INF] Mapping to employeesDtos.

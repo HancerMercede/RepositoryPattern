@@ -80,7 +80,7 @@ public class EmployeeController(IServiceManager serviceManager, IMapper mapper, 
         if (model is null)
         {
             logger.LogInformation($"The object {typeof(EmployeeCreateDto)} is null.");
-            return BadRequest("EmployeeCreateDto object is null.");
+            throw new EmployeeBadRequestException();
         }
 
         if (!ModelState.IsValid)
@@ -89,7 +89,7 @@ public class EmployeeController(IServiceManager serviceManager, IMapper mapper, 
             return UnprocessableEntity(ModelState);
         }
 
-        var existcompany = await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: false);
+        var existcompany = await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: true);
 
         if (existcompany is null)
         {
@@ -134,7 +134,7 @@ public class EmployeeController(IServiceManager serviceManager, IMapper mapper, 
         return NoContent();
     }
 
-    [HttpPut("{Id}")]
+    [HttpPut("{id}")]
     [ProducesResponseType(204)]
     [ProducesResponseType(404)]
     [ProducesResponseType(400)]

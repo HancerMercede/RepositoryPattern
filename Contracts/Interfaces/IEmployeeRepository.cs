@@ -10,7 +10,4 @@ public interface IEmployeeRepository
     Task<Employee> GetByCondition(string companyId, string employeeId, bool trackChanges);
     Task<Employee> CreateEmployeeForCompany(string companyId, Employee employee);
     Task DeleteEmployee(string companyId,string id, bool trackChanges);
-
-   // Task UpdateEmployee(string CompanyId, string id, bool trackChanges);
-
 }

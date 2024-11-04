@@ -7,14 +7,9 @@ using Shared.Shared;
 
 namespace Repository;
 
-public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
+public class EmployeeRepository(RepositoryContext repositoryContext)
+    : RepositoryBase<Employee>(repositoryContext), IEmployeeRepository
 {
-    public EmployeeRepository(RepositoryContext repositoryContext) 
-        : base(repositoryContext)
-    {
-
-    }
-
     public async Task<PageList<Employee>> GetAll(string companyId, PaginationParameters paginationParameters, bool trackChanges)
     
     {

@@ -7,15 +7,9 @@ using Shared.Shared;
 
 namespace Repository;
 
-public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
+public class CompanyRepository(RepositoryContext repositoryContext)
+    : RepositoryBase<Company>(repositoryContext), ICompanyRepository
 {
-    public 
-        CompanyRepository(RepositoryContext repositoryContext) 
-        : base(repositoryContext)
-    {
-
-    }
-
     public async Task<PageList<Company>> GetAll(PaginationParameters paginationParameters, bool trackChanges)
     {
         var companies = await FindAll(trackChanges)
@@ -53,7 +47,7 @@ public class CompanyRepository : RepositoryBase<Company>, ICompanyRepository
         return companies;
     }
 
-    public async Task DeleteCompany(string id, bool trackChanges)
+    public async Task DeleteRecord(string id, bool trackChanges)
     {
         var company = await FindByCondition(c => c.Id == Guid.Parse(id), trackChanges)
             .FirstOrDefaultAsync();

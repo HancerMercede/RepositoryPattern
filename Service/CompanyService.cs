@@ -1,30 +1,24 @@
 ﻿namespace Service;
 
-internal sealed class CompanyService:ICompanyService
+internal sealed class CompanyService(IRepositoryManager repositoryManager) : ICompanyService
 {
-    private readonly IRepositoryManager _repositoryManager;
-    
-    public CompanyService(IRepositoryManager repositoryManager)
-    {
-        _repositoryManager = repositoryManager;
-    }
     public async Task<(IEnumerable<Company> companies, MetaData metaData)> GetAll(PaginationParameters pagination, bool trackChanges)
     {
-        var companies = await _repositoryManager.Company.GetAll(pagination, trackChanges);
+        var companies = await repositoryManager.Company.GetAll(pagination, trackChanges);
         var metaData = companies.MetaData;
 
         return (companies, metaData);
     }
-    public async Task<Company> GetByCondition(string id, bool trackChanges) => await _repositoryManager.Company.GetByCondition(id, trackChanges);
+    public async Task<Company> GetByCondition(string id, bool trackChanges) => await repositoryManager.Company.GetByCondition(id, trackChanges);
 
-    public async Task<Company> CreateCompany(Company company) => await _repositoryManager.Company.CreateRecord(company);
+    public async Task<Company> CreateCompany(Company company) => await repositoryManager.Company.CreateRecord(company);
 
-    public async Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> ids, bool trackChanges) => await _repositoryManager.Company.GetByIds(ids, trackChanges);
+    public async Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> ids, bool trackChanges) => await repositoryManager.Company.GetByIds(ids, trackChanges);
 
-    public async Task DeleteCompany(string id, bool trackChanges) => await _repositoryManager.Company.DeleteCompany(id, trackChanges);
+    public async Task DeleteCompany(string id, bool trackChanges) => await repositoryManager.Company.DeleteRecord(id, trackChanges);
     
     public async Task SaveChanges()
     {
-        await _repositoryManager.Save();
+        await repositoryManager.Save();
     }
 }

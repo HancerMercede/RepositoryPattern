@@ -109,3 +109,4 @@ E:\Mis Archivos\RepositoryPattern\Tests\obj\Debug\net8.0\refint\Tests.dll
 E:\Mis Archivos\RepositoryPattern\Tests\obj\Debug\net8.0\Tests.pdb
 E:\Mis Archivos\RepositoryPattern\Tests\obj\Debug\net8.0\Tests.genruntimeconfig.cache
 E:\Mis Archivos\RepositoryPattern\Tests\obj\Debug\net8.0\ref\Tests.dll
+E:\Mis Archivos\RepositoryPattern\Tests\obj\Debug\net8.0\Tests.sourcelink.json

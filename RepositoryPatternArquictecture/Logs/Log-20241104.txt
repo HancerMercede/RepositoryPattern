@@ -1,0 +1,16 @@
+2024-11-04 13:26:49.165 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2024-11-04 13:27:02.345 -04:00 [INF] Getting all the companies.
+2024-11-04 13:27:04.884 -04:00 [INF] Sending the request headers information.
+2024-11-04 13:27:04.895 -04:00 [INF] Mapping to companiesDto.
+2024-11-04 13:27:05.043 -04:00 [INF] Returning the result to the client.
+2024-11-04 13:27:40.613 -04:00 [INF] Getting all the companies.
+2024-11-04 13:27:40.646 -04:00 [INF] Sending the request headers information.
+2024-11-04 13:27:40.647 -04:00 [INF] Mapping to companiesDto.
+2024-11-04 13:27:40.648 -04:00 [INF] Returning the result to the client.
+2024-11-04 13:28:07.300 -04:00 [INF] Getting the company by id.
+2024-11-04 13:28:07.543 -04:00 [INF] Verify if the company exist.
+2024-11-04 13:28:07.544 -04:00 [INF] Mapping to the dto.
+2024-11-04 13:28:07.547 -04:00 [INF] Returning the result to the client.
+2024-11-04 13:28:12.133 -04:00 [INF] Getting all the employees for company Id fd3bbd42-6321-4273-5ddd-08dcfb972664.
+2024-11-04 13:28:12.145 -04:00 [INF] Adding the information to request headers.
+2024-11-04 13:28:12.147 -04:00 [INF] Mapping to employeesDtos.
