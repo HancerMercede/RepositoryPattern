@@ -73,10 +73,6 @@ public class EmployeeController(IServiceManager serviceManager, ILogger<Employee
     [ProducesResponseType(404)]
     public async Task<IActionResult> Delete(string companyId, string id)
     {
-         await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: false);
-        
-         await serviceManager.EmployeeService.GetByCondition(companyId, id, trackChanges: false);
-         
          logger.LogInformation($"Deleting the employee for company {companyId}");
          await serviceManager.EmployeeService.DeleteEmployee(companyId, id, trackChanges: true);
          await serviceManager.EmployeeService.SaveChanges();

@@ -206,7 +206,7 @@
       <workItem from="1730575223073" duration="14858000" />
       <workItem from="1730600656872" duration="1762000" />
       <workItem from="1730740471368" duration="9948000" />
-      <workItem from="1730754715704" duration="6079000" />
+      <workItem from="1730754715704" duration="7861000" />
     </task>
     <servers />
   </component>
@@ -357,29 +357,42 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Presentation/Controllers/EmployeeController.cs</url>
-          <line>17</line>
+          <line>14</line>
           <properties documentPath="E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\EmployeeController.cs" containingFunctionPresentation="Method 'GetAll'">
             <startOffsets>
-              <option value="637" />
+              <option value="571" />
             </startOffsets>
             <endOffsets>
-              <option value="638" />
+              <option value="572" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Service/EmployeeService.cs</url>
-          <line>40</line>
-          <properties documentPath="E:\Mis Archivos\RepositoryPattern\Service\EmployeeService.cs" containingFunctionPresentation="Method 'GetByCondition'">
+          <line>22</line>
+          <properties documentPath="E:\Mis Archivos\RepositoryPattern\Service\EmployeeService.cs" containingFunctionPresentation="Method 'DeleteEmployee'">
             <startOffsets>
-              <option value="1355" />
+              <option value="662" />
             </startOffsets>
             <endOffsets>
-              <option value="1356" />
+              <option value="663" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="27" />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Presentation/Controllers/EmployeeController.cs</url>
+          <line>74</line>
+          <properties documentPath="E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\EmployeeController.cs" containingFunctionPresentation="Method 'Delete'">
+            <startOffsets>
+              <option value="2979" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2980" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

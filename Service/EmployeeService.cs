@@ -18,12 +18,20 @@ public class EmployeeService:IEmployeeService
         
         return  await _repositoryManager.Employee.CreateEmployeeForCompany(companyId, employee);
     }
-
-   
-
+    
     public async Task DeleteEmployee(string companyId, string id, bool trackChanges)
     {
         if (id is null)
+            throw new EmployeeNotFoundException(Guid.Parse(id));
+
+        var company = await _repositoryManager.Company.GetByCondition(companyId, trackChanges);
+        
+        if (company is null)
+            throw new CompanyNotFoundException(Guid.Parse(companyId));
+
+        var employee = await _repositoryManager.Employee.GetByCondition(companyId, id, trackChanges);
+
+        if (employee is null)
             throw new EmployeeNotFoundException(Guid.Parse(id));
         
         await _repositoryManager.Employee.DeleteEmployee(companyId, id, trackChanges);
