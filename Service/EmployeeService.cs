@@ -1,4 +1,6 @@
-﻿using Entities.Exceptions;
+﻿using Dtos.DtoModels;
+using Entities.Exceptions;
+using Mapster;
 
 namespace Service;
 
@@ -37,6 +39,27 @@ public class EmployeeService:IEmployeeService
         await _repositoryManager.Employee.DeleteEmployee(companyId, id, trackChanges);
     }
 
+    public async Task<(EmployeeUpdateDto employeeToPath, Employee employee)> GetEmployeeForPatch(string companyId, string id, bool compTrackChanges, bool empTrackChanges)
+    {
+         var company = await _repositoryManager.Company.GetByCondition(companyId, compTrackChanges);
+         
+         var existCompany = company ?? throw new CompanyNotFoundException(Guid.Parse(companyId));
+         
+         var employee = await _repositoryManager.Employee.GetByCondition(companyId, id, empTrackChanges);
+         
+         var existEmployee = employee ?? throw new EmployeeNotFoundException(Guid.Parse(id));
+
+         var employeeToPatch = employee.Adapt<EmployeeUpdateDto>();
+         
+         return (employeeToPatch, existEmployee);
+    }
+
+    public async Task SaveChangesForPatch(EmployeeUpdateDto employee, Employee employeeEntity)
+    {
+        employee.Adapt(employeeEntity);
+        await _repositoryManager.Save();
+    }
+
     public async Task<(IEnumerable<Employee> Employees, MetaData metaData)> GetAll(string companyId,PaginationParameters paginationParameters, bool trackChanges)
     {
         var employees = await _repositoryManager.Employee.GetAll(companyId, paginationParameters, trackChanges);
@@ -58,8 +81,4 @@ public class EmployeeService:IEmployeeService
         return employeeDb;
     }
     
-    public async Task SaveChanges()
-    {
-        await _repositoryManager.Save();
-    }
 }

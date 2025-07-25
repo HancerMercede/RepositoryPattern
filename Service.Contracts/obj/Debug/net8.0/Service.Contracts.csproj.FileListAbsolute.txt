@@ -16,3 +16,7 @@ E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\refint\Serv
 E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\Service.Contracts.pdb
 E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\ref\Service.Contracts.dll
 E:\Mis Archivos\RepositoryPattern\Service.Contracts\obj\Debug\net8.0\Service.Contracts.sourcelink.json
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\bin\Debug\net8.0\Dtos.dll
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\bin\Debug\net8.0\Dtos.pdb
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\bin\Debug\net8.0\Contracts.dll
+E:\Mis Archivos\RepositoryPattern\Service.Contracts\bin\Debug\net8.0\Contracts.pdb

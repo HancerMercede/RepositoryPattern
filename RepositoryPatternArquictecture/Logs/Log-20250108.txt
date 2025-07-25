@@ -1,0 +1,9 @@
+2025-01-08 16:41:36.013 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2025-01-08 16:42:22.710 -04:00 [INF] Getting all the companies.
+2025-01-08 16:42:24.557 -04:00 [INF] Sending the request headers information.
+2025-01-08 16:42:24.564 -04:00 [INF] Mapping to companiesDto.
+2025-01-08 16:42:24.660 -04:00 [INF] Returning the result to the client.
+2025-01-08 20:43:04.439 -04:00 [INF] Getting all the companies.
+2025-01-08 20:43:04.561 -04:00 [INF] Sending the request headers information.
+2025-01-08 20:43:04.564 -04:00 [INF] Mapping to companiesDto.
+2025-01-08 20:43:04.566 -04:00 [INF] Returning the result to the client.

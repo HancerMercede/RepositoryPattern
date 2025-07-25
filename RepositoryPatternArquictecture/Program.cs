@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.Extensions.Options;
 using Presentation;
 using Serilog;
 
@@ -23,12 +25,20 @@ builder.Services.AddAutoMapper(typeof(Program));
 // {
 //     opts.SuppressModelStateInvalidFilter = true;
 // });
+NewtonsoftJsonPatchInputFormatter GetjsonPatchInputFormatter()=>
+
+    new ServiceCollection().AddLogging().AddMvc().AddNewtonsoftJson()
+        .Services.BuildServiceProvider()
+        .GetRequiredService<IOptions<MvcOptions>>().Value.InputFormatters
+        .OfType<NewtonsoftJsonPatchInputFormatter>().First();
+
 
 // Adding Content Negotiation and Ignoring the reference cycles.
 builder.Services.AddControllers(config =>
 {
     config.RespectBrowserAcceptHeader = true;
     config.ReturnHttpNotAcceptable = true;
+    config.InputFormatters.Insert(0,GetjsonPatchInputFormatter());
 }).AddApplicationPart(typeof(AssemblyReference).Assembly)
     .AddNewtonsoftJson()
 .AddXmlDataContractSerializerFormatters()

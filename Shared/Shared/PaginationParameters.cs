@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared.Shared
-{
-    public class PaginationParameters:RequestParamaters
-    {
-    }
-}
+namespace Shared.Shared;
+public class PaginationParameters : RequestParameters;
+

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hvKhtIr9Gd8=",
+  "dgSpecHash": "XP8zPldEnDQ=",
   "success": true,
   "projectFilePath": "E:\\Mis Archivos\\RepositoryPattern\\Presentation\\Presentation.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.8\\microsoft.aspnetcore.jsonpatch.8.0.8.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\microsoft.aspnetcore.mvc.abstractions\\2.2.0\\microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\microsoft.aspnetcore.mvc.core\\2.2.5\\microsoft.aspnetcore.mvc.core.2.2.5.nupkg.sha512",
+    "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\8.0.8\\microsoft.aspnetcore.mvc.newtonsoftjson.8.0.8.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\microsoft.aspnetcore.responsecaching.abstractions\\2.2.0\\microsoft.aspnetcore.responsecaching.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\microsoft.aspnetcore.routing\\2.2.0\\microsoft.aspnetcore.routing.2.2.0.nupkg.sha512",
@@ -42,6 +43,7 @@
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\runtime.native.system\\4.0.0\\runtime.native.system.4.0.0.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
     "C:\\Users\\HANCER MERCEDE\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",

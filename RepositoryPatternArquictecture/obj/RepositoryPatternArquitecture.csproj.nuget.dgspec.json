@@ -369,6 +369,10 @@
               "target": "Package",
               "version": "[2.2.5, )"
             },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Microsoft.AspNetCore.Mvc.Versioning": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -459,10 +463,6 @@
             "Mapster": {
               "target": "Package",
               "version": "[7.4.1-pre01, )"
-            },
-            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
-              "target": "Package",
-              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -633,6 +633,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "E:\\Mis Archivos\\RepositoryPattern\\Dtos\\Dtos.csproj": {
+                "projectPath": "E:\\Mis Archivos\\RepositoryPattern\\Dtos\\Dtos.csproj"
+              },
               "E:\\Mis Archivos\\RepositoryPattern\\Entities\\Entities.csproj": {
                 "projectPath": "E:\\Mis Archivos\\RepositoryPattern\\Entities\\Entities.csproj"
               },
@@ -728,6 +731,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

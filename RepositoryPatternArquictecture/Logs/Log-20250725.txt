@@ -1,0 +1,1 @@
+2025-07-25 15:33:07.155 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.

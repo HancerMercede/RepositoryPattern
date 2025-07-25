@@ -1,4 +1,5 @@
-﻿using Entities.Models;
+﻿using Dtos.DtoModels;
+using Entities.Models;
 using Shared.RequestFeatures;
 using Shared.Shared;
 
@@ -10,5 +11,6 @@ public interface IEmployeeService
     Task<Employee> GetByCondition(string companyId, string id, bool trackChanges);
     Task<Employee> CreateEmployee(string companyId, Employee employee);
     Task DeleteEmployee(string companyId, string id, bool trackChanges);
-    Task SaveChanges();
+    Task<(EmployeeUpdateDto employeeToPath, Employee employee)> GetEmployeeForPatch(string companyId, string id, bool compTrackChanges, bool empTrackChanges);
+    Task SaveChangesForPatch(EmployeeUpdateDto employee, Employee employeeEntity);
 }

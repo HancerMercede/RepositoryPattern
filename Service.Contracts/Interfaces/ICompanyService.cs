@@ -10,8 +10,5 @@ public interface ICompanyService
     Task<Company> GetByCondition(string id, bool trackChanges);
     Task<Company> CreateCompany(Company company);
     Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
-
     Task DeleteCompany(string id, bool trackChanges);
-
-    Task SaveChanges();
 }

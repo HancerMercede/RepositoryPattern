@@ -25,8 +25,7 @@ namespace Tests;
             Assert.IsType<List<Company>>(result);
             Assert.Single(result);
         }
-
-
+        
         [Fact]
         public async void GetAllCompaniesAsync_ReturnsListOfCompanies()
         {
@@ -44,9 +43,9 @@ namespace Tests;
 
             //Assert
             Assert.IsType<List<Company>>(result);
-            Assert.All(result, C=>C.Country?.Contains("United States"));
+            Assert.All(result, c=>c.Country?.Contains("United States"));
         }
-
+        
         public async Task<PageList<Company>> GetCompanies_wIth_one_element()
         {
             var companies = new PageList<Company>(new List<Company>(), 0, 0, 0)

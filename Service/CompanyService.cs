@@ -47,8 +47,4 @@ internal sealed class CompanyService(IRepositoryManager repositoryManager) : ICo
 
     public async Task DeleteCompany(string id, bool trackChanges) => await repositoryManager.Company.DeleteRecord(id, trackChanges);
     
-    public async Task SaveChanges()
-    {
-        await repositoryManager.Save();
-    }
 }

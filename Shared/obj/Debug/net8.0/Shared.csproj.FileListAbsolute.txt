@@ -9,3 +9,4 @@ E:\Mis Archivos\RepositoryPattern\Shared\obj\Debug\net8.0\Shared.dll
 E:\Mis Archivos\RepositoryPattern\Shared\obj\Debug\net8.0\refint\Shared.dll
 E:\Mis Archivos\RepositoryPattern\Shared\obj\Debug\net8.0\Shared.pdb
 E:\Mis Archivos\RepositoryPattern\Shared\obj\Debug\net8.0\ref\Shared.dll
+E:\Mis Archivos\RepositoryPattern\Shared\obj\Debug\net8.0\Shared.sourcelink.json

@@ -48,8 +48,11 @@ public class EmployeeController(IServiceManager serviceManager, ILogger<Employee
     [HttpPost(Name = "CreateEmployeeForCompany")]
     [ProducesResponseType(201)]
     [ProducesResponseType(404)]
-    public async Task<ActionResult<EmployeeDto>> Create(string companyId, [FromBody] EmployeeCreateDto model)
+    public async Task<ActionResult<EmployeeDto>> Create(string companyId, [FromBody] EmployeeCreateDto? model)
     {
+        if(model is null) 
+            BadRequest("The model cannot be null.");
+        
         if (!ModelState.IsValid)
         {
             logger.LogInformation($"Invalid model state for object {typeof(EmployeeCreateDto)}.");
@@ -58,12 +61,12 @@ public class EmployeeController(IServiceManager serviceManager, ILogger<Employee
 
         await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: false);
         
-        var dbEntity = model.Adapt<Employee>();
+        var dbEntity = model?.Adapt<Employee>();
 
-        await serviceManager.EmployeeService.CreateEmployee(companyId, dbEntity);
-        await serviceManager.EmployeeService.SaveChanges();
+        await serviceManager.EmployeeService.CreateEmployee(companyId, dbEntity!);
+        await serviceManager.Save();
 
-        var dto = dbEntity.Adapt<EmployeeDto>();
+        var dto = dbEntity?.Adapt<EmployeeDto>();
 
         return CreatedAtRoute("GetEmployeeForCompany", new { companyId = dto.CompanyId, id = dto.Id }, dto);
     }
@@ -75,7 +78,7 @@ public class EmployeeController(IServiceManager serviceManager, ILogger<Employee
     {
          logger.LogInformation($"Deleting the employee for company {companyId}");
          await serviceManager.EmployeeService.DeleteEmployee(companyId, id, trackChanges: true);
-         await serviceManager.EmployeeService.SaveChanges();
+         await serviceManager.Save();
 
          return NoContent();
     }
@@ -101,45 +104,67 @@ public class EmployeeController(IServiceManager serviceManager, ILogger<Employee
         // _context.Entry<T>().State = EntityState.Modified
         //_mapper.Map(model, dbEntity);
         model.Adapt(dbEntity);
-        await serviceManager.EmployeeService.SaveChanges();
+        await serviceManager.Save();
 
         return NoContent();
     }
-
-    [HttpPatch("{id}")]
+    //
+    // [HttpPatch("{id}")]
+    // [ProducesResponseType(204)]
+    // [ProducesResponseType(404)]
+    // [ProducesResponseType(400)]
+    // public async Task<IActionResult> Path(string companyId, string id, [FromBody] JsonPatchDocument<EmployeeUpdateDto>? PacthDoc)
+    // {
+    //     await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: false);
+    //  
+    //     // Here I have to track the entity to change the state to modified and being able to save the changes.
+    //     var employeeDb = await serviceManager.EmployeeService.GetByCondition(companyId, id, trackChanges: true);
+    //     
+    //     var employeeToPath = employeeDb.Adapt<EmployeeUpdateDto>();
+    //
+      // PacthDoc?.ApplyTo(employeeToPath, (IObjectAdapter) ModelState);
+    //
+    //     TryValidateModel(employeeToPath);
+    //
+    //     if (!ModelState.IsValid)
+    //     {
+    //         logger.LogInformation("Invalid model state for patch document.");
+    //         return UnprocessableEntity(ModelState);
+    //     }
+    //     
+    //     employeeToPath.Adapt(employeeDb);
+    //     
+    //     await serviceManager.EmployeeService.SaveChanges();
+    //
+    //     return NoContent();
+    // }
+    
+    [HttpPatch("{employeeId}", Name = "PatchEmployee")]
     [ProducesResponseType(204)]
     [ProducesResponseType(404)]
     [ProducesResponseType(400)]
-    public async Task<IActionResult> Path(string companyId, string id, [FromBody] JsonPatchDocument<EmployeeUpdateDto> pacthDoc)
+    public async Task<IActionResult> PartiallyUpdateEmployeeForCompany(string companyId, string employeeId,
+        [FromBody] JsonPatchDocument<EmployeeUpdateDto>? patchDoc)
     {
-
-        if (pacthDoc is null)
-        {
-            logger.LogInformation("The model can not be null");
-            return BadRequest("The model can not be null");
-        }
-
-        await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: false);
-     
-        // Here I have to track the entity to change the state to modified and being able to save the changes.
-        var employeeDb = await serviceManager.EmployeeService.GetByCondition(companyId, id, trackChanges: true);
-        
-        var employeeToPath = employeeDb.Adapt<EmployeeUpdateDto>();
-
-        pacthDoc.ApplyTo(employeeToPath, (IObjectAdapter) ModelState);
-
-        TryValidateModel(employeeToPath);
-
+    
         if (!ModelState.IsValid)
         {
-            logger.LogInformation("Invalid model state for patch document.");
-            return UnprocessableEntity(ModelState);
+            logger.LogError($"Invalid model state for object {typeof(EmployeeUpdateDto)}");
+            return  UnprocessableEntity(patchDoc);
         }
+    
+        if(patchDoc is null) 
+            return BadRequest("Invalid patch document, can't be null");
+        var result = await serviceManager.EmployeeService.GetEmployeeForPatch(companyId,employeeId, compTrackChanges: false, empTrackChanges:true);
+    
+        patchDoc.ApplyTo(result.employeeToPath, ModelState);
         
-        employeeToPath.Adapt(employeeDb);
+        TryValidateModel(result.employeeToPath);
         
-        await serviceManager.EmployeeService.SaveChanges();
-
+        if (!ModelState.IsValid)
+            return UnprocessableEntity(ModelState);
+        
+        await serviceManager.EmployeeService.SaveChangesForPatch(result.employeeToPath, result.employee);
         return NoContent();
     }
 }

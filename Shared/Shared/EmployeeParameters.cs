@@ -1,5 +1,4 @@
 ﻿namespace Shared.Shared;
 
-public class EmployeeParameters :RequestParamaters
-{
-}
+public class EmployeeParameters : RequestParameters;
+

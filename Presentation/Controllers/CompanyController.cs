@@ -74,7 +74,7 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
         var dbEntity = model.Adapt<Company>();
 
         await serviceManager.CompanyService.CreateCompany(dbEntity);
-        await serviceManager.CompanyService.SaveChanges();
+        await serviceManager.Save();
 
         var dto = dbEntity.Adapt<CompanyDto>();
         return CreatedAtRoute("GetById", new { id = dto.Id }, dto);
@@ -91,7 +91,7 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
             await serviceManager.CompanyService.CreateCompany(company);
         }
         
-        await serviceManager.CompanyService.SaveChanges();
+        await serviceManager.Save();
         
         var companiesDto = dbCompanies.Adapt<IEnumerable<CompanyDto>>();
         var ids = string.Join(',', companiesDto.Select(c => c.Id));
@@ -110,7 +110,7 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
         var dbEntity = await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: true);
         
         model.Adapt(dbEntity);
-        await serviceManager.CompanyService.SaveChanges();
+        await serviceManager.Save();
         return NoContent();
     }
 
@@ -119,7 +119,7 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
     {   var companyExist = await serviceManager.CompanyService.GetByCondition(id, trackChanges: false);
         
         await serviceManager.CompanyService.DeleteCompany(id, trackChanges:true);
-        await serviceManager.CompanyService.SaveChanges();  
+        await serviceManager.Save();  
         return NoContent(); 
     }
 

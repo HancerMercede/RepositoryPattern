@@ -9,4 +9,3 @@ global using Shared.Shared;
 global using Entities.Exceptions;
 global using Presentation.ModelBinders;
 global using Microsoft.AspNetCore.JsonPatch;
-global using Microsoft.AspNetCore.JsonPatch.Adapters;

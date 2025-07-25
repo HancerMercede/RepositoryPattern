@@ -925,6 +925,22 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "Contracts/1.0.0.0": {
+        "runtime": {
+          "Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Shared/1.0.0.0": {
+        "runtime": {
+          "Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1468,6 +1484,16 @@
     },
     "Entities/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Contracts/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Shared/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

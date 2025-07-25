@@ -1,4 +1,4 @@
-﻿using Entities.Helpers;
+﻿using Contracts.Interfaces;
 
 namespace Entities.Models;
 
@@ -12,6 +12,7 @@ public class Employee: IEntity
     public string? Name { get; set; }
 
     [Required(ErrorMessage = "Age is a required field.")] 
+    [Range(18, 80, ErrorMessage = "The age field can be lower than 18.")]
     public int Age { get; set; }
 
     [Required(ErrorMessage = "Position is a required field.")]

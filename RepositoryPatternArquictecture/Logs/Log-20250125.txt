@@ -1,0 +1,101 @@
+2025-01-25 20:41:30.600 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2025-01-25 20:41:33.918 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - Presentation.Controllers.EmployeeController.PartiallyUpdateEmployeeForCompany (Presentation). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-25 20:43:29.920 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2025-01-25 20:43:31.315 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "PATCH api/v{version}/company/{CompanyId}/Employee/{id}" for actions - Presentation.Controllers.EmployeeController.Path (Presentation),Presentation.Controllers.EmployeeController.PartiallyUpdateEmployeeForCompany (Presentation). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-25 20:43:52.721 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2025-01-25 20:43:54.095 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "PATCH api/v{version}/company/{CompanyId}/Employee/{id}" for actions - Presentation.Controllers.EmployeeController.Path (Presentation),Presentation.Controllers.EmployeeController.PartiallyUpdateEmployeeForCompany (Presentation). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-25 20:44:14.583 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2025-01-25 20:46:05.797 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2025-01-25 20:46:29.914 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2025-01-25 20:47:49.736 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+Entities.Exceptions.EmployeeNotFoundException: The employee with id: 66d3c31d-ef56-4c09-0d41-08dcfcf9d7cf does not exist in the database.
+   at Service.EmployeeService.GetByCondition(String companyId, String id, Boolean trackChanges) in E:\Mis Archivos\RepositoryPattern\Service\EmployeeService.cs:line 79
+   at Presentation.Controllers.EmployeeController.Get(String companyId, String id) in E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\EmployeeController.cs:line 41
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-25 20:47:49.769 -04:00 [ERR] Something went wrong: Entities.Exceptions.EmployeeNotFoundException: The employee with id: 66d3c31d-ef56-4c09-0d41-08dcfcf9d7cf does not exist in the database.
+   at Service.EmployeeService.GetByCondition(String companyId, String id, Boolean trackChanges) in E:\Mis Archivos\RepositoryPattern\Service\EmployeeService.cs:line 79
+   at Presentation.Controllers.EmployeeController.Get(String companyId, String id) in E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\EmployeeController.cs:line 41
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-01-25 20:48:10.195 -04:00 [INF] Getting all the companies.
+2025-01-25 20:48:10.240 -04:00 [INF] Sending the request headers information.
+2025-01-25 20:48:10.248 -04:00 [INF] Mapping to companiesDto.
+2025-01-25 20:48:10.332 -04:00 [INF] Returning the result to the client.
+2025-01-25 20:48:22.309 -04:00 [INF] Getting the company by id.
+2025-01-25 20:48:22.322 -04:00 [INF] Mapping to the dto.
+2025-01-25 20:48:22.326 -04:00 [INF] Returning the result to the client.
+2025-01-25 20:48:52.719 -04:00 [INF] Getting all the employees for company Id 41ca47d3-0c31-47c4-bb61-7aad1cca61e5.
+2025-01-25 20:48:52.732 -04:00 [INF] Adding the information to request headers.
+2025-01-25 20:48:52.734 -04:00 [INF] Mapping to employeesDto.
+2025-01-25 20:49:04.621 -04:00 [INF] Getting all the companies.
+2025-01-25 20:49:04.627 -04:00 [INF] Sending the request headers information.
+2025-01-25 20:49:04.628 -04:00 [INF] Mapping to companiesDto.
+2025-01-25 20:49:04.629 -04:00 [INF] Returning the result to the client.
+2025-01-25 20:49:20.231 -04:00 [INF] Getting the company by id.
+2025-01-25 20:49:20.238 -04:00 [INF] Mapping to the dto.
+2025-01-25 20:49:20.239 -04:00 [INF] Returning the result to the client.
+2025-01-25 20:49:24.946 -04:00 [INF] Getting all the employees for company Id 310d4e84-6176-4f25-ea44-08dcfbb0311f.
+2025-01-25 20:49:24.949 -04:00 [INF] Adding the information to request headers.
+2025-01-25 20:49:24.951 -04:00 [INF] Mapping to employeesDto.
+2025-01-25 20:49:39.922 -04:00 [INF] Getting all the companies.
+2025-01-25 20:49:39.927 -04:00 [INF] Sending the request headers information.
+2025-01-25 20:49:39.928 -04:00 [INF] Mapping to companiesDto.
+2025-01-25 20:49:39.929 -04:00 [INF] Returning the result to the client.
+2025-01-25 20:50:03.725 -04:00 [INF] Getting all the employees for company Id 34ceb4f6-bcc7-4b3c-141c-08dcfb94622a.
+2025-01-25 20:50:03.729 -04:00 [INF] Adding the information to request headers.
+2025-01-25 20:50:03.730 -04:00 [INF] Mapping to employeesDto.
+2025-01-25 20:50:25.161 -04:00 [INF] Getting all the companies.
+2025-01-25 20:50:25.171 -04:00 [INF] Sending the request headers information.
+2025-01-25 20:50:25.174 -04:00 [INF] Mapping to companiesDto.
+2025-01-25 20:50:25.176 -04:00 [INF] Returning the result to the client.
+2025-01-25 20:50:40.105 -04:00 [INF] Getting the company by id.
+2025-01-25 20:50:40.116 -04:00 [INF] Mapping to the dto.
+2025-01-25 20:50:40.118 -04:00 [INF] Returning the result to the client.
+2025-01-25 20:50:45.747 -04:00 [INF] Getting all the employees for company Id f3960d30-f489-444b-4459-08db0f80cbd9.
+2025-01-25 20:50:45.751 -04:00 [INF] Adding the information to request headers.
+2025-01-25 20:50:45.752 -04:00 [INF] Mapping to employeesDto.

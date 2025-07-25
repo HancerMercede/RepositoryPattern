@@ -10,8 +10,7 @@ public class CompanyRepository(RepositoryContext repositoryContext)
            .ToListAsync();
 
         var pagination = PageList<Company>.ToPageList(companies, paginationParameters.PageNumber, paginationParameters.PageSize);
-
-
+        
         return pagination;
     }
 
@@ -39,7 +38,7 @@ public class CompanyRepository(RepositoryContext repositoryContext)
 
         return companies;
     }
-
+    
     public async Task DeleteRecord(string id, bool trackChanges)
     {
         var company = await FindByCondition(c => c.Id == Guid.Parse(id), trackChanges)

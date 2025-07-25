@@ -10,3 +10,9 @@ E:\Mis Archivos\RepositoryPattern\Entities\obj\Debug\net8.0\refint\Entities.dll
 E:\Mis Archivos\RepositoryPattern\Entities\obj\Debug\net8.0\Entities.pdb
 E:\Mis Archivos\RepositoryPattern\Entities\obj\Debug\net8.0\ref\Entities.dll
 E:\Mis Archivos\RepositoryPattern\Entities\obj\Debug\net8.0\Entities.sourcelink.json
+E:\Mis Archivos\RepositoryPattern\Entities\bin\Debug\net8.0\Contracts.dll
+E:\Mis Archivos\RepositoryPattern\Entities\bin\Debug\net8.0\Shared.dll
+E:\Mis Archivos\RepositoryPattern\Entities\bin\Debug\net8.0\Contracts.pdb
+E:\Mis Archivos\RepositoryPattern\Entities\bin\Debug\net8.0\Shared.pdb
+E:\Mis Archivos\RepositoryPattern\Entities\obj\Debug\net8.0\Entities.csproj.AssemblyReference.cache
+E:\Mis Archivos\RepositoryPattern\Entities\obj\Debug\net8.0\Entities.csproj.Up2Date
