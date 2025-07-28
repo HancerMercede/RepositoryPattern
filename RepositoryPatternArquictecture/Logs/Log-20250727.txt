@@ -1,0 +1,220 @@
+2025-07-27 20:00:56.797 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2025-07-27 20:02:11.682 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2025-07-27 20:02:12.994 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:15.268 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:15.276 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:15.394 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:17.785 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:17.831 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:17.833 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:17.834 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:18.776 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:18.788 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:18.790 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:18.791 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:19.576 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:19.582 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:19.583 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:19.585 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:20.275 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:20.281 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:20.283 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:20.284 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:20.978 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:20.985 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:20.986 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:20.988 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:21.694 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:21.700 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:21.701 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:21.703 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:22.385 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:22.392 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:22.394 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:22.395 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:23.057 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:23.063 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:23.065 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:23.067 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:23.709 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:23.715 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:23.717 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:23.718 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:24.442 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:24.449 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:24.450 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:24.451 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:25.314 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:25.321 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:25.323 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:25.324 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:26.078 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:26.084 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:26.086 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:26.087 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:26.942 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:26.948 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:26.950 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:26.951 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:27.787 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:27.793 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:27.794 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:27.795 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:28.587 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:28.593 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:28.594 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:28.595 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:29.769 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:29.775 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:29.777 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:29.778 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:30.829 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:30.835 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:30.837 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:30.839 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:36.658 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:36.663 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:36.665 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:36.666 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:37.871 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:37.877 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:37.878 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:37.879 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:38.621 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:38.626 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:38.627 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:38.628 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:39.400 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:39.407 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:39.408 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:39.410 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:40.149 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:40.155 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:40.156 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:40.157 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:40.965 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:40.971 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:40.972 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:40.973 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:41.778 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:41.783 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:41.785 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:41.786 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:42.575 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:42.582 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:42.583 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:42.585 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:43.465 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:43.471 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:43.472 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:43.473 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:44.421 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:44.426 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:44.428 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:44.429 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:45.220 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:45.226 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:45.227 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:45.228 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:46.358 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:46.364 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:46.366 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:46.367 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:47.342 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:47.351 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:47.352 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:47.353 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:48.244 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:48.250 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:48.252 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:48.253 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:49.378 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:49.385 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:49.386 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:49.387 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:50.376 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:50.382 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:50.383 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:50.384 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:51.046 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:51.052 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:51.054 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:51.055 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:51.711 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:51.717 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:51.718 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:51.720 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:53.187 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:53.192 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:53.194 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:53.195 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:54.077 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:54.082 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:54.084 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:54.085 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:02:54.965 -04:00 [INF] Getting all the companies.
+2025-07-27 20:02:54.971 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:02:54.973 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:02:54.974 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:03:30.567 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2025-07-27 20:03:35.027 -04:00 [INF] Getting all the companies.
+2025-07-27 20:03:36.987 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:03:36.996 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:03:37.096 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:03:38.402 -04:00 [INF] Getting all the companies.
+2025-07-27 20:03:38.439 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:03:38.441 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:03:38.442 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:03:39.475 -04:00 [INF] Getting all the companies.
+2025-07-27 20:03:39.486 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:03:39.487 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:03:39.490 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:03:40.429 -04:00 [INF] Getting all the companies.
+2025-07-27 20:03:40.436 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:03:40.437 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:03:40.439 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:03:41.440 -04:00 [INF] Getting all the companies.
+2025-07-27 20:03:41.445 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:03:41.447 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:03:41.448 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:03:46.143 -04:00 [INF] Getting all the companies.
+2025-07-27 20:03:46.150 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:03:46.151 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:03:46.152 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:03:47.767 -04:00 [INF] Getting all the companies.
+2025-07-27 20:03:47.772 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:03:47.775 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:03:47.776 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:03:48.739 -04:00 [INF] Getting all the companies.
+2025-07-27 20:03:48.745 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:03:48.747 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:03:48.748 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:03:49.661 -04:00 [INF] Getting all the companies.
+2025-07-27 20:03:49.667 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:03:49.668 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:03:49.669 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:03:50.584 -04:00 [INF] Getting all the companies.
+2025-07-27 20:03:50.590 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:03:50.592 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:03:50.593 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:03:58.764 -04:00 [INF] Getting all the companies.
+2025-07-27 20:03:58.771 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:03:58.773 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:03:58.774 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:03:59.980 -04:00 [INF] Getting all the companies.
+2025-07-27 20:03:59.985 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:03:59.986 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:03:59.987 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:04:00.978 -04:00 [INF] Getting all the companies.
+2025-07-27 20:04:00.984 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:04:00.986 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:04:00.987 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:04:02.039 -04:00 [INF] Getting all the companies.
+2025-07-27 20:04:02.045 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:04:02.047 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:04:02.048 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:04:03.020 -04:00 [INF] Getting all the companies.
+2025-07-27 20:04:03.026 -04:00 [INF] Sending the request headers information.
+2025-07-27 20:04:03.027 -04:00 [INF] Mapping to companiesDto.
+2025-07-27 20:04:03.028 -04:00 [INF] Returning the result to the client.
+2025-07-27 20:06:50.225 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.

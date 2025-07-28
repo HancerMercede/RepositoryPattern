@@ -1,3 +1,4 @@
+using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Options;
 using Presentation;
@@ -8,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var connection = builder.Configuration.GetConnectionString("defaultConnection");
 
+// Adding rate limiting and other services
+builder.Services.ConfigureRateLimiter();
 builder.Services.ConfiguredSqlContext(connection!);
 builder.Services.ConfiguredCors();
 builder.Services.ConfiguredIISIntegration();
@@ -88,8 +91,9 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
-app.UseCors("AllowAll");
+app.UseRateLimiter();
 
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 //app.Run(async context =>

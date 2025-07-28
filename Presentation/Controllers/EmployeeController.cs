@@ -68,7 +68,7 @@ public class EmployeeController(IServiceManager serviceManager, ILogger<Employee
 
         var dto = dbEntity?.Adapt<EmployeeDto>();
 
-        return CreatedAtRoute("GetEmployeeForCompany", new { companyId = dto.CompanyId, id = dto.Id }, dto);
+        return CreatedAtRoute("GetEmployeeForCompany", new { companyId = dto?.CompanyId, id = dto?.Id }, dto);
     }
 
     [HttpDelete("{id}")]
