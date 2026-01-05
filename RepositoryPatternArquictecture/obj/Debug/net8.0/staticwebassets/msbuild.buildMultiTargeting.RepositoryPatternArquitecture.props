@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\RepositoryPatternArquitecture.props" />
-</Project>

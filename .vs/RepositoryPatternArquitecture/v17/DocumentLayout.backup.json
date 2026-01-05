@@ -3,52 +3,36 @@
   "WorkspaceRootPath": "E:\\Mis Archivos\\RepositoryPattern\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D8AC1996-262F-4C4B-B2CF-5D84E8D95FC6}|Presentation\\Presentation.csproj|e:\\mis archivos\\repositorypattern\\presentation\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D8AC1996-262F-4C4B-B2CF-5D84E8D95FC6}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95DE3BD9-A587-35A9-17E0-3C34D2A57441}|Entities\\Entities.csproj|e:\\mis archivos\\repositorypattern\\entities\\models\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95DE3BD9-A587-35A9-17E0-3C34D2A57441}|Entities\\Entities.csproj|solutionrelative:entities\\models\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8AC1996-262F-4C4B-B2CF-5D84E8D95FC6}|Presentation\\Presentation.csproj|e:\\mis archivos\\repositorypattern\\presentation\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D8AC1996-262F-4C4B-B2CF-5D84E8D95FC6}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95DE3BD9-A587-35A9-17E0-3C34D2A57441}|Entities\\Entities.csproj|e:\\mis archivos\\repositorypattern\\entities\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95DE3BD9-A587-35A9-17E0-3C34D2A57441}|Entities\\Entities.csproj|solutionrelative:entities\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F3F0AF3-FB42-4279-83EE-6789DA4CAF11}|Repository\\Repository.csproj|e:\\mis archivos\\repositorypattern\\repository\\companyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F3F0AF3-FB42-4279-83EE-6789DA4CAF11}|Repository\\Repository.csproj|solutionrelative:repository\\companyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9848F5A4-FE3E-4B98-9CC3-2E0651795689}|Contracts\\Contracts.csproj|e:\\mis archivos\\repositorypattern\\contracts\\interfaces\\icompanyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9848F5A4-FE3E-4B98-9CC3-2E0651795689}|Contracts\\Contracts.csproj|solutionrelative:contracts\\interfaces\\icompanyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F3F0AF3-FB42-4279-83EE-6789DA4CAF11}|Repository\\Repository.csproj|e:\\mis archivos\\repositorypattern\\repository\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F3F0AF3-FB42-4279-83EE-6789DA4CAF11}|Repository\\Repository.csproj|solutionrelative:repository\\repositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9848F5A4-FE3E-4B98-9CC3-2E0651795689}|Contracts\\Contracts.csproj|e:\\mis archivos\\repositorypattern\\contracts\\interfaces\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9848F5A4-FE3E-4B98-9CC3-2E0651795689}|Contracts\\Contracts.csproj|solutionrelative:contracts\\interfaces\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{618D424D-7F7B-443D-B2B2-739EB973DE83}|Service\\Service.csproj|e:\\mis archivos\\repositorypattern\\service\\companyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{618D424D-7F7B-443D-B2B2-739EB973DE83}|Service\\Service.csproj|solutionrelative:service\\companyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9848F5A4-FE3E-4B98-9CC3-2E0651795689}|Contracts\\Contracts.csproj|e:\\mis archivos\\repositorypattern\\contracts\\interfaces\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9848F5A4-FE3E-4B98-9CC3-2E0651795689}|Contracts\\Contracts.csproj|solutionrelative:contracts\\interfaces\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F3F0AF3-FB42-4279-83EE-6789DA4CAF11}|Repository\\Repository.csproj|e:\\mis archivos\\repositorypattern\\repository\\repository.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{2F3F0AF3-FB42-4279-83EE-6789DA4CAF11}|Repository\\Repository.csproj|solutionrelative:repository\\repository.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{95DE3BD9-A587-35A9-17E0-3C34D2A57441}|Entities\\Entities.csproj|e:\\mis archivos\\repositorypattern\\entities\\entities.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{95DE3BD9-A587-35A9-17E0-3C34D2A57441}|Entities\\Entities.csproj|solutionrelative:entities\\entities.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F3F0AF3-FB42-4279-83EE-6789DA4CAF11}|Repository\\Repository.csproj|e:\\mis archivos\\repositorypattern\\repository\\repository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{2F3F0AF3-FB42-4279-83EE-6789DA4CAF11}|Repository\\Repository.csproj|solutionrelative:repository\\repository.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{9848F5A4-FE3E-4B98-9CC3-2E0651795689}|Contracts\\Contracts.csproj|e:\\mis archivos\\repositorypattern\\contracts\\interfaces\\irepositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9848F5A4-FE3E-4B98-9CC3-2E0651795689}|Contracts\\Contracts.csproj|solutionrelative:contracts\\interfaces\\irepositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{242298C4-99D2-442B-B9BB-3F2C34F07289}|Service.Contracts\\Service.Contracts.csproj|e:\\mis archivos\\repositorypattern\\service.contracts\\service.contracts.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{242298C4-99D2-442B-B9BB-3F2C34F07289}|Service.Contracts\\Service.Contracts.csproj|solutionrelative:service.contracts\\service.contracts.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A572A88-989D-4B1D-AD67-04031FD86C65}|Persistence\\Persistence.csproj|e:\\mis archivos\\repositorypattern\\persistence\\persistence.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{8A572A88-989D-4B1D-AD67-04031FD86C65}|Persistence\\Persistence.csproj|solutionrelative:persistence\\persistence.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F8EB6F2-B6DB-486E-A612-D968163DA333}|Entities\\Entities.csproj|e:\\mis archivos\\repositorypattern\\entities\\entities.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{0F8EB6F2-B6DB-486E-A612-D968163DA333}|Entities\\Entities.csproj|solutionrelative:entities\\entities.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B59372F-E085-4C44-9A87-B80902941582}|Dtos\\Dtos.csproj|e:\\mis archivos\\repositorypattern\\dtos\\dtos.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{2B59372F-E085-4C44-9A87-B80902941582}|Dtos\\Dtos.csproj|solutionrelative:dtos\\dtos.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9848F5A4-FE3E-4B98-9CC3-2E0651795689}|Contracts\\Contracts.csproj|e:\\mis archivos\\repositorypattern\\contracts\\contracts.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{9848F5A4-FE3E-4B98-9CC3-2E0651795689}|Contracts\\Contracts.csproj|solutionrelative:contracts\\contracts.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{9848F5A4-FE3E-4B98-9CC3-2E0651795689}|Contracts\\Contracts.csproj|e:\\mis archivos\\repositorypattern\\contracts\\interfaces\\irepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9848F5A4-FE3E-4B98-9CC3-2E0651795689}|Contracts\\Contracts.csproj|solutionrelative:contracts\\interfaces\\irepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,8 +42,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 11,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Entities",
+              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Entities\\Entities.csproj",
+              "RelativeDocumentMoniker": "Entities\\Entities.csproj",
+              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Entities\\Entities.csproj",
+              "RelativeToolTip": "Entities\\Entities.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-05T17:22:38.119Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -82,143 +79,94 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EmployeeController.cs",
-              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Presentation\\Controllers\\EmployeeController.cs",
-              "RelativeDocumentMoniker": "Presentation\\Controllers\\EmployeeController.cs",
-              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Presentation\\Controllers\\EmployeeController.cs",
-              "RelativeToolTip": "Presentation\\Controllers\\EmployeeController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "IRepositoryManager.cs",
+              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Interfaces\\IRepositoryManager.cs",
+              "RelativeDocumentMoniker": "Contracts\\Interfaces\\IRepositoryManager.cs",
+              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Interfaces\\IRepositoryManager.cs",
+              "RelativeToolTip": "Contracts\\Interfaces\\IRepositoryManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T16:18:52.358Z",
+              "WhenOpened": "2026-01-05T17:21:01.633Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CompanyController.cs",
-              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Presentation\\Controllers\\CompanyController.cs",
-              "RelativeDocumentMoniker": "Presentation\\Controllers\\CompanyController.cs",
-              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Presentation\\Controllers\\CompanyController.cs",
-              "RelativeToolTip": "Presentation\\Controllers\\CompanyController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAQAAAAuAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "IRepositoryBase.cs",
+              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Interfaces\\IRepositoryBase.cs",
+              "RelativeDocumentMoniker": "Contracts\\Interfaces\\IRepositoryBase.cs",
+              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Interfaces\\IRepositoryBase.cs",
+              "RelativeToolTip": "Contracts\\Interfaces\\IRepositoryBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T15:20:34.748Z",
+              "WhenOpened": "2026-01-05T17:20:59.528Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CompanyService.cs",
-              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Service\\CompanyService.cs",
-              "RelativeDocumentMoniker": "Service\\CompanyService.cs",
-              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Service\\CompanyService.cs",
-              "RelativeToolTip": "Service\\CompanyService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Title": "IEntity.cs",
+              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Interfaces\\IEntity.cs",
+              "RelativeDocumentMoniker": "Contracts\\Interfaces\\IEntity.cs",
+              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Interfaces\\IEntity.cs",
+              "RelativeToolTip": "Contracts\\Interfaces\\IEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T15:10:08.268Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CompanyRepository.cs",
-              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Repository\\CompanyRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\CompanyRepository.cs",
-              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Repository\\CompanyRepository.cs",
-              "RelativeToolTip": "Repository\\CompanyRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T15:10:08.28Z"
+              "WhenOpened": "2026-01-05T17:20:57.224Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "RepositoryBase.cs",
-              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Repository\\RepositoryBase.cs",
-              "RelativeDocumentMoniker": "Repository\\RepositoryBase.cs",
-              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Repository\\RepositoryBase.cs",
-              "RelativeToolTip": "Repository\\RepositoryBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "Title": "IEmployeeRepository.cs",
+              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Interfaces\\IEmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Contracts\\Interfaces\\IEmployeeRepository.cs",
+              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Interfaces\\IEmployeeRepository.cs",
+              "RelativeToolTip": "Contracts\\Interfaces\\IEmployeeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T15:10:08.291Z"
+              "WhenOpened": "2026-01-05T17:20:45.826Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Repository",
-              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Repository\\Repository.csproj",
-              "RelativeDocumentMoniker": "Repository\\Repository.csproj",
-              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Repository\\Repository.csproj",
-              "RelativeToolTip": "Repository\\Repository.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-01T15:09:27.932Z"
+              "DocumentIndex": 2,
+              "Title": "ICompanyRepository.cs",
+              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Interfaces\\ICompanyRepository.cs",
+              "RelativeDocumentMoniker": "Contracts\\Interfaces\\ICompanyRepository.cs",
+              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Interfaces\\ICompanyRepository.cs",
+              "RelativeToolTip": "Contracts\\Interfaces\\ICompanyRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T17:20:25.181Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Repository.csproj",
-              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Repository\\Repository.csproj",
-              "RelativeDocumentMoniker": "Repository\\Repository.csproj",
-              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Repository\\Repository.csproj",
-              "RelativeToolTip": "Repository\\Repository.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-01T15:09:19.296Z"
+              "DocumentIndex": 0,
+              "Title": "Company.cs",
+              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Entities\\Models\\Company.cs",
+              "RelativeDocumentMoniker": "Entities\\Models\\Company.cs",
+              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Entities\\Models\\Company.cs*",
+              "RelativeToolTip": "Entities\\Models\\Company.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T17:05:22.441Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Service.Contracts",
-              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Service.Contracts\\Service.Contracts.csproj",
-              "RelativeDocumentMoniker": "Service.Contracts\\Service.Contracts.csproj",
-              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Service.Contracts\\Service.Contracts.csproj",
-              "RelativeToolTip": "Service.Contracts\\Service.Contracts.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-01T15:08:56.214Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Persistence",
-              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Persistence\\Persistence.csproj",
-              "RelativeDocumentMoniker": "Persistence\\Persistence.csproj",
-              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Persistence\\Persistence.csproj",
-              "RelativeToolTip": "Persistence\\Persistence.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-01T15:08:49.38Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Entities",
-              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Entities\\Entities.csproj",
-              "RelativeDocumentMoniker": "Entities\\Entities.csproj",
-              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Entities\\Entities.csproj",
-              "RelativeToolTip": "Entities\\Entities.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-01T15:08:44.833Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Dtos",
-              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Dtos\\Dtos.csproj",
-              "RelativeDocumentMoniker": "Dtos\\Dtos.csproj",
-              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Dtos\\Dtos.csproj",
-              "RelativeToolTip": "Dtos\\Dtos.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-01T15:08:33.035Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Contracts",
-              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Contracts.csproj",
-              "RelativeDocumentMoniker": "Contracts\\Contracts.csproj",
-              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Contracts\\Contracts.csproj",
-              "RelativeToolTip": "Contracts\\Contracts.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-01T15:07:42.531Z"
+              "DocumentIndex": 1,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "E:\\Mis Archivos\\RepositoryPattern\\Entities\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "Entities\\Models\\Employee.cs",
+              "ToolTip": "E:\\Mis Archivos\\RepositoryPattern\\Entities\\Models\\Employee.cs*",
+              "RelativeToolTip": "Entities\\Models\\Employee.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T17:04:49.675Z",
+              "EditorCaption": ""
             }
           ]
         }

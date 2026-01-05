@@ -22,7 +22,7 @@ namespace Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Entities.Models.Company", b =>
+            modelBuilder.Entity("Entities.Project.Models.Company", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -63,7 +63,7 @@ namespace Persistence.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Entities.Models.Employee", b =>
+            modelBuilder.Entity("Entities.Project.Models.Employee", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -119,9 +119,9 @@ namespace Persistence.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Entities.Models.Employee", b =>
+            modelBuilder.Entity("Entities.Project.Models.Employee", b =>
                 {
-                    b.HasOne("Entities.Models.Company", "Company")
+                    b.HasOne("Entities.Project.Models.Company", "Company")
                         .WithMany("Employees")
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -130,7 +130,7 @@ namespace Persistence.Migrations
                     b.Navigation("Company");
                 });
 
-            modelBuilder.Entity("Entities.Models.Company", b =>
+            modelBuilder.Entity("Entities.Project.Models.Company", b =>
                 {
                     b.Navigation("Employees");
                 });

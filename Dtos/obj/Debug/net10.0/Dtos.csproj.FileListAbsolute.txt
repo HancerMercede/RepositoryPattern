@@ -1,0 +1,12 @@
+E:\Mis Archivos\RepositoryPattern\Dtos\bin\Debug\net10.0\Dtos.deps.json
+E:\Mis Archivos\RepositoryPattern\Dtos\bin\Debug\net10.0\Dtos.dll
+E:\Mis Archivos\RepositoryPattern\Dtos\bin\Debug\net10.0\Dtos.pdb
+E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net10.0\Dtos.GeneratedMSBuildEditorConfig.editorconfig
+E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net10.0\Dtos.AssemblyInfoInputs.cache
+E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net10.0\Dtos.AssemblyInfo.cs
+E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net10.0\Dtos.csproj.CoreCompileInputs.cache
+E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net10.0\Dtos.sourcelink.json
+E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net10.0\Dtos.dll
+E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net10.0\refint\Dtos.dll
+E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net10.0\Dtos.pdb
+E:\Mis Archivos\RepositoryPattern\Dtos\obj\Debug\net10.0\ref\Dtos.dll

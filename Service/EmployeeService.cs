@@ -24,7 +24,7 @@ public class EmployeeService:IEmployeeService
     public async Task DeleteEmployee(string companyId, string id, bool trackChanges)
     {
         if (id is null)
-            throw new EmployeeNotFoundException(Guid.Parse(id));
+            throw new EmployeeNotFoundException(Guid.Parse(id!));
 
         var company = await _repositoryManager.Company.GetByCondition(companyId, trackChanges);
         

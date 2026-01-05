@@ -1,5 +1,5 @@
 ﻿
-// ReSharper disable All
+
 
 using System.Threading.RateLimiting;
 using Service;
@@ -18,6 +18,7 @@ public static class ServiceExtensions
                .AllowAnyHeader());
         });
     
+    // ReSharper disable once InconsistentNaming
     public static void ConfiguredIISIntegration(this IServiceCollection services) =>
         services.Configure<IISOptions>(opt => 
         { 
