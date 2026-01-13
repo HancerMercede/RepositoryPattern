@@ -4,11 +4,12 @@ namespace Service;
 
 internal sealed class CompanyService(IRepositoryManager repositoryManager) : ICompanyService
 {
+    #region Conventional Implementation without Either  
     public async Task<(IEnumerable<Company> companies, MetaData metaData)> GetAll(PaginationParameters pagination, bool trackChanges)
     {
         var companies = await repositoryManager.Company.GetAll(pagination, trackChanges);
         var metaData = companies.MetaData;
-
+        
         return (companies, metaData);
     }
 
@@ -43,8 +44,63 @@ internal sealed class CompanyService(IRepositoryManager repositoryManager) : ICo
         return companiesEntities;
     }
 
-    
-
     public async Task DeleteCompany(string id, bool trackChanges) => await repositoryManager.Company.DeleteRecord(id, trackChanges);
+    #endregion
+    public EitherAsync<string, (IEnumerable<Company> companies, MetaData metaData)> GetAllWithEither(PaginationParameters pagination, bool trackChanges)
+    {
+        return EitherAsync<string,(IEnumerable<Company>, MetaData) >.Try(async () =>
+            {
+                var companies = await repositoryManager.Company.GetAll(pagination, trackChanges);
+                return ( companies :(IEnumerable<Company>) companies, companies.MetaData);
+            }, exception => exception.Message
+        ).Ensure(db => db.companies.Any(), "No companies found");
+    }
+
+    public EitherAsync<string, IEnumerable<Company>> GetByIdsWithEither(IEnumerable<Guid> ids, bool trackChanges)
+    {
+        return EitherAsync<string, IEnumerable<Company>>.Try(async () =>
+            {
+                var companies = await repositoryManager.Company.GetByIds(ids, trackChanges);
+                return companies;
+            }, exception=> exception.Message)
+            .Ensure(companies => companies.Count() != ids.Count(), 
+                new CollectionByIdsBadRequestException().Message);
+    }
+
+    public EitherAsync<string, Company> CreateCompanyWithEither(Company company)
+    {
+       return EitherAsync<string, Company>.Try(async () =>
+        {
+            var dbCompany = await repositoryManager.Company.CreateRecord(company);
+            await repositoryManager.Save();
+            return dbCompany;
+
+        }, exception => exception.Message)
+           .Ensure(c=> !string.IsNullOrEmpty(c.Name) && !string.IsNullOrEmpty(c.Address), "The name or address cannot be null or empty." );
+    }
+
+
+    public EitherAsync<string, Company> GetByConditionWithEither(string id, bool trackChanges)
+    {
+        return EitherAsync<string, Company>.Try(async () =>
+            {
+                var company = await repositoryManager.Company.GetByCondition(id, trackChanges);
+                return company;
+            }, exception => exception.Message)
+            .Ensure(company => company is not null, new CompanyNotFoundException(Guid.Parse(id)).Message);
+
+    }
+
     
+    public EitherAsync<string, Unit> DeleteCompanyWithEither(string id, bool trackChanges)
+    {
+        return EitherAsync<string, Unit>.Try(async () =>
+        {
+            await repositoryManager.Company.DeleteRecord(id, trackChanges);
+            await repositoryManager.Save();
+
+            return new Unit();
+        }, _ => new CompanyNotFoundException(Guid.Parse(id)).Message);
+
+    }
 }

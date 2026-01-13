@@ -7,13 +7,15 @@
 public class CompanyController(IServiceManager serviceManager, ILogger<CompanyController> logger)
     : ControllerBase
 {
+    #region  Conventional Implementation without Either
+    
     [HttpGet(Name = "GetCompanies")]
     [ProducesResponseType(200)]
     [ProducesResponseType(404)]
     public async Task<ActionResult<IEnumerable<CompanyDto>>> GetAll([FromQuery] PaginationParameters pagination)
     {
         logger.LogInformation("Getting all the companies.");
-        var dbEntities = await serviceManager.CompanyService.GetAll(pagination, false);
+        var dbEntities =  await serviceManager.CompanyService.GetAll(pagination, false);
 
         logger.LogInformation("Sending the request headers information.");
         var queryable = dbEntities.companies.AsQueryable();
@@ -21,7 +23,8 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
        
         HttpContext.HeadersPaginationParametersInsert(queryable, metaData);
 
-        if (!dbEntities.companies.Any()) return NotFound("No companies found.");
+        if (!dbEntities.companies.Any()) 
+            return NotFound("No companies found.");
         
         logger.LogInformation("Mapping to companiesDto.");
         var companiesDto = dbEntities.companies.Adapt<IEnumerable<CompanyDto>>();
@@ -122,9 +125,81 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
         await serviceManager.Save();  
         return NoContent(); 
     }
+    #endregion
+    [HttpGet("Either")]
+    public async Task<ActionResult<IEnumerable<CompanyDto>>> GetAllWithEither([FromQuery] PaginationParameters pagination)
+    {
+        var result = await serviceManager.CompanyService.GetAllWithEither(pagination, false).Run();
 
-    
-   
+        return result.Match<ActionResult<IEnumerable<CompanyDto>>>(
+            error => NotFound(error),
+            success =>
+            {
+                var companies = success.companies.AsQueryable();
+                var metadata = success.metaData;
+                
+                HttpContext.HeadersPaginationParametersInsert(companies, metadata);
+                var companiesDtos = success.companies.Adapt<IEnumerable<CompanyDto>>();
+                return Ok(companiesDtos);
+            }
+        );
+    }
+
+    [HttpGet("Either/{Id}")]
+    public async Task<ActionResult<CompanyDto>> GetByIdWithEither(string id)
+    {
+        var result = await serviceManager.CompanyService.GetByConditionWithEither(id, trackChanges:false)
+            .Map<CompanyDto>(c => new CompanyDto
+            {   
+                Id = c.Id,
+                Name = c.Name,
+                FullAddress = string.Concat(c.Address," ",c.Country)
+            })
+         .Run();
+        
+        return result.Match<ActionResult<CompanyDto>>(error => NotFound(error),
+            success => Ok(success)
+            );
+    }
+
+    [HttpGet("Either/Collection/{ids}")]
+    public async Task<ActionResult<IEnumerable<CompanyDto>>>GetCompaniesCollectionWithEitherByIds(
+        [ModelBinder(BinderType = typeof(ArrayModelBinder))] IEnumerable<Guid> ids)
+    {
+        var result = await serviceManager.CompanyService.GetByIdsWithEither(ids, trackChanges: false).Run();
+        return result.Match<ActionResult<IEnumerable<CompanyDto>>>(error => BadRequest(error),
+            success =>
+            {
+                var companiesDto = success.Adapt<IEnumerable<CompanyDto>>();
+                return Ok(companiesDto);
+            }
+        );
+    }
+
+    [HttpPost("CreateEither")]
+    public async Task<ActionResult<CompanyDto>> CreateEither([FromBody] CompanyCreateDto model)
+    {
+        var companyDb = model.Adapt<Company>();
+        var result = await serviceManager.CompanyService.CreateCompanyWithEither(companyDb).Map(c => new CompanyDto
+        {
+            Id = c.Id,
+            Name = c.Name,
+            FullAddress = string.Concat(c.Address, " ", c.Country)
+        }).Run();
+        
+        return result.Match<ActionResult<CompanyDto>>(error => BadRequest(error),
+            success => CreatedAtRoute("GetById", new { success.Id }, success));
+    }
+
+    [HttpDelete("DeleteEither/{Id}")]
+    public async Task<IActionResult> DeleteEither(string id)
+    {
+        var result = await serviceManager.CompanyService.DeleteCompanyWithEither(id, trackChanges:false)
+            .Run();
+
+        return result.Match<IActionResult>(error => NotFound(error),
+            success => NoContent());
+    }
 }
 
 

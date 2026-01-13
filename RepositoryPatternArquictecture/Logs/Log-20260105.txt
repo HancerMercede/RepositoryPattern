@@ -1,2 +1,16 @@
 2026-01-05 13:34:50.523 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
 2026-01-05 13:34:50.815 -04:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2026-01-05 16:41:35.944 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2026-01-05 16:41:36.200 -04:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2026-01-05 16:42:26.250 -04:00 [INF] Getting all the companies.
+2026-01-05 16:42:28.548 -04:00 [INF] Sending the request headers information.
+2026-01-05 16:42:28.563 -04:00 [INF] Mapping to companiesDto.
+2026-01-05 16:42:28.650 -04:00 [INF] Returning the result to the client.
+2026-01-05 16:42:45.871 -04:00 [INF] Getting all the companies.
+2026-01-05 16:42:45.908 -04:00 [INF] Sending the request headers information.
+2026-01-05 16:42:45.910 -04:00 [INF] Mapping to companiesDto.
+2026-01-05 16:42:45.911 -04:00 [INF] Returning the result to the client.
+2026-01-05 16:42:56.958 -04:00 [INF] Getting all the companies.
+2026-01-05 16:42:56.966 -04:00 [INF] Sending the request headers information.
+2026-01-05 16:42:56.968 -04:00 [INF] Mapping to companiesDto.
+2026-01-05 16:42:56.970 -04:00 [INF] Returning the result to the client.
