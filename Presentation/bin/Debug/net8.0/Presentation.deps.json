@@ -566,7 +566,7 @@
         },
         "runtime": {
           "Contracts.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -574,7 +574,7 @@
       "Dtos/1.0.0": {
         "runtime": {
           "Dtos.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -582,7 +582,7 @@
       "Entities/1.0.0": {
         "runtime": {
           "Entities.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -595,7 +595,7 @@
         },
         "runtime": {
           "Service.Contracts.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -603,7 +603,7 @@
       "Shared/1.0.0": {
         "runtime": {
           "Shared.dll": {
-            "assemblyVersion": "1.0.0",
+            "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         }

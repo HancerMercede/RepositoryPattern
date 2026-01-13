@@ -43,7 +43,7 @@ public class CompanyRepository(RepositoryContext repositoryContext)
     {
         var company = await FindByCondition(c => c.Id == Guid.Parse(id), trackChanges)
             .FirstOrDefaultAsync();
-
+        
         await Delete(company!);
     }
 }

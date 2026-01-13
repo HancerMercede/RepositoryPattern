@@ -1,6 +1,7 @@
 ﻿
-// ReSharper disable All
 
+
+using System.Threading.RateLimiting;
 using Service;
 using Service.Contracts.Interfaces;
 
@@ -17,6 +18,7 @@ public static class ServiceExtensions
                .AllowAnyHeader());
         });
     
+    // ReSharper disable once InconsistentNaming
     public static void ConfiguredIISIntegration(this IServiceCollection services) =>
         services.Configure<IISOptions>(opt => 
         { 
@@ -35,4 +37,32 @@ public static class ServiceExtensions
 
     public static void ConfigureServiceManager(this IServiceCollection services) =>
         services.AddScoped<IServiceManager, ServiceManager>();
+
+    public static void ConfigureRateLimiter(this IServiceCollection services)
+    {
+        services.AddRateLimiter(options =>
+        {
+            options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(ctx =>
+                RateLimitPartition.GetFixedWindowLimiter(
+                    partitionKey: ctx.Connection.RemoteIpAddress?.ToString() ?? "Unknown",
+                    factory: _ => new FixedWindowRateLimiterOptions
+                    {
+                        PermitLimit = 5,
+                        Window = TimeSpan.FromSeconds(10),
+                    }
+                ));
+            options.AddPolicy("genaral", ctx =>
+            {
+                return RateLimitPartition.GetFixedWindowLimiter(
+                    partitionKey: ctx.Connection.RemoteIpAddress?.ToString() ?? "Unknown",
+                    factory: _ => new FixedWindowRateLimiterOptions
+                    {
+                        PermitLimit = 5,
+                        Window = TimeSpan.FromSeconds(10)
+                    }
+                );
+            });
+        });
+    }
+
 }

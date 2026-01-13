@@ -11,7 +11,7 @@ public static class MapsterConfig
     {
         TypeAdapterConfig<Company, CompanyDto>
         .NewConfig()
-        .Map(dest => dest.FullAddress, src => string.Concat(src.Address, " ", src.Country));
+        .Map(dest => dest.FullAddress, src => string.Concat(src.Address," ", src.Country));
         TypeAdapterConfig.GlobalSettings.Scan(Assembly.GetExecutingAssembly());
     }
 }

@@ -1,15 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <LangVersion>14</LangVersion>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Entities</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Reference Include="Contracts">
-      <HintPath>..\RepositoryPatternArquictecture\bin\Debug\net8.0\Contracts.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 
 </Project>

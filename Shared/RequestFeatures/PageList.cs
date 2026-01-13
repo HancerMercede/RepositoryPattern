@@ -21,7 +21,10 @@ public class PageList<T> : List<T>
     public static PageList<T> ToPageList(IEnumerable<T> source, int pageNumber, int pageSize)
     { 
         var count = source.Count();
-        var items = source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+        var items = source
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
 
         return new PageList<T>(items, count, pageNumber, pageSize);   
     }

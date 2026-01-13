@@ -1,7 +1,6 @@
 ﻿
-using Entities.Models;
-using Shared.RequestFeatures;
 using Shared.Shared;
+using Entities.Models;
 
 namespace Contracts.Interfaces;
 

@@ -1,9 +1,14 @@
 ﻿
 
-using Contracts.Interfaces;
+
+
+
+
+
+using Entities.Helpers;
 
 namespace Entities.Models;
-public class Company : IEntity
+public class Company: IEntity
 {
     public Company()
     {

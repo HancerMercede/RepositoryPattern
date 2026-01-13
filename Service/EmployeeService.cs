@@ -4,48 +4,41 @@ using Mapster;
 
 namespace Service;
 
-public class EmployeeService:IEmployeeService
+public class EmployeeService(IRepositoryManager repositoryManager) : IEmployeeService
 {
-    private readonly IRepositoryManager _repositoryManager;
-
-    public EmployeeService(IRepositoryManager repositoryManager)
-    {
-        _repositoryManager = repositoryManager;
-    }
-
     public async Task<Employee> CreateEmployee(string companyId, Employee employee)
     {
         if (employee is null)
             throw new EmployeeBadRequestException();
         
-        return  await _repositoryManager.Employee.CreateEmployeeForCompany(companyId, employee);
+        return  await repositoryManager.Employee.CreateEmployeeForCompany(companyId, employee);
     }
     
     public async Task DeleteEmployee(string companyId, string id, bool trackChanges)
     {
         if (id is null)
-            throw new EmployeeNotFoundException(Guid.Parse(id));
+            throw new EmployeeNotFoundException(Guid.Parse(id!));
 
-        var company = await _repositoryManager.Company.GetByCondition(companyId, trackChanges);
+        var company = await repositoryManager.Company.GetByCondition(companyId, trackChanges);
         
         if (company is null)
             throw new CompanyNotFoundException(Guid.Parse(companyId));
 
-        var employee = await _repositoryManager.Employee.GetByCondition(companyId, id, trackChanges);
+        var employee = await repositoryManager.Employee.GetByCondition(companyId, id, trackChanges);
 
         if (employee is null)
             throw new EmployeeNotFoundException(Guid.Parse(id));
         
-        await _repositoryManager.Employee.DeleteEmployee(companyId, id, trackChanges);
+        await repositoryManager.Employee.DeleteEmployee(companyId, id, trackChanges);
     }
 
     public async Task<(EmployeeUpdateDto employeeToPath, Employee employee)> GetEmployeeForPatch(string companyId, string id, bool compTrackChanges, bool empTrackChanges)
     {
-         var company = await _repositoryManager.Company.GetByCondition(companyId, compTrackChanges);
+         var company = await repositoryManager.Company.GetByCondition(companyId, compTrackChanges);
          
          var existCompany = company ?? throw new CompanyNotFoundException(Guid.Parse(companyId));
          
-         var employee = await _repositoryManager.Employee.GetByCondition(companyId, id, empTrackChanges);
+         var employee = await repositoryManager.Employee.GetByCondition(companyId, id, empTrackChanges);
          
          var existEmployee = employee ?? throw new EmployeeNotFoundException(Guid.Parse(id));
 
@@ -57,12 +50,12 @@ public class EmployeeService:IEmployeeService
     public async Task SaveChangesForPatch(EmployeeUpdateDto employee, Employee employeeEntity)
     {
         employee.Adapt(employeeEntity);
-        await _repositoryManager.Save();
+        await repositoryManager.Save();
     }
 
     public async Task<(IEnumerable<Employee> Employees, MetaData metaData)> GetAll(string companyId,PaginationParameters paginationParameters, bool trackChanges)
     {
-        var employees = await _repositoryManager.Employee.GetAll(companyId, paginationParameters, trackChanges);
+        var employees = await repositoryManager.Employee.GetAll(companyId, paginationParameters, trackChanges);
         var metadata = employees.MetaData;
        
         return (Employees: employees, metaData: metadata); 
@@ -73,7 +66,7 @@ public class EmployeeService:IEmployeeService
         if (id is null)
             throw new IdParametersBadRequestException();
 
-        var employeeDb = await _repositoryManager.Employee.GetByCondition(companyId, id,trackChanges);
+        var employeeDb = await repositoryManager.Employee.GetByCondition(companyId, id,trackChanges);
         
         if (employeeDb is null)
             throw new EmployeeNotFoundException(Guid.Parse(id));
