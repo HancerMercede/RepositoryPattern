@@ -148,7 +148,7 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
         );
     }
 
-    [HttpGet("Either/{Id}")]
+    [HttpGet("Either/{Id}", Name = "GetCompanyById")]
     public async Task<ActionResult<CompanyDto>> GetByIdWithEither(string id) => 
         (await serviceManager.CompanyService
         .GetByConditionWithEither(id, trackChanges: false)
@@ -172,9 +172,8 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
             Name = c.Name,
             FullAddress = string.Concat(c.Address, " ", c.Country)
         }).Run();
-        
-        return result.Match<ActionResult<CompanyDto>>(error => BadRequest(error),
-            success => CreatedAtRoute("GetById", new { success.Id }, success));
+
+        return result.HandleCreated("GetCompanyById", c=>c.Id);
     }
 
     [HttpDelete("DeleteEither/{Id}")]
