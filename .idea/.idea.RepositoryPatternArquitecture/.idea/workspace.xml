@@ -12,115 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="46655f67-3701-4d22-b42d-bac0673aaa16" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RepositoryPatternArquitecture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RepositoryPatternArquitecture/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/bin/Debug/net10.0/Contracts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/bin/Debug/net10.0/Contracts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/bin/Debug/net10.0/Contracts.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/bin/Debug/net10.0/Contracts.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/Contracts.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/Contracts.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/Contracts.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/Contracts.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/Contracts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/Contracts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/Contracts.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/Contracts.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/Contracts.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/Contracts.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/ref/Contracts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/ref/Contracts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/refint/Contracts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/obj/Debug/net10.0/refint/Contracts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dtos/bin/Debug/net10.0/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/bin/Debug/net10.0/Dtos.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dtos/bin/Debug/net10.0/Dtos.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/bin/Debug/net10.0/Dtos.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/Dtos.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/Dtos.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/Dtos.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/Dtos.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/Dtos.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/Dtos.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/Dtos.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/Dtos.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/Dtos.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/ref/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/ref/Dtos.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/refint/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/Debug/net10.0/refint/Dtos.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dtos/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Dtos/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/obj/Debug/net10.0/Entities.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/obj/Debug/net10.0/Entities.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/obj/Debug/net10.0/Entities.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/obj/Debug/net10.0/Entities.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/bin/Debug/net10.0/Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/bin/Debug/net10.0/Persistence.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/bin/Debug/net10.0/Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/bin/Debug/net10.0/Persistence.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/Persistence.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/Persistence.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/Persistence.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/Persistence.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/Persistence.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/Persistence.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/Persistence.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/Persistence.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/ref/Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/ref/Persistence.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/refint/Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/obj/Debug/net10.0/refint/Persistence.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Contracts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Contracts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Contracts.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Contracts.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Dtos.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Dtos.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Dtos.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/bin/Debug/net10.0/Contracts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/bin/Debug/net10.0/Contracts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/bin/Debug/net10.0/Contracts.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/bin/Debug/net10.0/Contracts.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/bin/Debug/net10.0/Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/bin/Debug/net10.0/Persistence.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/bin/Debug/net10.0/Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/bin/Debug/net10.0/Persistence.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/bin/Debug/net10.0/Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/bin/Debug/net10.0/Repository.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/bin/Debug/net10.0/Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/bin/Debug/net10.0/Repository.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/Repository.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/Repository.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/Repository.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/Repository.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/Repository.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/Repository.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/Repository.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/Repository.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/Repository.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/Repository.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/ref/Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/ref/Repository.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/refint/Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/obj/Debug/net10.0/refint/Repository.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repository/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Repository/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/Logs/Log-20231209.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Contracts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Contracts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Contracts.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Contracts.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Dtos.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Dtos.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Dtos.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Persistence.dll" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Persistence.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Persistence.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Persistence.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Repository.dll" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Repository.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Repository.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Repository.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/RepositoryPatternArquitecture.dll" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/RepositoryPatternArquitecture.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/RepositoryPatternArquitecture.exe" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/RepositoryPatternArquitecture.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/RepositoryPatternArquitecture.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/RepositoryPatternArquitecture.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Service.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Service.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.dll" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/ref/RepositoryPatternArquitecture.dll" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/ref/RepositoryPatternArquitecture.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/refint/RepositoryPatternArquitecture.dll" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/refint/RepositoryPatternArquitecture.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/rjsmrazor.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/rjsmrazor.dswa.cache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service.Contracts/bin/Debug/net10.0/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Contracts/bin/Debug/net10.0/Dtos.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service.Contracts/bin/Debug/net10.0/Dtos.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Contracts/bin/Debug/net10.0/Dtos.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service.Contracts/obj/Debug/net10.0/Service.Contracts.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Contracts/obj/Debug/net10.0/Service.Contracts.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service.Contracts/obj/Debug/net10.0/Service.Contracts.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Contracts/obj/Debug/net10.0/Service.Contracts.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service.Contracts/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Contracts/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/CompanyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/CompanyService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Contracts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Contracts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Contracts.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Contracts.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Dtos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Dtos.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Dtos.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Dtos.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Service.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Service.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/ref/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/ref/Service.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/refint/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/refint/Service.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Service/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net10.0/Shared.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net10.0/Shared.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net10.0/Shared.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net10.0/Shared.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/obj/Debug/net10.0/Tests.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/obj/Debug/net10.0/Tests.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/obj/Debug/net10.0/Tests.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/obj/Debug/net10.0/Tests.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/obj/Debug/net10.0/Tests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/obj/Debug/net10.0/Tests.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Shared/Either.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Shared/Either.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Shared/EitherAsync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Shared/EitherAsync.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -344,7 +237,7 @@
       <workItem from="1768254186555" duration="2465000" />
       <workItem from="1768258493588" duration="8251000" />
       <workItem from="1768320542388" duration="11672000" />
-      <workItem from="1768399566683" duration="306000" />
+      <workItem from="1768399566683" duration="1243000" />
     </task>
     <servers />
   </component>
