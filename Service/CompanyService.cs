@@ -95,13 +95,15 @@ internal sealed class CompanyService(IRepositoryManager repositoryManager) : ICo
     
     public EitherAsync<string, Unit> DeleteCompanyWithEither(string id, bool trackChanges)
     {
-        return EitherAsync<string, Unit>.Try(async () =>
-        {
-            await repositoryManager.Company.DeleteRecord(id, trackChanges);
-            await repositoryManager.Save();
+        return EitherAsync<string, string>.FromRight(id)
+            .Ensure(s =>!string.IsNullOrWhiteSpace(s) , $"the id can not be null or empty")
+            .Ensure(s=>Guid.TryParse(s,out _),$"{id} is not a valid Guid.")
+            .FlatMap(idParam=> EitherAsync<string, Unit>.Try(async () =>
+            {
+                await repositoryManager.Company.DeleteRecord(idParam, trackChanges);
+                await repositoryManager.Save();
 
-            return new Unit();
-        }, _ => new CompanyNotFoundException(Guid.Parse(id)).Message);
-
+                return new Unit();
+            }, _ => new CompanyNotFoundException(Guid.Parse(id)).Message).Run());
     }
 }

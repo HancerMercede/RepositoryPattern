@@ -69,3 +69,278 @@ System.InvalidOperationException: No route matches the supplied values.
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
 2026-01-14 11:38:06.091 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
 2026-01-14 11:38:17.367 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2026-01-14 11:44:36.816 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2026-01-14 12:03:17.074 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2026-01-14 12:03:51.676 -04:00 [ERR] Something went wrong: System.FormatException: Unrecognized Guid format.
+   at System.Guid.GuidResult.SetFailure(ParseFailure failureKind)
+   at System.Guid.TryParseGuid[TChar](ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.Parse(ReadOnlySpan`1 input)
+   at System.Guid.Parse(String input)
+   at Service.CompanyService.<>c__DisplayClass11_0.<DeleteCompanyWithEither>b__3(Exception _) in E:\Mis Archivos\RepositoryPattern\Service\CompanyService.cs:line 106
+   at Shared.Shared.EitherAsync`2.<>c__DisplayClass11_0`2.<<Try>b__0>d.MoveNext() in E:\Mis Archivos\RepositoryPattern\Shared\Shared\EitherAsync.cs:line 73
+--- End of stack trace from previous location ---
+   at Shared.Shared.EitherAsync`2.<>c__DisplayClass8_0`1.<<FlatMap>b__0>d.MoveNext() in E:\Mis Archivos\RepositoryPattern\Shared\Shared\EitherAsync.cs:line 35
+--- End of stack trace from previous location ---
+   at Presentation.Controllers.CompanyController.DeleteEither(String id) in E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\CompanyController.cs:line 181
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2026-01-14 12:03:51.689 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Unrecognized Guid format.
+   at System.Guid.GuidResult.SetFailure(ParseFailure failureKind)
+   at System.Guid.TryParseGuid[TChar](ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.Parse(ReadOnlySpan`1 input)
+   at System.Guid.Parse(String input)
+   at Service.CompanyService.<>c__DisplayClass11_0.<DeleteCompanyWithEither>b__3(Exception _) in E:\Mis Archivos\RepositoryPattern\Service\CompanyService.cs:line 106
+   at Shared.Shared.EitherAsync`2.<>c__DisplayClass11_0`2.<<Try>b__0>d.MoveNext() in E:\Mis Archivos\RepositoryPattern\Shared\Shared\EitherAsync.cs:line 73
+--- End of stack trace from previous location ---
+   at Shared.Shared.EitherAsync`2.<>c__DisplayClass8_0`1.<<FlatMap>b__0>d.MoveNext() in E:\Mis Archivos\RepositoryPattern\Shared\Shared\EitherAsync.cs:line 35
+--- End of stack trace from previous location ---
+   at Presentation.Controllers.CompanyController.DeleteEither(String id) in E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\CompanyController.cs:line 181
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2026-01-14 12:03:59.245 -04:00 [ERR] Something went wrong: System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.FormatException: Unrecognized Guid format.
+   at System.Guid.GuidResult.SetFailure(ParseFailure failureKind)
+   at System.Guid.TryParseGuid[TChar](ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.Parse(ReadOnlySpan`1 input)
+   at System.Guid.Parse(String input)
+   at System.Linq.Expressions.Interpreter.FuncCallInstruction`2.Run(InterpretedFrame frame)
+   at System.Linq.Expressions.Interpreter.Interpreter.Run(InterpretedFrame frame)
+   at System.Linq.Expressions.Interpreter.LightLambda.Run(Object[] arguments)
+   at System.Dynamic.Utils.DelegateHelpers.FuncThunk[TReturn](Func`2 handler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.<Evaluate>g__EvaluateCore|70_0(Expression expression, Boolean& evaluateAsParameter, String& parameterName, Boolean& isContextAccessor)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.<Evaluate>g__EvaluateCore|70_0(Expression expression, Boolean& evaluateAsParameter, String& parameterName, Boolean& isContextAccessor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Evaluate(Expression expression, Boolean& evaluateAsParameter, String& parameterName, Boolean& isContextAccessor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.ProcessEvaluatableRoot(Expression evaluatableRoot, State& state, Boolean forceEvaluation)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitBinary(BinaryExpression binary)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression, State& state)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitLambda[T](Expression`1 lambda)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression, State& state)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitUnary(UnaryExpression unary)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit[T](ReadOnlyCollection`1 expressions, Func`2 elementVisitor, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(ReadOnlyCollection`1 expressions, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitMethodCall(MethodCallExpression methodCall)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit[T](ReadOnlyCollection`1 expressions, Func`2 elementVisitor, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(ReadOnlyCollection`1 expressions, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitMethodCall(MethodCallExpression methodCall)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit[T](ReadOnlyCollection`1 expressions, Func`2 elementVisitor, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(ReadOnlyCollection`1 expressions, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitMethodCall(MethodCallExpression methodCall)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit[T](ReadOnlyCollection`1 expressions, Func`2 elementVisitor, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(ReadOnlyCollection`1 expressions, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitMethodCall(MethodCallExpression methodCall)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression, State& state)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.ExtractParameters(Expression expression, Dictionary`2 parameters, Boolean parameterize, Boolean clearParameterizedValues, Boolean precompiledQuery)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.ExtractParameters(Expression expression, Dictionary`2 parameters, Boolean parameterize, Boolean clearParameterizedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExtractParameters(Expression query, Dictionary`2 parameters, IDiagnosticsLogger`1 logger, Boolean compiledQuery, Boolean generateContextAccessors)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.SingleOrDefaultAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Repository.CompanyRepository.GetByCondition(String id, Boolean trackChanges) in E:\Mis Archivos\RepositoryPattern\Repository\CompanyRepository.cs:line 19
+   at Service.CompanyService.GetByCondition(String id, Boolean trackChanges) in E:\Mis Archivos\RepositoryPattern\Service\CompanyService.cs:line 21
+   at Presentation.Controllers.CompanyController.Delete(String id) in E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\CompanyController.cs:line 124
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2026-01-14 12:03:59.251 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.FormatException: Unrecognized Guid format.
+   at System.Guid.GuidResult.SetFailure(ParseFailure failureKind)
+   at System.Guid.TryParseGuid[TChar](ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.Parse(ReadOnlySpan`1 input)
+   at System.Guid.Parse(String input)
+   at System.Linq.Expressions.Interpreter.FuncCallInstruction`2.Run(InterpretedFrame frame)
+   at System.Linq.Expressions.Interpreter.Interpreter.Run(InterpretedFrame frame)
+   at System.Linq.Expressions.Interpreter.LightLambda.Run(Object[] arguments)
+   at System.Dynamic.Utils.DelegateHelpers.FuncThunk[TReturn](Func`2 handler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.<Evaluate>g__EvaluateCore|70_0(Expression expression, Boolean& evaluateAsParameter, String& parameterName, Boolean& isContextAccessor)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.<Evaluate>g__EvaluateCore|70_0(Expression expression, Boolean& evaluateAsParameter, String& parameterName, Boolean& isContextAccessor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Evaluate(Expression expression, Boolean& evaluateAsParameter, String& parameterName, Boolean& isContextAccessor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.ProcessEvaluatableRoot(Expression evaluatableRoot, State& state, Boolean forceEvaluation)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitBinary(BinaryExpression binary)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression, State& state)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitLambda[T](Expression`1 lambda)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression, State& state)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitUnary(UnaryExpression unary)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit[T](ReadOnlyCollection`1 expressions, Func`2 elementVisitor, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(ReadOnlyCollection`1 expressions, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitMethodCall(MethodCallExpression methodCall)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit[T](ReadOnlyCollection`1 expressions, Func`2 elementVisitor, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(ReadOnlyCollection`1 expressions, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitMethodCall(MethodCallExpression methodCall)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit[T](ReadOnlyCollection`1 expressions, Func`2 elementVisitor, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(ReadOnlyCollection`1 expressions, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitMethodCall(MethodCallExpression methodCall)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit[T](ReadOnlyCollection`1 expressions, Func`2 elementVisitor, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(ReadOnlyCollection`1 expressions, StateType& aggregateStateType, State[]& expressionStates, Boolean poolExpressionStates)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.VisitMethodCall(MethodCallExpression methodCall)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.Visit(Expression expression, State& state)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.ExtractParameters(Expression expression, Dictionary`2 parameters, Boolean parameterize, Boolean clearParameterizedValues, Boolean precompiledQuery)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ExpressionTreeFuncletizer.ExtractParameters(Expression expression, Dictionary`2 parameters, Boolean parameterize, Boolean clearParameterizedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExtractParameters(Expression query, Dictionary`2 parameters, IDiagnosticsLogger`1 logger, Boolean compiledQuery, Boolean generateContextAccessors)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.SingleOrDefaultAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Repository.CompanyRepository.GetByCondition(String id, Boolean trackChanges) in E:\Mis Archivos\RepositoryPattern\Repository\CompanyRepository.cs:line 19
+   at Service.CompanyService.GetByCondition(String id, Boolean trackChanges) in E:\Mis Archivos\RepositoryPattern\Service\CompanyService.cs:line 21
+   at Presentation.Controllers.CompanyController.Delete(String id) in E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\CompanyController.cs:line 124
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2026-01-14 12:04:08.720 -04:00 [ERR] Something went wrong: System.FormatException: Unrecognized Guid format.
+   at System.Guid.GuidResult.SetFailure(ParseFailure failureKind)
+   at System.Guid.TryParseGuid[TChar](ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.Parse(ReadOnlySpan`1 input)
+   at System.Guid.Parse(String input)
+   at Service.CompanyService.<>c__DisplayClass11_0.<DeleteCompanyWithEither>b__3(Exception _) in E:\Mis Archivos\RepositoryPattern\Service\CompanyService.cs:line 106
+   at Shared.Shared.EitherAsync`2.<>c__DisplayClass11_0`2.<<Try>b__0>d.MoveNext() in E:\Mis Archivos\RepositoryPattern\Shared\Shared\EitherAsync.cs:line 73
+--- End of stack trace from previous location ---
+   at Shared.Shared.EitherAsync`2.<>c__DisplayClass8_0`1.<<FlatMap>b__0>d.MoveNext() in E:\Mis Archivos\RepositoryPattern\Shared\Shared\EitherAsync.cs:line 35
+--- End of stack trace from previous location ---
+   at Presentation.Controllers.CompanyController.DeleteEither(String id) in E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\CompanyController.cs:line 181
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2026-01-14 12:04:08.722 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Unrecognized Guid format.
+   at System.Guid.GuidResult.SetFailure(ParseFailure failureKind)
+   at System.Guid.TryParseGuid[TChar](ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.Parse(ReadOnlySpan`1 input)
+   at System.Guid.Parse(String input)
+   at Service.CompanyService.<>c__DisplayClass11_0.<DeleteCompanyWithEither>b__3(Exception _) in E:\Mis Archivos\RepositoryPattern\Service\CompanyService.cs:line 106
+   at Shared.Shared.EitherAsync`2.<>c__DisplayClass11_0`2.<<Try>b__0>d.MoveNext() in E:\Mis Archivos\RepositoryPattern\Shared\Shared\EitherAsync.cs:line 73
+--- End of stack trace from previous location ---
+   at Shared.Shared.EitherAsync`2.<>c__DisplayClass8_0`1.<<FlatMap>b__0>d.MoveNext() in E:\Mis Archivos\RepositoryPattern\Shared\Shared\EitherAsync.cs:line 35
+--- End of stack trace from previous location ---
+   at Presentation.Controllers.CompanyController.DeleteEither(String id) in E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\CompanyController.cs:line 181
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2026-01-14 12:05:04.111 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
+2026-01-14 12:05:24.983 -04:00 [ERR] Something went wrong: System.FormatException: Unrecognized Guid format.
+   at System.Guid.GuidResult.SetFailure(ParseFailure failureKind)
+   at System.Guid.TryParseGuid[TChar](ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.Parse(ReadOnlySpan`1 input)
+   at System.Guid.Parse(String input)
+   at Service.CompanyService.<>c__DisplayClass11_0.<DeleteCompanyWithEither>b__3(Exception _) in E:\Mis Archivos\RepositoryPattern\Service\CompanyService.cs:line 106
+   at Shared.Shared.EitherAsync`2.<>c__DisplayClass11_0`2.<<Try>b__0>d.MoveNext() in E:\Mis Archivos\RepositoryPattern\Shared\Shared\EitherAsync.cs:line 73
+--- End of stack trace from previous location ---
+   at Shared.Shared.EitherAsync`2.<>c__DisplayClass8_0`1.<<FlatMap>b__0>d.MoveNext() in E:\Mis Archivos\RepositoryPattern\Shared\Shared\EitherAsync.cs:line 35
+--- End of stack trace from previous location ---
+   at Presentation.Controllers.CompanyController.DeleteEither(String id) in E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\CompanyController.cs:line 181
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2026-01-14 12:05:24.994 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: Unrecognized Guid format.
+   at System.Guid.GuidResult.SetFailure(ParseFailure failureKind)
+   at System.Guid.TryParseGuid[TChar](ReadOnlySpan`1 guidString, GuidResult& result)
+   at System.Guid.Parse(ReadOnlySpan`1 input)
+   at System.Guid.Parse(String input)
+   at Service.CompanyService.<>c__DisplayClass11_0.<DeleteCompanyWithEither>b__3(Exception _) in E:\Mis Archivos\RepositoryPattern\Service\CompanyService.cs:line 106
+   at Shared.Shared.EitherAsync`2.<>c__DisplayClass11_0`2.<<Try>b__0>d.MoveNext() in E:\Mis Archivos\RepositoryPattern\Shared\Shared\EitherAsync.cs:line 73
+--- End of stack trace from previous location ---
+   at Shared.Shared.EitherAsync`2.<>c__DisplayClass8_0`1.<<FlatMap>b__0>d.MoveNext() in E:\Mis Archivos\RepositoryPattern\Shared\Shared\EitherAsync.cs:line 35
+--- End of stack trace from previous location ---
+   at Presentation.Controllers.CompanyController.DeleteEither(String id) in E:\Mis Archivos\RepositoryPattern\Presentation\Controllers\CompanyController.cs:line 181
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)

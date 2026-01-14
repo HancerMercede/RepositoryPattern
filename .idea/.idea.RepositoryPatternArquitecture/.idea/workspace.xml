@@ -15,14 +15,12 @@
       <change beforePath="$PROJECT_DIR$/Contracts/bin/Debug/net10.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/bin/Debug/net10.0/Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contracts/bin/Debug/net10.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Contracts/bin/Debug/net10.0/Shared.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/Controllers/CompanyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Controllers/CompanyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Helpers/FunctionalControllerExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Helpers/FunctionalControllerExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Presentation.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Presentation.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Presentation.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Presentation.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/bin/Debug/net10.0/Shared.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/obj/Debug/net10.0/Presentation.sourcelink.json" afterDir="false" />
@@ -36,6 +34,8 @@
       <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/RepositoryPatternArquitecture.dll" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/RepositoryPatternArquitecture.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/RepositoryPatternArquitecture.exe" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/RepositoryPatternArquitecture.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/RepositoryPatternArquitecture.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/RepositoryPatternArquitecture.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Service.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/bin/Debug/net10.0/Shared.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/RepositoryPatternArquitecture.AssemblyInfo.cs" afterDir="false" />
@@ -51,8 +51,19 @@
       <change beforePath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/rjsmrazor.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryPatternArquictecture/obj/Debug/net10.0/rjsmrazor.dswa.cache.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service.Contracts/bin/Debug/net10.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Contracts/bin/Debug/net10.0/Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service.Contracts/bin/Debug/net10.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service.Contracts/bin/Debug/net10.0/Shared.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/CompanyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/CompanyService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Service.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/bin/Debug/net10.0/Shared.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/Service.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/ref/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/ref/Service.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/obj/Debug/net10.0/refint/Service.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Service/obj/Debug/net10.0/refint/Service.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/bin/Debug/net10.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/bin/Debug/net10.0/Shared.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/bin/Debug/net10.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/bin/Debug/net10.0/Shared.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net10.0/Shared.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net10.0/Shared.AssemblyInfo.cs" afterDir="false" />
@@ -285,7 +296,7 @@
       <workItem from="1768254186555" duration="2465000" />
       <workItem from="1768258493588" duration="8251000" />
       <workItem from="1768320542388" duration="11672000" />
-      <workItem from="1768399566683" duration="3928000" />
+      <workItem from="1768399566683" duration="5833000" />
     </task>
     <servers />
   </component>

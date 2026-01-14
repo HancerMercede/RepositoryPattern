@@ -177,14 +177,10 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
     }
 
     [HttpDelete("DeleteEither/{Id}")]
-    public async Task<IActionResult> DeleteEither(string id)
-    {
-        var result = await serviceManager.CompanyService.DeleteCompanyWithEither(id, trackChanges:false)
-            .Run();
-
-        return result.Match<IActionResult>(error => NotFound(error),
-            success => NoContent());
-    }
+    public async Task<IActionResult> DeleteEither(string id)=>
+        (await serviceManager.CompanyService.DeleteCompanyWithEither(id, trackChanges:false)
+            .Run()).HandleResult();
+    
 }
 
 
