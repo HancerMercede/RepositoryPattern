@@ -70,8 +70,10 @@ internal sealed class CompanyService(IRepositoryManager repositoryManager) : ICo
     public EitherAsync<string, Company> CreateCompanyWithEither(Company company)
     {
         return EitherAsync<string, Company>.FromRight(company)
-            .Ensure(c => !string.IsNullOrEmpty(c.Name) && !string.IsNullOrEmpty(c.Address),
-                "company name or address can not be null or empty")
+            .Ensure(c => !string.IsNullOrEmpty(c.Name), 
+                "company name can not be null or empty")
+            .Ensure(c=> !string.IsNullOrEmpty(c.Address),
+                "company address can not be null or empty")
             .FlatMap(c => EitherAsync<string, Company>.Try(async () =>
             {
                 var dbCompany = await repositoryManager.Company.CreateRecord(company);
