@@ -1,4 +1,6 @@
-﻿namespace Presentation.Controllers;
+﻿using Microsoft.AspNetCore.Authentication;
+
+namespace Presentation.Controllers;
 
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiVersion("1.0")]
@@ -129,8 +131,9 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
     [HttpGet("Either")]
     public async Task<ActionResult<IEnumerable<CompanyDto>>> GetAllWithEither([FromQuery] PaginationParameters pagination)
     {
-        var result = await serviceManager.CompanyService.GetAllWithEither(pagination, false).Run();
-
+        var result = await serviceManager.CompanyService.GetAllWithEither(pagination, false)
+            .Run();
+       
         return result.Match<ActionResult<IEnumerable<CompanyDto>>>(
             error => NotFound(error),
             success =>
@@ -139,42 +142,25 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
                 var metadata = success.metaData;
                 
                 HttpContext.HeadersPaginationParametersInsert(companies, metadata);
-                var companiesDtos = success.companies.Adapt<IEnumerable<CompanyDto>>();
-                return Ok(companiesDtos);
+                var dtosCompanies = companies.Adapt<IEnumerable<CompanyDto>>();
+                return Ok(dtosCompanies);
             }
         );
     }
 
     [HttpGet("Either/{Id}")]
-    public async Task<ActionResult<CompanyDto>> GetByIdWithEither(string id)
-    {
-        var result = await serviceManager.CompanyService.GetByConditionWithEither(id, trackChanges:false)
-            .Map<CompanyDto>(c => new CompanyDto
-            {   
-                Id = c.Id,
-                Name = c.Name,
-                FullAddress = string.Concat(c.Address," ",c.Country)
-            })
-         .Run();
-        
-        return result.Match<ActionResult<CompanyDto>>(error => NotFound(error),
-            success => Ok(success)
-            );
-    }
+    public async Task<ActionResult<CompanyDto>> GetByIdWithEither(string id) => 
+        (await serviceManager.CompanyService
+        .GetByConditionWithEither(id, trackChanges: false)
+        .Map(c => c.Adapt<CompanyDto>()).Run()).HandleResult();
+   
 
-    [HttpGet("Either/Collection/{ids}")]
+    [HttpGet("Either/Collection/{ids}", Name = "CompanyCollectionWithEither")]
     public async Task<ActionResult<IEnumerable<CompanyDto>>>GetCompaniesCollectionWithEitherByIds(
-        [ModelBinder(BinderType = typeof(ArrayModelBinder))] IEnumerable<Guid> ids)
-    {
-        var result = await serviceManager.CompanyService.GetByIdsWithEither(ids, trackChanges: false).Run();
-        return result.Match<ActionResult<IEnumerable<CompanyDto>>>(error => BadRequest(error),
-            success =>
-            {
-                var companiesDto = success.Adapt<IEnumerable<CompanyDto>>();
-                return Ok(companiesDto);
-            }
-        );
-    }
+        [ModelBinder(BinderType = typeof(ArrayModelBinder))] IEnumerable<Guid> ids) =>
+        (await serviceManager.CompanyService.GetByIdsWithEither(ids, trackChanges: false)
+            .Map(c=>c.Adapt<IEnumerable<CompanyDto>>())
+            .Run()).HandleResult();
 
     [HttpPost("CreateEither")]
     public async Task<ActionResult<CompanyDto>> CreateEither([FromBody] CompanyCreateDto model)
