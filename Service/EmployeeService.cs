@@ -52,7 +52,7 @@ public class EmployeeService(IRepositoryManager repositoryManager) : IEmployeeSe
         employee.Adapt(employeeEntity);
         await repositoryManager.Save();
     }
-
+    
     public async Task<(IEnumerable<Employee> Employees, MetaData metaData)> GetAll(string companyId,PaginationParameters paginationParameters, bool trackChanges)
     {
         var employees = await repositoryManager.Employee.GetAll(companyId, paginationParameters, trackChanges);
@@ -74,4 +74,49 @@ public class EmployeeService(IRepositoryManager repositoryManager) : IEmployeeSe
         return employeeDb;
     }
     
+    public EitherAsync<string, (IEnumerable<Employee> employees, MetaData metaData)> GetAllEmployees(string companyId, PaginationParameters pagination, bool trackChanges)
+    {
+        return EitherAsync<string, string>.FromRight(companyId)
+            .Ensure(c => !string.IsNullOrWhiteSpace(c), "The company id can not be null or empty")
+            .FlatMap(idParam => EitherAsync<string, IEnumerable<Employee>>.Try(async () =>
+            {
+                var employees = await repositoryManager.Employee.GetAll(idParam, pagination, trackChanges);
+                var metadata = employees.MetaData;
+                return (Employees: (IEnumerable<Employee>) employees, MetaData: metadata);
+            }, exception => exception.Message).Run())
+            .Ensure(c=>c.Employees.Any(),"There are no employees for this company.");
+    }
+
+    public EitherAsync<string, Employee> GetByConditionWithEither(string companyId, string id, bool trackChanges)
+    {
+        return EitherAsync<string, string>.FromRight(companyId)
+            .Ensure(c => !string.IsNullOrWhiteSpace(c), "The company id can not be null or empty")
+            .Ensure(e => !string.IsNullOrWhiteSpace(e), "The employee id can not be null or empty")
+            .FlatMap(idParam => EitherAsync<string, Employee>.Try(async () =>
+            {
+               var employee = await repositoryManager.Employee.GetByCondition(idParam, id, trackChanges);
+               return employee;
+            }, exception => exception.Message).Run());
+    }
+
+    public EitherAsync<string, Employee> CreateEmployeeWithEither(string companyId, Employee employee)
+    {
+         return EitherAsync<string, string>.FromRight(companyId)
+             .Ensure(c=>!string.IsNullOrWhiteSpace(c), "The company id can not be null or empty.")
+             .Map(_=>employee)
+                 .Ensure(e=>!string.IsNullOrWhiteSpace(e.Name), "The employee name can not be null or empty.")
+                 .Ensure(e=>e.Age>=18 && e.Age<=80, "The employee age can not be less than 18 or more than 80.")
+             .Ensure(e=>!string.IsNullOrWhiteSpace(e.Position), "The employee position can not be null or empty.")
+             .FlatMap<Employee>(_=>EitherAsync<string, Employee>.Try(async () =>
+             {
+                 var employeeForCompany = await repositoryManager.Employee.CreateEmployeeForCompany(companyId, employee);
+                 await repositoryManager.Save();
+                 return employeeForCompany;
+             },exception=>exception.Message).Run());
+    }
+
+    public EitherAsync<string, Unit> DeleteEmployeeWithEither(string companyId, string id, bool trackChanges)
+    {
+        throw new NotImplementedException();
+    }
 }

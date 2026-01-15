@@ -54,21 +54,48 @@ public static class FunctionalControllerExtensions
     
     /// <summary>
     /// Maps an Either result to an HTTP 201 Created response.
-    /// It automatically generates the 'Location' header using the provided route name and ID.
+    /// This method is flexible: it can handle a single ID or an anonymous object for complex routes.
     /// </summary>
     /// <typeparam name="T">The type of the newly created entity DTO.</typeparam>
-    /// <param name="result">The Either result from the service layer.</param>
-    /// <param name="routeName">The name of the Get route (e.g., "GetCompanyById").</param>
-    /// <param name="idSelector">A function to extract the ID from the created entity.</param>
-    /// <returns>A 201 Created result with the entity, or an appropriate error result.</returns>
+    /// <param name="result">The Either result from the service layer containing the created entity or an error message.</param>
+    /// <param name="routeName">The name of the GET route used to retrieve the resource (e.g., "GetCompanyById").</param>
+    /// <param name="idSelector">
+    /// A function that selects the route data. It can return a simple value (like a Guid or int), 
+    /// in which case it's mapped to an 'id' parameter, or an anonymous object (new { companyId, id }) 
+    /// for routes with multiple parameters.
+    /// </param>
+    /// <returns>
+    /// An <see cref="ActionResult{T}"/>: <see cref="CreatedAtRouteResult"/> on success (Right), 
+    /// or the corresponding error result (e.g., BadRequest, NotFound) on failure (Left).
+    /// </returns>
     public static ActionResult<T> HandleCreated<T>(
-        this Either<string, T> result, 
-        string routeName, 
+        this Either<string, T> result,
+        string routeName,
         Func<T, object> idSelector)
     {
         return result.Match<ActionResult<T>>(
             onLeft: error => MapToErrorResult(error),
-            onRight: data => new CreatedAtRouteResult(routeName, new { id = idSelector(data) }, data)
+            onRight: data =>
+            {
+                var selectorResult = idSelector(data);
+                object routeValues;
+
+                // Check if the result is already an anonymous object (complex route)
+                // or a primitive value (simple route with 'id' parameter).
+                if (selectorResult != null && selectorResult.GetType().Name.Contains("AnonymousType"))
+                {
+                    routeValues = selectorResult;
+                }
+                else
+                {
+                    // For simple selectors like c => c.Id, we wrap it in an 'id' property
+                    // so ASP.NET can match the {id} parameter in the route.
+                    routeValues = new { id = selectorResult };
+                }
+
+                return new CreatedAtRouteResult(routeName, routeValues, data);
+            }
         );
     }
+
 }

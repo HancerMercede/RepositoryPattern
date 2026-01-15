@@ -7,69 +7,70 @@
 public class EmployeeController(IServiceManager serviceManager, ILogger<EmployeeController> logger)
     : ControllerBase
 {
-    [HttpGet]
-    [ProducesResponseType(200)]
-    [ProducesResponseType(404)]
-    [ProducesResponseType(403)]
-    public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetAll(string companyId,[FromQuery] PaginationParameters paginationParameters)
-    {
-        await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: false);
-        
-        logger.LogInformation($"Getting all the employees for company Id {companyId}.");
-        var employees = await serviceManager.EmployeeService.GetAll(companyId, paginationParameters, trackChanges: false);
+    #region  Conventional Implementation
+    // [HttpGet]
+    // [ProducesResponseType(200)]
+    // [ProducesResponseType(404)]
+    // [ProducesResponseType(403)]
+    // public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetAll(string companyId,[FromQuery] PaginationParameters paginationParameters)
+    // {
+    //     await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: false);
+    //     
+    //     logger.LogInformation($"Getting all the employees for company Id {companyId}.");
+    //     var employees = await serviceManager.EmployeeService.GetAll(companyId, paginationParameters, trackChanges: false);
+    //
+    //     logger.LogInformation("Adding the information to request headers.");
+    //     var queryable = employees.Employees.AsQueryable();
+    //     var metaData = employees.metaData;
+    //     
+    //     HttpContext.HeadersPaginationParametersInsert(queryable, metaData);
+    //     
+    //     logger.LogInformation("Mapping to employeesDto.");
+    //     var employeesDto = employees.Employees.Adapt<IEnumerable<EmployeeToShowToClientDto>>();
+    //
+    //     return Ok(employeesDto);
+    // }
 
-        logger.LogInformation("Adding the information to request headers.");
-        var queryable = employees.Employees.AsQueryable();
-        var metaData = employees.metaData;
-        
-        HttpContext.HeadersPaginationParametersInsert(queryable, metaData);
-        
-        logger.LogInformation("Mapping to employeesDto.");
-        var employeesDto = employees.Employees.Adapt<IEnumerable<EmployeeToShowToClientDto>>();
+    // [HttpGet("{id}", Name = "GetEmployeeForCompany")]
+    // [ProducesResponseType(200)]
+    // [ProducesResponseType(404)]
+    // [ProducesResponseType(400)]
+    // public async Task<ActionResult<EmployeeDto>> Get(string companyId, string id)
+    // {
+    //     await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: false);
+    //     
+    //     var employee = await serviceManager.EmployeeService.GetByCondition(companyId, id, trackChanges: false);
+    //
+    //     var employeeDto = employee.Adapt<EmployeeToShowToClientDto>();
+    //
+    //     return Ok(employeeDto);
+    // }
 
-        return Ok(employeesDto);
-    }
-
-    [HttpGet("{id}", Name = "GetEmployeeForCompany")]
-    [ProducesResponseType(200)]
-    [ProducesResponseType(404)]
-    [ProducesResponseType(400)]
-    public async Task<ActionResult<EmployeeDto>> Get(string companyId, string id)
-    {
-        await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: false);
-        
-        var employee = await serviceManager.EmployeeService.GetByCondition(companyId, id, trackChanges: false);
-
-        var employeeDto = employee.Adapt<EmployeeToShowToClientDto>();
-
-        return Ok(employeeDto);
-    }
-
-    [HttpPost(Name = "CreateEmployeeForCompany")]
-    [ProducesResponseType(201)]
-    [ProducesResponseType(404)]
-    public async Task<ActionResult<EmployeeDto>> Create(string companyId, [FromBody] EmployeeCreateDto? model)
-    {
-        if(model is null) 
-            BadRequest("The model cannot be null.");
-        
-        if (!ModelState.IsValid)
-        {
-            logger.LogInformation($"Invalid model state for object {typeof(EmployeeCreateDto)}.");
-            return UnprocessableEntity(ModelState);
-        }
-
-        await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: false);
-        
-        var dbEntity = model?.Adapt<Employee>();
-
-        await serviceManager.EmployeeService.CreateEmployee(companyId, dbEntity!);
-        await serviceManager.Save();
-
-        var dto = dbEntity?.Adapt<EmployeeDto>();
-
-        return CreatedAtRoute("GetEmployeeForCompany", new { companyId = dto?.CompanyId, id = dto?.Id }, dto);
-    }
+    // [HttpPost(Name = "CreateEmployeeForCompany")]
+    // [ProducesResponseType(201)]
+    // [ProducesResponseType(404)]
+    // public async Task<ActionResult<EmployeeDto>> Create(string companyId, [FromBody] EmployeeCreateDto? model)
+    // {
+    //     if(model is null) 
+    //         BadRequest("The model cannot be null.");
+    //     
+    //     if (!ModelState.IsValid)
+    //     {
+    //         logger.LogInformation($"Invalid model state for object {typeof(EmployeeCreateDto)}.");
+    //         return UnprocessableEntity(ModelState);
+    //     }
+    //
+    //     await serviceManager.CompanyService.GetByCondition(companyId, trackChanges: false);
+    //     
+    //     var dbEntity = model?.Adapt<Employee>();
+    //
+    //     await serviceManager.EmployeeService.CreateEmployee(companyId, dbEntity!);
+    //     await serviceManager.Save();
+    //
+    //     var dto = dbEntity?.Adapt<EmployeeDto>();
+    //
+    //     return CreatedAtRoute("GetEmployeeForCompany", new { companyId = dto?.CompanyId, id = dto?.Id }, dto);
+    // }
 
     [HttpDelete("{id}")]
     [ProducesResponseType(204)]
@@ -167,4 +168,35 @@ public class EmployeeController(IServiceManager serviceManager, ILogger<Employee
         await serviceManager.EmployeeService.SaveChangesForPatch(result.employeeToPath, result.employee);
         return NoContent();
     }
+    #endregion
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetAllEmployeesWithEither(string companyId, [FromQuery] PaginationParameters pagination)
+    {  
+        var result = await serviceManager.EmployeeService.GetAllEmployees(companyId, pagination, trackChanges: false).Run();
+       return result.Match<ActionResult<IEnumerable<EmployeeDto>>>(error=>NotFound(error),
+        success =>
+        {
+            var employeesDtos = success.employees.Adapt<List<EmployeeDto>>().AsQueryable();
+            var metadata = success.metaData;
+            HttpContext.HeadersPaginationParametersInsert(employeesDtos, metadata);
+            return Ok(employeesDtos);
+        });
+    }
+
+    [HttpGet("{Id}", Name = "GetEmployeeForCompany")]
+    public async Task<ActionResult<EmployeeDto>> GetByConditionEither(string companyId, string id)
+        => (await serviceManager.EmployeeService.GetByConditionWithEither(companyId, id, trackChanges: false).Map(e=>e.Adapt<EmployeeDto>()).Run())
+            .HandleResult();
+
+    [HttpPost(Name = "CreateEmployeeForCompany")]
+    public async Task<ActionResult<EmployeeDto>> CreateEmployeeForCompany(string companyId, [FromBody] EmployeeCreateDto model)
+    {
+        var employeeDb = model.Adapt<Employee>();
+        var result =   await serviceManager.EmployeeService.CreateEmployeeWithEither(companyId, employeeDb)
+            .Map(e=>e.Adapt<EmployeeDto>()).Run();
+        
+         return result.HandleCreated("GetEmployeeForCompany", e => new {companyId = e.CompanyId, id = e.Id});
+    }
+
 }

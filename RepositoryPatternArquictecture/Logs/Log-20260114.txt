@@ -344,3 +344,4 @@ System.FormatException: Unrecognized Guid format.
    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2026-01-14 18:39:29.192 -04:00 [WRN] The WebRootPath was not found: E:\Mis Archivos\RepositoryPattern\RepositoryPatternArquictecture\wwwroot. Static files may be unavailable.
