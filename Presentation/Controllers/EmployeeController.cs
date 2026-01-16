@@ -7,7 +7,7 @@
 public class EmployeeController(IServiceManager serviceManager, ILogger<EmployeeController> logger)
     : ControllerBase
 {
-    #region  Conventional Implementation
+    #region  Conventional Implementation without Either
     // [HttpGet]
     // [ProducesResponseType(200)]
     // [ProducesResponseType(404)]
@@ -72,17 +72,17 @@ public class EmployeeController(IServiceManager serviceManager, ILogger<Employee
     //     return CreatedAtRoute("GetEmployeeForCompany", new { companyId = dto?.CompanyId, id = dto?.Id }, dto);
     // }
 
-    [HttpDelete("{id}")]
-    [ProducesResponseType(204)]
-    [ProducesResponseType(404)]
-    public async Task<IActionResult> Delete(string companyId, string id)
-    {
-         logger.LogInformation($"Deleting the employee for company {companyId}");
-         await serviceManager.EmployeeService.DeleteEmployee(companyId, id, trackChanges: true);
-         await serviceManager.Save();
-
-         return NoContent();
-    }
+    // [HttpDelete("{id}")]
+    // [ProducesResponseType(204)]
+    // [ProducesResponseType(404)]
+    // public async Task<IActionResult> Delete(string companyId, string id)
+    // {
+    //      logger.LogInformation($"Deleting the employee for company {companyId}");
+    //      await serviceManager.EmployeeService.DeleteEmployee(companyId, id, trackChanges: true);
+    //      await serviceManager.Save();
+    //
+    //      return NoContent();
+    // }
 
     [HttpPut("{id}")]
     [ProducesResponseType(204)]
@@ -168,13 +168,13 @@ public class EmployeeController(IServiceManager serviceManager, ILogger<Employee
         await serviceManager.EmployeeService.SaveChangesForPatch(result.employeeToPath, result.employee);
         return NoContent();
     }
-    #endregion
+    #endregion 
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetAllEmployeesWithEither(string companyId, [FromQuery] PaginationParameters pagination)
     {  
         var result = await serviceManager.EmployeeService.GetAllEmployees(companyId, pagination, trackChanges: false).Run();
-       return result.Match<ActionResult<IEnumerable<EmployeeDto>>>(error=>NotFound(error),
+        return result.Match<ActionResult<IEnumerable<EmployeeDto>>>(error=>NotFound(error),
         success =>
         {
             var employeesDtos = success.employees.Adapt<List<EmployeeDto>>().AsQueryable();
@@ -186,7 +186,8 @@ public class EmployeeController(IServiceManager serviceManager, ILogger<Employee
 
     [HttpGet("{Id}", Name = "GetEmployeeForCompany")]
     public async Task<ActionResult<EmployeeDto>> GetByConditionEither(string companyId, string id)
-        => (await serviceManager.EmployeeService.GetByConditionWithEither(companyId, id, trackChanges: false).Map(e=>e.Adapt<EmployeeDto>()).Run())
+        => (await serviceManager.EmployeeService.GetByConditionWithEither(companyId, id, trackChanges: false)
+                .Map(e=>e.Adapt<EmployeeDto>()).Run())
             .HandleResult();
 
     [HttpPost(Name = "CreateEmployeeForCompany")]
@@ -199,4 +200,9 @@ public class EmployeeController(IServiceManager serviceManager, ILogger<Employee
          return result.HandleCreated("GetEmployeeForCompany", e => new {companyId = e.CompanyId, id = e.Id});
     }
 
+    [HttpDelete("{id}", Name = "DeleteEmployee")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(404)]
+    public async Task<IActionResult> DeleteEmployee(string companyId, string id) =>
+        (await serviceManager.EmployeeService.DeleteEmployeeWithEither(companyId, id, false).Run()).HandleResult();
 }
