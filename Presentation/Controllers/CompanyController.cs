@@ -131,7 +131,8 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
     [HttpGet("Either")]
     public async Task<ActionResult<IEnumerable<CompanyDto>>> GetAllWithEither([FromQuery] PaginationParameters pagination)
     {
-        var result = await serviceManager.CompanyService.GetAllWithEither(pagination, false)
+        var result = await serviceManager.CompanyService
+            .GetAllWithEither(pagination, false)
             .Run();
        
         return result.Match<ActionResult<IEnumerable<CompanyDto>>>(
@@ -166,12 +167,13 @@ public class CompanyController(IServiceManager serviceManager, ILogger<CompanyCo
     public async Task<ActionResult<CompanyDto>> CreateEither([FromBody] CompanyCreateDto model)
     {
         var companyDb = model.Adapt<Company>();
-        var result = await serviceManager.CompanyService.CreateCompanyWithEither(companyDb).Map(c => new CompanyDto
-        {
-            Id = c.Id,
-            Name = c.Name,
-            FullAddress = string.Concat(c.Address, " ", c.Country)
-        }).Run();
+        var result = await serviceManager.CompanyService.CreateCompanyWithEither(companyDb)
+            .Map(c => new CompanyDto
+            {
+                Id = c.Id,
+                Name = c.Name,
+                FullAddress = string.Concat(c.Address, " ", c.Country)
+            }).Run();
 
         return result.HandleCreated("GetCompanyById", c=>c.Id);
     }

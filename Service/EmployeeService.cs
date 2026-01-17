@@ -4,7 +4,7 @@ using Mapster;
 
 namespace Service;
 
-public class EmployeeService(IRepositoryManager repositoryManager) : IEmployeeService
+internal sealed class EmployeeService(IRepositoryManager repositoryManager) : IEmployeeService
 {
     #region conventional implementation without Either
     public async Task<Employee> CreateEmployee(string companyId, Employee employee)
@@ -79,9 +79,9 @@ public class EmployeeService(IRepositoryManager repositoryManager) : IEmployeeSe
     {
         return EitherAsync<string, string>.FromRight(companyId)
             .Ensure(c => !string.IsNullOrWhiteSpace(c), "The company id can not be null or empty")
-            .FlatMap(idParam => EitherAsync<string, IEnumerable<Employee>>.Try(async () =>
+            .FlatMap(_ => EitherAsync<string, IEnumerable<Employee>>.Try(async () =>
             {
-                var employees = await repositoryManager.Employee.GetAll(idParam, pagination, trackChanges);
+                var employees = await repositoryManager.Employee.GetAll(companyId, pagination, trackChanges);
                 var metadata = employees.MetaData;
                 return (Employees: (IEnumerable<Employee>) employees, MetaData: metadata);
             }, exception => exception.Message).Run())

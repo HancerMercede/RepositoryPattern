@@ -9,8 +9,6 @@ public class EmployeeRepository(RepositoryContext repositoryContext)
         var employees = await FindByCondition(c => c.CompanyId == Guid.Parse(companyId), trackChanges)
             .OrderBy(e => e.Name)
             .ToListAsync();
-
-        var count = await FindByCondition(c => c.CompanyId == Guid.Parse(companyId), trackChanges).CountAsync();
         
         var pagination = PageList<Employee>.ToPageList(employees, paginationParameters.PageNumber, paginationParameters.PageSize);
        

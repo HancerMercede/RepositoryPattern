@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dtos.DtoModels;
 
-public class EmployeeDto
+public record EmployeeDto
 {
     [Column("EmployeeId")]
     public Guid Id { get; set; }
