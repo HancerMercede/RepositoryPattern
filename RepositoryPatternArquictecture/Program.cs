@@ -29,7 +29,6 @@ builder.Services.AddAutoMapper(typeof(Program));
 //     opts.SuppressModelStateInvalidFilter = true;
 // });
 NewtonsoftJsonPatchInputFormatter GetjsonPatchInputFormatter()=>
-
     new ServiceCollection().AddLogging().AddMvc().AddNewtonsoftJson()
         .Services.BuildServiceProvider()
         .GetRequiredService<IOptions<MvcOptions>>().Value.InputFormatters
@@ -55,7 +54,7 @@ builder.Host.UseSerilog((ctx, lc) =>
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c => c.DocumentFilter<JsonPatchDocumentFilter>());
+
 
 // Provide the api validations to validate the models is null or not.
 builder.Services.Configure<ApiBehaviorOptions>(opts =>
@@ -70,6 +69,9 @@ builder.Services.AddApiVersioning(v =>
     v.AssumeDefaultVersionWhenUnspecified = true;
     v.ApiVersionReader = new UrlSegmentApiVersionReader();
 });
+
+// Map health checks
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
@@ -100,6 +102,7 @@ app.UseAuthorization();
 //{
 //    await context.Response.WriteAsync("Hello from the middlewate");
 //});
+app.MapHealthChecks("/Health");
 
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
