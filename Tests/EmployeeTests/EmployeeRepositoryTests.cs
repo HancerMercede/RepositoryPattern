@@ -73,13 +73,14 @@ public class EmployeeRepositoryTests
     {
         // Arrange
         var companyId = Guid.NewGuid().ToString();
-        var employee = new Employee { Name = "New Employee", CompanyId = Guid.Parse(companyId) };
+        var employee = new Employee { Name = "New Employee", CompanyId = Guid.Parse(companyId), Position = "Developer" };
 
         // Act
         _mockRepo.Object.CreateEmployeeForCompany(companyId, employee);
 
         // Assert
-        _mockRepo.Verify(r => r.CreateEmployeeForCompany(companyId, It.IsAny<Employee>()), Times.Once);
+        _mockRepo.Verify(r => r.CreateEmployeeForCompany(It.Is<string>(id => id == companyId), 
+            It.Is<Employee>(e => e.Name == "New Employee" && e.Position == "Developer")), Times.Once);
     }
 
     [Fact]
@@ -87,13 +88,17 @@ public class EmployeeRepositoryTests
     {
         // Arrange
         var companyId = Guid.NewGuid().ToString();
-        var employee = new Employee { Id = Guid.NewGuid(), Name = "To Be Deleted" };
+        var employeeId = Guid.NewGuid();
+        var employee = new Employee { Id = employeeId, Name = "To Be Deleted" };
 
         // Act
-        _mockRepo.Object.DeleteEmployee(companyId, employee.Id.ToString(), false);
+        _mockRepo.Object.DeleteEmployee(companyId, employeeId.ToString(), false);
 
         // Assert
-        _mockRepo.Verify(r => r.DeleteEmployee(companyId, employee.Id.ToString(), false), Times.Once);
+        _mockRepo.Verify(r => r.DeleteEmployee(
+            It.Is<string>(c => c == companyId),
+            It.Is<string>(e => e == employeeId.ToString()),
+            It.Is<bool>(trackChanges => trackChanges == false)), Times.Once);
     }
     private PageList<Employee> CreateSampleEmployees(string companyId)
     {

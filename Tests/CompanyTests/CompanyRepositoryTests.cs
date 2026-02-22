@@ -1,10 +1,7 @@
-using Moq;
-using Xunit;
 using Shared.RequestFeatures;
 using Shared.Shared;
 
-
-namespace Tests;
+namespace Tests.CompanyTests;
 
 public class CompanyRepositoryTests
 {
@@ -90,6 +87,8 @@ public class CompanyRepositoryTests
 
         // Assert
         Assert.Equal(2, result.Count());
+        Assert.Equal("Co 1", result.First().Name);
+        Assert.Equal("Co 2", result.Last().Name);
         _mockRepo.Verify(r => r.GetByIds(ids, false), Times.Once);
     }
 
@@ -97,13 +96,16 @@ public class CompanyRepositoryTests
     public void CreateCompany_WhenValid_CallsCreate()
     {
         // Arrange
-        var company = new Company { Name = "New Tech" };
+        var company = new Company { Name = "New Tech", Country = "USA", Address = "123 Main St" };
 
         // Act
         _mockRepo.Object.CreateRecord(company);
 
         // Assert
-        _mockRepo.Verify(r => r.CreateRecord(company), Times.Once);
+        _mockRepo.Verify(r => r.CreateRecord(It.Is<Company>(c => 
+            c.Name == "New Tech" && 
+            c.Country == "USA" && 
+            c.Address == "123 Main St")), Times.Once);
     }
     private PageList<Company> CreateSampleCompanies(int count)
     {
