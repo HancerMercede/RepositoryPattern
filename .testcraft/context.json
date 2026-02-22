@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": "3.0.0",
-    "createdAt": "2026-02-22T22:10:01.460Z",
-    "updatedAt": "2026-02-22T22:10:01.460Z",
+    "createdAt": "2026-02-22T22:16:48.321Z",
+    "updatedAt": "2026-02-22T22:16:48.321Z",
     "projectRoot": "E:\\Mis Archivos\\RepositoryPattern",
     "projectName": "RepositoryPattern",
     "scanCommand": "node testcraft-init.js",
@@ -88,7 +88,7 @@
     "assertLib": null,
     "e2eTool": null,
     "confirmed": true,
-    "confirmedAt": "2026-02-22T22:10:01.460Z"
+    "confirmedAt": "2026-02-22T22:16:48.321Z"
   },
   "learnedStyle": {
     "fileNaming": ".test",

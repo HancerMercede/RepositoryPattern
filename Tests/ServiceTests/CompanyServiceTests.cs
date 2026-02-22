@@ -60,7 +60,7 @@ public class CompanyServiceTests
     public async Task GetByCondition_WhenCompanyNotFound_ThrowsException()
     {
         var id = Guid.NewGuid().ToString();
-        _mockCompanyRepo.Setup(r => r.GetByCondition(id, false)).ReturnsAsync((Company?)null);
+        _mockCompanyRepo.Setup(r => r.GetByCondition(id, false)).Returns(Task.FromResult<Company?>(null));
 
         await Assert.ThrowsAsync<CompanyNotFoundException>(() => _service.GetByCondition(id, false));
     }
@@ -217,7 +217,7 @@ public class CompanyServiceTests
     public async Task GetByConditionWithEither_WhenCompanyNotFound_ReturnsLeft()
     {
         var id = Guid.NewGuid().ToString();
-        _mockCompanyRepo.Setup(r => r.GetByCondition(id, false)).ReturnsAsync((Company?)null);
+        _mockCompanyRepo.Setup(r => r.GetByCondition(id, false)).Returns(Task.FromResult<Company?>(null));
 
         var result = await _service.GetByConditionWithEither(id, false).Run();
 

@@ -66,7 +66,7 @@ public class EmployeeServiceTests
         var companyId = Guid.NewGuid().ToString();
         var employeeId = Guid.NewGuid().ToString();
 
-        _mockCompanyRepo.Setup(r => r.GetByCondition(companyId, false)).ReturnsAsync((Company?)null);
+        _mockCompanyRepo.Setup(r => r.GetByCondition(companyId, false)).Returns(Task.FromResult<Company?>(null));
 
         await Assert.ThrowsAsync<CompanyNotFoundException>(() => _service.DeleteEmployee(companyId, employeeId, false));
     }
@@ -79,7 +79,7 @@ public class EmployeeServiceTests
         var company = new Company { Id = Guid.Parse(companyId) };
 
         _mockCompanyRepo.Setup(r => r.GetByCondition(companyId, false)).ReturnsAsync(company);
-        _mockEmployeeRepo.Setup(r => r.GetByCondition(companyId, employeeId, false)).ReturnsAsync((Employee?)null);
+        _mockEmployeeRepo.Setup(r => r.GetByCondition(companyId, employeeId, false)).Returns(Task.FromResult<Employee?>(null));
 
         await Assert.ThrowsAsync<EmployeeNotFoundException>(() => _service.DeleteEmployee(companyId, employeeId, false));
     }
@@ -107,7 +107,7 @@ public class EmployeeServiceTests
         var companyId = Guid.NewGuid().ToString();
         var employeeId = Guid.NewGuid().ToString();
 
-        _mockCompanyRepo.Setup(r => r.GetByCondition(companyId, false)).ReturnsAsync((Company?)null);
+        _mockCompanyRepo.Setup(r => r.GetByCondition(companyId, false)).Returns(Task.FromResult<Company?>(null));
 
         await Assert.ThrowsAsync<CompanyNotFoundException>(() => _service.GetEmployeeForPatch(companyId, employeeId, false, false));
     }
@@ -120,7 +120,7 @@ public class EmployeeServiceTests
         var company = new Company { Id = Guid.Parse(companyId) };
 
         _mockCompanyRepo.Setup(r => r.GetByCondition(companyId, false)).ReturnsAsync(company);
-        _mockEmployeeRepo.Setup(r => r.GetByCondition(companyId, employeeId, false)).ReturnsAsync((Employee?)null);
+        _mockEmployeeRepo.Setup(r => r.GetByCondition(companyId, employeeId, false)).Returns(Task.FromResult<Employee?>(null));
 
         await Assert.ThrowsAsync<EmployeeNotFoundException>(() => _service.GetEmployeeForPatch(companyId, employeeId, false, false));
     }
@@ -178,7 +178,7 @@ public class EmployeeServiceTests
         var companyId = Guid.NewGuid().ToString();
         var employeeId = Guid.NewGuid().ToString();
 
-        _mockEmployeeRepo.Setup(r => r.GetByCondition(companyId, employeeId, false)).ReturnsAsync((Employee?)null);
+        _mockEmployeeRepo.Setup(r => r.GetByCondition(companyId, employeeId, false)).Returns(Task.FromResult<Employee?>(null));
 
         await Assert.ThrowsAsync<EmployeeNotFoundException>(() => _service.GetByCondition(companyId, employeeId, false));
     }
@@ -259,7 +259,7 @@ public class EmployeeServiceTests
         var companyId = Guid.NewGuid().ToString();
         var employeeId = Guid.NewGuid().ToString();
 
-        _mockEmployeeRepo.Setup(r => r.GetByCondition(companyId, employeeId, false)).ReturnsAsync((Employee?)null);
+        _mockEmployeeRepo.Setup(r => r.GetByCondition(companyId, employeeId, false)).Returns(Task.FromResult<Employee?>(null));
 
         var result = await _service.GetByConditionWithEither(companyId, employeeId, false).Run();
 
