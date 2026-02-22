@@ -85,14 +85,14 @@ internal sealed class CompanyService(IRepositoryManager repositoryManager) : ICo
     public EitherAsync<string, Company> GetByConditionWithEither(string id, bool trackChanges)
     {
         return EitherAsync<string, string>.FromRight(id)
-            .Ensure(s=>!string.IsNullOrWhiteSpace(id), "The id can not be null or empty.")
-            .Ensure(s=>Guid.TryParse(id, out _), $"{id} is not a valid Guid.")
+            .Ensure(s=>!string.IsNullOrWhiteSpace(s), "The id can not be null or empty.")
+            .Ensure(s=>Guid.TryParse(s, out _), $"{id} is not a valid Guid.")
             .FlatMap(c=>EitherAsync<string, Company>.Try(async () =>
             {
-                var company = await repositoryManager.Company.GetByCondition(id, trackChanges);
+                var company = await repositoryManager.Company.GetByCondition(c, trackChanges);
                 return company;
             }, exception => exception.Message).Run())
-            .Ensure(company => company is not null, new CompanyNotFoundException(Guid.Parse(id)).Message);
+            .Ensure(company => company is not null, "Company not found.");
 
     }
     
@@ -107,6 +107,6 @@ internal sealed class CompanyService(IRepositoryManager repositoryManager) : ICo
                 await repositoryManager.Save();
 
                 return new Unit();
-            }, _ => new CompanyNotFoundException(Guid.Parse(id)).Message).Run());
+            }, _ => "Company not found.").Run());
     }
 }
