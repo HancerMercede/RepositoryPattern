@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": "3.0.0",
-    "createdAt": "2026-02-22T21:27:28.419Z",
-    "updatedAt": "2026-02-22T21:27:28.419Z",
+    "createdAt": "2026-02-22T22:10:01.460Z",
+    "updatedAt": "2026-02-22T22:10:01.460Z",
     "projectRoot": "E:\\Mis Archivos\\RepositoryPattern",
     "projectName": "RepositoryPattern",
     "scanCommand": "node testcraft-init.js",
@@ -63,7 +63,8 @@
       "Shared\\Shared",
       "Tests",
       "Tests\\CompanyTests",
-      "Tests\\EmployeeTests"
+      "Tests\\EmployeeTests",
+      "Tests\\ServiceTests"
     ],
     "folderMap": {}
   },
@@ -87,7 +88,7 @@
     "assertLib": null,
     "e2eTool": null,
     "confirmed": true,
-    "confirmedAt": "2026-02-22T21:27:28.419Z"
+    "confirmedAt": "2026-02-22T22:10:01.460Z"
   },
   "learnedStyle": {
     "fileNaming": ".test",
@@ -96,7 +97,9 @@
     "describeExamples": [],
     "itExamples": [],
     "assertionStyle": [],
-    "mockingStyle": [],
+    "mockingStyle": [
+      "Moq (.NET)"
+    ],
     "factoryPatterns": [],
     "usesAAAComments": true,
     "importExamples": [
@@ -104,7 +107,10 @@
       "using Shared.Shared;\r",
       "using Moq;\r",
       "using Xunit;\r",
-      "using Shared.Shared; \r"
+      "using Shared.Shared; \r",
+      "using Entities.Exceptions;",
+      "using Service;",
+      "using Shared.RequestFeatures;"
     ],
     "codeSnippets": [
       {
@@ -116,20 +122,21 @@
         "snippet": "using Moq;\r\nusing Xunit;\r\nusing Shared.RequestFeatures;\r\nusing Shared.Shared; \r\nnamespace Tests.EmployeeTests;\r\npublic class EmployeeRepositoryTests\r\n{\r\n    private readonly Mock<IEmployeeRepository> _mockRepo = new();\r\n    [Fact]\r\n    public async Task GetEmployees_WhenCalled_ReturnsPagedListWithCorrectCount()\r\n    {\r\n        var companyId = Guid.NewGuid().ToString();\r\n        var pagination = new PaginationParameters();\r\n        var expectedEmployees = CreateSampleEmployees(companyId);\r\n        _mockRepo.Setup(repo => repo.GetAll(companyId, pagination, false))\r\n                 .ReturnsAsync(expectedEmployees);\r\n        var result = await _mockRepo.Object.GetAll(companyId, pagination, false);\r\n        Assert.NotNull(result);\r\n        Assert.IsAssignableFrom<IEnumerable<Employee>>(result);\r\n        Assert.Equal(expectedEmployees.Count, result.Count());\r\n        _mockRepo.Verify(x => x.GetAll(companyId, pagination, false), Times.Once);\r\n    }\r\n    [Fact]\r\n    public async Task GetEmployeeById_WhenEmployeeExists_ReturnsEmployeeWithCorrectData()\r\n    {\r"
       },
       {
-        "file": "Tests\\Usings.cs",
-        "snippet": "global using Contracts.Interfaces;\r\nglobal using Entities.Models;\r\nglobal using Moq;\r\nglobal using Xunit;"
+        "file": "Tests\\ServiceTests\\CompanyServiceTests.cs",
+        "snippet": "using Entities.Exceptions;\nusing Service;\nusing Shared.RequestFeatures;\nusing Shared.Shared;\nnamespace Tests.ServiceTests;\npublic class CompanyServiceTests\n{\n    private readonly Mock<IRepositoryManager> _mockRepoManager;\n    private readonly Mock<ICompanyRepository> _mockCompanyRepo;\n    private readonly CompanyService _service;\n    public CompanyServiceTests()\n    {\n        _mockRepoManager = new Mock<IRepositoryManager>();\n        _mockCompanyRepo = new Mock<ICompanyRepository>();\n        _mockRepoManager.Setup(r => r.Company).Returns(_mockCompanyRepo.Object);\n        _service = new CompanyService(_mockRepoManager.Object);\n    }\n    #region Conventional Tests\n    [Fact]\n    public async Task GetAll_ReturnsCompaniesWithMetaData()\n    {\n        var pagination = new PaginationParameters();\n        var companies = new PageList<Company>(new List<Company>(), 0, 1, 10);\n        _mockCompanyRepo.Setup(r => r.GetAll(pagination, false)).ReturnsAsync(companies);\n        var result = await _service.GetAll(pagination, false);"
       }
     ],
-    "totalTestsFound": 3
+    "totalTestsFound": 5
   },
   "files": {
     "testDirs": [
       "Tests",
       "Tests\\CompanyTests",
-      "Tests\\EmployeeTests"
+      "Tests\\EmployeeTests",
+      "Tests\\ServiceTests"
     ],
     "srcFileCount": 70,
-    "testFileCount": 3,
+    "testFileCount": 5,
     "allSrcFiles": [
       "Contracts\\Interfaces\\IBaseInterface.cs",
       "Contracts\\Interfaces\\ICompanyRepository.cs",
@@ -205,16 +212,20 @@
     "allTestFiles": [
       "Tests\\CompanyTests\\CompanyRepositoryTests.cs",
       "Tests\\EmployeeTests\\EmployeeRepositoryTests.cs",
+      "Tests\\ServiceTests\\CompanyServiceTests.cs",
+      "Tests\\ServiceTests\\EmployeeServiceTests.cs",
       "Tests\\Usings.cs"
     ]
   },
   "progress": {
-    "coveragePercent": 6,
+    "coveragePercent": 9,
     "testedFiles": [
       "Entities\\Models\\Company.cs",
       "Entities\\Models\\Employee.cs",
       "Repository\\CompanyRepository.cs",
-      "Repository\\EmployeeRepository.cs"
+      "Repository\\EmployeeRepository.cs",
+      "Service\\CompanyService.cs",
+      "Service\\EmployeeService.cs"
     ],
     "untestedFiles": [
       "Contracts\\Interfaces\\IBaseInterface.cs",
@@ -267,8 +278,6 @@
       "RepositoryPatternArquictecture\\Helpers\\MyJPIF.cs",
       "RepositoryPatternArquictecture\\Helpers\\ServiceExtensions.cs",
       "RepositoryPatternArquictecture\\Program.cs",
-      "Service\\CompanyService.cs",
-      "Service\\EmployeeService.cs",
       "Service\\Helpers\\globals.cs",
       "Service\\ServiceManager.cs",
       "Service.Contracts\\Interfaces\\ICompanyService.cs",
