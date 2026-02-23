@@ -2,7 +2,7 @@
   "_meta": {
     "version": "3.0.0",
     "createdAt": "2026-02-22T22:16:48.321Z",
-    "updatedAt": "2026-02-22T22:16:48.321Z",
+    "updatedAt": "2026-02-22T23:45:00.000Z",
     "projectRoot": "E:\\Mis Archivos\\RepositoryPattern",
     "projectName": "RepositoryPattern",
     "scanCommand": "node testcraft-init.js",
@@ -63,6 +63,7 @@
       "Shared\\Shared",
       "Tests",
       "Tests\\CompanyTests",
+      "Tests\\ControllerTests",
       "Tests\\EmployeeTests",
       "Tests\\ServiceTests"
     ],
@@ -132,11 +133,12 @@
     "testDirs": [
       "Tests",
       "Tests\\CompanyTests",
+      "Tests\\ControllerTests",
       "Tests\\EmployeeTests",
       "Tests\\ServiceTests"
     ],
     "srcFileCount": 70,
-    "testFileCount": 5,
+    "testFileCount": 7,
     "allSrcFiles": [
       "Contracts\\Interfaces\\IBaseInterface.cs",
       "Contracts\\Interfaces\\ICompanyRepository.cs",
@@ -211,6 +213,8 @@
     ],
     "allTestFiles": [
       "Tests\\CompanyTests\\CompanyRepositoryTests.cs",
+      "Tests\\ControllerTests\\CompanyControllerTests.cs",
+      "Tests\\ControllerTests\\EmployeeControllerTests.cs",
       "Tests\\EmployeeTests\\EmployeeRepositoryTests.cs",
       "Tests\\ServiceTests\\CompanyServiceTests.cs",
       "Tests\\ServiceTests\\EmployeeServiceTests.cs",
@@ -218,10 +222,12 @@
     ]
   },
   "progress": {
-    "coveragePercent": 9,
+    "coveragePercent": 11,
     "testedFiles": [
       "Entities\\Models\\Company.cs",
       "Entities\\Models\\Employee.cs",
+      "Presentation\\Controllers\\CompanyController.cs",
+      "Presentation\\Controllers\\EmployeeController.cs",
       "Repository\\CompanyRepository.cs",
       "Repository\\EmployeeRepository.cs",
       "Service\\CompanyService.cs",
@@ -262,8 +268,6 @@
       "Persistence\\Migrations\\20230213184101_SeedingData.Designer.cs",
       "Persistence\\Migrations\\RepositoryContextModelSnapshot.cs",
       "Presentation\\AssemblyReference.cs",
-      "Presentation\\Controllers\\CompanyController.cs",
-      "Presentation\\Controllers\\EmployeeController.cs",
       "Presentation\\Helpers\\FunctionalControllerExtensions.cs",
       "Presentation\\Helpers\\HttpContextExtensions.cs",
       "Presentation\\Helpers\\imports.cs",
@@ -295,23 +299,33 @@
     ],
     "totalSrcFiles": 70,
     "nextSuggested": [
-      "Contracts\\Interfaces\\IBaseInterface.cs",
-      "Contracts\\Interfaces\\ICompanyRepository.cs",
-      "Contracts\\Interfaces\\IEmployeeRepository.cs",
-      "Contracts\\Interfaces\\IEntity.cs",
-      "Contracts\\Interfaces\\IRepositoryBase.cs"
+      "Presentation\\Helpers\\FunctionalControllerExtensions.cs",
+      "Persistence\\Context\\RepositoryContext.cs",
+      "Repository\\RepositoryBase.cs"
     ],
-    "lastTestedFile": null,
-    "lastTestedAt": null
+    "lastTestedFile": "Presentation\\Controllers\\CompanyController.cs, Presentation\\Controllers\\EmployeeController.cs",
+    "lastTestedAt": "2026-02-22T23:45:00.000Z"
   },
   "session": {
     "currentFile": null,
     "currentTestType": null,
-    "history": [],
-    "notes": []
+    "history": [
+      {
+        "file": "Presentation\\Controllers\\CompanyController.cs, Presentation\\Controllers\\EmployeeController.cs",
+        "testType": "integration",
+        "testsGenerated": 24,
+        "summary": "Tests de integracion para endpoints Either de CompanyController (14 tests) y EmployeeController (10 tests). Cubre GetAll, GetById, Create, Delete con Either pattern, caching y manejo de errores.",
+        "generatedAt": "2026-02-22T23:45:00.000Z"
+      }
+    ],
+    "notes": [
+      "Agregado Microsoft.AspNetCore.Mvc.Testing al proyecto de Tests",
+      "Agregada referencia a Presentation.csproj en Tests.csproj",
+      "Creado directorio Tests\\ControllerTests"
+    ]
   },
   "preferences": {
-    "language": null,
+    "language": "es",
     "additionalContext": null
   }
 }
