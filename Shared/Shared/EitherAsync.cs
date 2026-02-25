@@ -9,6 +9,12 @@
 public record EitherAsync<L, R>(Func<Task<Either<L, R>>> Run)
 {
     /// <summary>
+    /// Implicit conversion from EitherAsync to Task of Either.
+    /// </summary>
+    public static implicit operator Task<Either<L, R>>(EitherAsync<L, R> eitherAsync) 
+        => eitherAsync.Run();
+
+    /// <summary>
     /// Transforms the successful value (Right) of the EitherAsync using a synchronous mapping function.
     /// If the result is a Left, the mapping function is skipped.
     /// </summary>
@@ -57,7 +63,7 @@ public record EitherAsync<L, R>(Func<Task<Either<L, R>>> Run)
     /// <param name="action">The asynchronous operation to execute.</param>
     /// <param name="errorHandler">A function to transform the exception into the Left type.</param>
     /// <returns>An EitherAsync containing the result of the task or the captured error.</returns>
-    public static EitherAsync<L, R> Try<L, R>(
+    public static EitherAsync<L, R> Try(
         Func<Task<R>> action, 
         Func<Exception, L> errorHandler)
     {
@@ -71,6 +77,28 @@ public record EitherAsync<L, R>(Func<Task<Either<L, R>>> Run)
             catch (Exception ex)
             {
                 return Either<L, R>.ToLeft(errorHandler(ex));
+            }
+        });
+    }
+    
+    /// <summary>
+    /// Executes a synchronous task safely. If an exception occurs, it is caught and transformed using the error handler.
+    /// </summary>
+    /// <param name="action">The synchronous operation to execute.</param>
+    /// <param name="errorHandler">A function to transform the exception into the Left type.</param>
+    /// <returns>An EitherAsync containing the result of the task or the captured error.</returns>
+    public static EitherAsync<L, R> Try(Func<R> action, Func<Exception, L> errorHandler)
+    {
+        return new EitherAsync<L, R>(() =>
+        {
+            try
+            {
+                var result = action();
+                return Task.FromResult(Either<L, R>.ToRight(result));
+            }
+            catch (Exception ex)
+            {
+                return Task.FromResult(Either<L, R>.ToLeft(errorHandler(ex)));
             }
         });
     }
@@ -90,4 +118,40 @@ public record EitherAsync<L, R>(Func<Task<Either<L, R>>> Run)
                 : Either<L, R>.ToLeft(errorMessage)
         ));
     }
+
+    /// <summary>
+    /// Executes a function based on the current state of the EitherAsync.
+    /// Returns a Task with the result of the executed function.
+    /// </summary>
+    /// <typeparam name="T">The return type.</typeparam>
+    /// <param name="onLeft">Function to execute if the state is Left.</param>
+    /// <param name="onRight">Function to execute if the state is Right.</param>
+    /// <returns>A Task containing the result of the executed function.</returns>
+    public Task<T> MatchAsync<T>(Func<L, T> onLeft, Func<R, T> onRight)
+        => Run().ContinueWith(t => t.Result.Match(onLeft, onRight));
+
+    /// <summary>
+    /// Executes an async function based on the current state of the EitherAsync.
+    /// Returns a Task with the result of the executed async function.
+    /// </summary>
+    /// <typeparam name="T">The return type.</typeparam>
+    /// <param name="onLeft">Async function to execute if the state is Left.</param>
+    /// <param name="onRight">Async function to execute if the state is Right.</param>
+    /// <returns>A Task containing the result of the executed async function.</returns>
+    public Task<T> MatchAsync<T>(Func<L, Task<T>> onLeft, Func<R, Task<T>> onRight)
+        => Run().ContinueWith(async t =>
+        {
+            return t.Result switch
+            {
+                Either<L, R>.Left l => await onLeft(l.Value),
+                Either<L, R>.Right r => await onRight(r.Value),
+                _ => throw new InvalidOperationException()
+            };
+        }).Unwrap();
+
+    /// <summary>
+    /// Executes the EitherAsync and returns the underlying Either result.
+    /// </summary>
+    /// <returns>A Task containing the Either result.</returns>
+    public async Task<Either<L, R>> RunAsync() => await Run();
 }

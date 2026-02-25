@@ -48,10 +48,10 @@ internal sealed class CompanyService(IRepositoryManager repositoryManager) : ICo
     #endregion
     public EitherAsync<string, (IEnumerable<Company> companies, MetaData metaData)> GetAllWithEither(PaginationParameters pagination, bool trackChanges)
     {
-        return EitherAsync<string,(IEnumerable<Company>, MetaData) >.Try(async () =>
+        return EitherAsync<string, (IEnumerable<Company> companies, MetaData metaData)>.Try(async () =>
             {
                 var companies = await repositoryManager.Company.GetAll(pagination, trackChanges);
-                return ( companies :(IEnumerable<Company>) companies, companies.MetaData);
+                return (companies, companies.MetaData);
             }, exception => exception.Message
         ).Ensure(db => db.companies.Any(), "No companies found");
     }
@@ -74,12 +74,12 @@ internal sealed class CompanyService(IRepositoryManager repositoryManager) : ICo
                 "company name can not be null or empty.")
             .Ensure(c=> !string.IsNullOrEmpty(c.Address),
                 "company address can not be null or empty.")
-            .FlatMap(c => EitherAsync<string, Company>.Try(async () =>
+            .FlatMap<Company>(c => EitherAsync<string, Company>.Try(async () =>
             {
                 var dbCompany = await repositoryManager.Company.CreateRecord(company);
                 await repositoryManager.Save();
                 return dbCompany;
-            }, exception => exception.Message).Run());
+            }, exception => exception.Message));
     }
     
     public EitherAsync<string, Company> GetByConditionWithEither(string id, bool trackChanges)
@@ -87,11 +87,11 @@ internal sealed class CompanyService(IRepositoryManager repositoryManager) : ICo
         return EitherAsync<string, string>.FromRight(id)
             .Ensure(s=>!string.IsNullOrWhiteSpace(s), "The id can not be null or empty.")
             .Ensure(s=>Guid.TryParse(s, out _), $"{id} is not a valid Guid.")
-            .FlatMap(c=>EitherAsync<string, Company>.Try(async () =>
+            .FlatMap<Company>(c=>EitherAsync<string, Company>.Try(async () =>
             {
                 var company = await repositoryManager.Company.GetByCondition(c, trackChanges);
                 return company;
-            }, exception => exception.Message).Run())
+            }, exception => exception.Message))
             .Ensure(company => company is not null, "Company not found.");
 
     }
@@ -101,12 +101,12 @@ internal sealed class CompanyService(IRepositoryManager repositoryManager) : ICo
         return EitherAsync<string, string>.FromRight(id)
             .Ensure(s =>!string.IsNullOrWhiteSpace(s) , $"The id can not be null or empty.")
             .Ensure(s=>Guid.TryParse(s,out _),$"{id} is not a valid Guid.")
-            .FlatMap(idParam=> EitherAsync<string, Unit>.Try(async () =>
+            .FlatMap<Unit>(idParam=> EitherAsync<string, Unit>.Try(async () =>
             {
                 await repositoryManager.Company.DeleteRecord(idParam, trackChanges);
                 await repositoryManager.Save();
 
                 return new Unit();
-            }, _ => "Company not found.").Run());
+            }, _ => "Company not found."));
     }
 }

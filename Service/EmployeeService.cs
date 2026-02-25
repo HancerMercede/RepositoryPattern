@@ -79,13 +79,13 @@ internal sealed class EmployeeService(IRepositoryManager repositoryManager) : IE
     {
         return EitherAsync<string, string>.FromRight(companyId)
             .Ensure(c => !string.IsNullOrWhiteSpace(c), "The company id can not be null or empty")
-            .FlatMap(_ => EitherAsync<string, IEnumerable<Employee>>.Try(async () =>
+            .FlatMap<(IEnumerable<Employee> employees, MetaData metaData)>(_ => EitherAsync<string, (IEnumerable<Employee> employees, MetaData metaData)>.Try(async () =>
             {
                 var employees = await repositoryManager.Employee.GetAll(companyId, pagination, trackChanges);
                 var metadata = employees.MetaData;
-                return (Employees: (IEnumerable<Employee>) employees, MetaData: metadata);
-            }, exception => exception.Message).Run())
-            .Ensure(c=>c.Employees.Any(),"There are no employees for this company.");
+                return (Employees: employees, MetaData: metadata);
+            }, exception => exception.Message))
+            .Ensure(c=>c.employees.Any(),"There are no employees for this company.");
     }
 
     public EitherAsync<string, Employee> GetByConditionWithEither(string companyId, string id, bool trackChanges)
@@ -93,11 +93,11 @@ internal sealed class EmployeeService(IRepositoryManager repositoryManager) : IE
         return EitherAsync<string, string>.FromRight(companyId)
             .Ensure(c => !string.IsNullOrWhiteSpace(c), "The company id can not be null or empty")
             .Ensure(e => !string.IsNullOrWhiteSpace(id), "The employee id can not be null or empty")
-            .FlatMap(_ => EitherAsync<string, Employee>.Try(async () =>
+            .FlatMap<Employee>(_ => EitherAsync<string, Employee>.Try(async () =>
             {
                var employee = await repositoryManager.Employee.GetByCondition(companyId, id, trackChanges);
                return employee;
-            }, exception => exception.Message).Run())
+            }, exception => exception.Message))
             .Ensure(employee=> employee is not null, "Employee not found.");
     }
 
@@ -109,12 +109,12 @@ internal sealed class EmployeeService(IRepositoryManager repositoryManager) : IE
                  .Ensure(e=>!string.IsNullOrWhiteSpace(e.Name), "The employee name can not be null or empty.")
                  .Ensure(e=>e.Age >= 18 && e.Age <= 80, "The employee age can not be less than 18 or more than 80.")
              .Ensure(e=>!string.IsNullOrWhiteSpace(e.Position), "The employee position can not be null or empty.")
-             .FlatMap(_=>EitherAsync<string, Employee>.Try(async () =>
+             .FlatMap<Employee>(_=>EitherAsync<string, Employee>.Try(async () =>
              {
                  var employeeForCompany = await repositoryManager.Employee.CreateEmployeeForCompany(companyId, employee);
                  await repositoryManager.Save();
                  return employeeForCompany;
-             },exception=>exception.Message).Run());
+             },exception=>exception.Message));
     }
 
     public EitherAsync<string, Unit> DeleteEmployeeWithEither(string companyId, string id, bool trackChanges)
@@ -122,11 +122,11 @@ internal sealed class EmployeeService(IRepositoryManager repositoryManager) : IE
         return EitherAsync<string, string>.FromRight(companyId)
             .Ensure(c => !string.IsNullOrWhiteSpace(c), "The company id can not be null or empty.")
             .Ensure(_ => !string.IsNullOrWhiteSpace(id), "The user id can not be null or empty.")
-            .FlatMap(_ => EitherAsync<string, Unit>.Try(async () =>
+            .FlatMap<Unit>(_ => EitherAsync<string, Unit>.Try(async () =>
             {
                await repositoryManager.Employee.DeleteEmployee(companyId, id, trackChanges);
                await repositoryManager.Save();
                return new Unit();
-            }, exception => exception.Message).Run());
+            }, exception => exception.Message));
     }
 }

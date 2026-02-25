@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": "3.0.0",
-    "createdAt": "2026-02-22T22:16:48.321Z",
-    "updatedAt": "2026-02-22T23:45:00.000Z",
+    "createdAt": "2026-02-25T16:49:17.823Z",
+    "updatedAt": "2026-02-25T16:49:17.823Z",
     "projectRoot": "E:\\Mis Archivos\\RepositoryPattern",
     "projectName": "RepositoryPattern",
     "scanCommand": "node testcraft-init.js",
@@ -89,7 +89,7 @@
     "assertLib": null,
     "e2eTool": null,
     "confirmed": true,
-    "confirmedAt": "2026-02-22T22:16:48.321Z"
+    "confirmedAt": "2026-02-25T16:49:17.823Z"
   },
   "learnedStyle": {
     "fileNaming": ".test",
@@ -106,12 +106,12 @@
     "importExamples": [
       "using Shared.RequestFeatures;\r",
       "using Shared.Shared;\r",
-      "using Moq;\r",
-      "using Xunit;\r",
-      "using Shared.Shared; \r",
-      "using Entities.Exceptions;",
-      "using Service;",
-      "using Shared.RequestFeatures;"
+      "using Dtos.DtoModels;",
+      "using Entities.Models;",
+      "using Microsoft.AspNetCore.Http;",
+      "using Microsoft.AspNetCore.Mvc;",
+      "using Microsoft.Extensions.Logging;",
+      "using Moq;"
     ],
     "codeSnippets": [
       {
@@ -119,15 +119,15 @@
         "snippet": "using Shared.RequestFeatures;\r\nusing Shared.Shared;\r\nnamespace Tests.CompanyTests;\r\npublic class CompanyRepositoryTests\r\n{\r\n    private readonly Mock<ICompanyRepository> _mockRepo = new();\r\n    [Fact]\r\n    public async Task GetAllCompaniesAsync_WhenOneCompanyExists_ReturnsListWithSingleElement()\r\n    {\r\n        var pagination = new PaginationParameters();\r\n        var expectedCompanies = CreateSampleCompanies(count: 1);\r\n        _mockRepo.Setup(repo => repo.GetAll(pagination, false))\r\n                 .ReturnsAsync(expectedCompanies);\r\n        var result = (await _mockRepo.Object.GetAll(pagination, false)).ToList();\r\n        Assert.IsType<List<Company>>(result);\r\n        Assert.Single(result);\r\n        Assert.Equal(\"Test Company 0\", result[0].Name);\r\n        _mockRepo.Verify(r => r.GetAll(pagination, false), Times.Once);\r\n    }\r\n    [Fact]\r\n    public async Task GetAllCompaniesAsync_WhenMultipleCompaniesExist_ReturnsCorrectCountryFilter()\r\n    {\r\n        var pagination = new PaginationParameters();\r\n        var expectedCompanies = CreateSampleCompanies(count: 2);\r\n        _mockRepo.Setup(repo => repo.GetAll(pagination, false))\r"
       },
       {
-        "file": "Tests\\EmployeeTests\\EmployeeRepositoryTests.cs",
-        "snippet": "using Moq;\r\nusing Xunit;\r\nusing Shared.RequestFeatures;\r\nusing Shared.Shared; \r\nnamespace Tests.EmployeeTests;\r\npublic class EmployeeRepositoryTests\r\n{\r\n    private readonly Mock<IEmployeeRepository> _mockRepo = new();\r\n    [Fact]\r\n    public async Task GetEmployees_WhenCalled_ReturnsPagedListWithCorrectCount()\r\n    {\r\n        var companyId = Guid.NewGuid().ToString();\r\n        var pagination = new PaginationParameters();\r\n        var expectedEmployees = CreateSampleEmployees(companyId);\r\n        _mockRepo.Setup(repo => repo.GetAll(companyId, pagination, false))\r\n                 .ReturnsAsync(expectedEmployees);\r\n        var result = await _mockRepo.Object.GetAll(companyId, pagination, false);\r\n        Assert.NotNull(result);\r\n        Assert.IsAssignableFrom<IEnumerable<Employee>>(result);\r\n        Assert.Equal(expectedEmployees.Count, result.Count());\r\n        _mockRepo.Verify(x => x.GetAll(companyId, pagination, false), Times.Once);\r\n    }\r\n    [Fact]\r\n    public async Task GetEmployeeById_WhenEmployeeExists_ReturnsEmployeeWithCorrectData()\r\n    {\r"
+        "file": "Tests\\ControllerTests\\CompanyControllerTests.cs",
+        "snippet": "using Dtos.DtoModels;\nusing Entities.Models;\nusing Microsoft.AspNetCore.Http;\nusing Microsoft.AspNetCore.Mvc;\nusing Microsoft.Extensions.Logging;\nusing Moq;\nusing Nexus.Store.Contract;\nusing Presentation.Controllers;\nusing Service.Contracts.Interfaces;\nusing Shared.RequestFeatures;\nusing Shared.Shared;\nnamespace Tests.ControllerTests;\npublic class CompanyControllerTests\n{\n    private readonly Mock<IServiceManager> _mockServiceManager;\n    private readonly Mock<ICompanyService> _mockCompanyService;\n    private readonly Mock<ILogger<CompanyController>> _mockLogger;\n    private readonly Mock<INexusEngine> _mockNexus;\n    private readonly CompanyController _controller;\n    public CompanyControllerTests()\n    {\n        _mockServiceManager = new Mock<IServiceManager>();\n        _mockCompanyService = new Mock<ICompanyService>();\n        _mockLogger = new Mock<ILogger<CompanyController>>();\n        _mockNexus = new Mock<INexusEngine>();"
       },
       {
-        "file": "Tests\\ServiceTests\\CompanyServiceTests.cs",
-        "snippet": "using Entities.Exceptions;\nusing Service;\nusing Shared.RequestFeatures;\nusing Shared.Shared;\nnamespace Tests.ServiceTests;\npublic class CompanyServiceTests\n{\n    private readonly Mock<IRepositoryManager> _mockRepoManager;\n    private readonly Mock<ICompanyRepository> _mockCompanyRepo;\n    private readonly CompanyService _service;\n    public CompanyServiceTests()\n    {\n        _mockRepoManager = new Mock<IRepositoryManager>();\n        _mockCompanyRepo = new Mock<ICompanyRepository>();\n        _mockRepoManager.Setup(r => r.Company).Returns(_mockCompanyRepo.Object);\n        _service = new CompanyService(_mockRepoManager.Object);\n    }\n    #region Conventional Tests\n    [Fact]\n    public async Task GetAll_ReturnsCompaniesWithMetaData()\n    {\n        var pagination = new PaginationParameters();\n        var companies = new PageList<Company>(new List<Company>(), 0, 1, 10);\n        _mockCompanyRepo.Setup(r => r.GetAll(pagination, false)).ReturnsAsync(companies);\n        var result = await _service.GetAll(pagination, false);"
+        "file": "Tests\\ControllerTests\\EmployeeControllerTests.cs",
+        "snippet": "using Dtos.DtoModels;\nusing Entities.Models;\nusing Microsoft.AspNetCore.Http;\nusing Microsoft.AspNetCore.Mvc;\nusing Microsoft.Extensions.Logging;\nusing Moq;\nusing Nexus.Store.Contract;\nusing Presentation.Controllers;\nusing Service.Contracts.Interfaces;\nusing Shared.RequestFeatures;\nusing Shared.Shared;\nnamespace Tests.ControllerTests;\npublic class EmployeeControllerTests\n{\n    private readonly Mock<IServiceManager> _mockServiceManager;\n    private readonly Mock<IEmployeeService> _mockEmployeeService;\n    private readonly Mock<ILogger<EmployeeController>> _mockLogger;\n    private readonly Mock<INexusEngine> _mockNexus;\n    private readonly EmployeeController _controller;\n    public EmployeeControllerTests()\n    {\n        _mockServiceManager = new Mock<IServiceManager>();\n        _mockEmployeeService = new Mock<IEmployeeService>();\n        _mockLogger = new Mock<ILogger<EmployeeController>>();\n        _mockNexus = new Mock<INexusEngine>();"
       }
     ],
-    "totalTestsFound": 5
+    "totalTestsFound": 7
   },
   "files": {
     "testDirs": [
@@ -299,33 +299,23 @@
     ],
     "totalSrcFiles": 70,
     "nextSuggested": [
-      "Presentation\\Helpers\\FunctionalControllerExtensions.cs",
-      "Persistence\\Context\\RepositoryContext.cs",
-      "Repository\\RepositoryBase.cs"
+      "Contracts\\Interfaces\\IBaseInterface.cs",
+      "Contracts\\Interfaces\\ICompanyRepository.cs",
+      "Contracts\\Interfaces\\IEmployeeRepository.cs",
+      "Contracts\\Interfaces\\IEntity.cs",
+      "Contracts\\Interfaces\\IRepositoryBase.cs"
     ],
-    "lastTestedFile": "Presentation\\Controllers\\CompanyController.cs, Presentation\\Controllers\\EmployeeController.cs",
-    "lastTestedAt": "2026-02-22T23:45:00.000Z"
+    "lastTestedFile": null,
+    "lastTestedAt": null
   },
   "session": {
     "currentFile": null,
     "currentTestType": null,
-    "history": [
-      {
-        "file": "Presentation\\Controllers\\CompanyController.cs, Presentation\\Controllers\\EmployeeController.cs",
-        "testType": "integration",
-        "testsGenerated": 24,
-        "summary": "Tests de integracion para endpoints Either de CompanyController (14 tests) y EmployeeController (10 tests). Cubre GetAll, GetById, Create, Delete con Either pattern, caching y manejo de errores.",
-        "generatedAt": "2026-02-22T23:45:00.000Z"
-      }
-    ],
-    "notes": [
-      "Agregado Microsoft.AspNetCore.Mvc.Testing al proyecto de Tests",
-      "Agregada referencia a Presentation.csproj en Tests.csproj",
-      "Creado directorio Tests\\ControllerTests"
-    ]
+    "history": [],
+    "notes": []
   },
   "preferences": {
-    "language": "es",
+    "language": null,
     "additionalContext": null
   }
 }
